@@ -19,7 +19,7 @@ Directory | Description
 
 + **Website:** [www.aspose.com](https://www.aspose.com)
 + **Product Home:** [Aspose.GIS for .NET](https://products.aspose.com/gis/net)
-+ **Download:** [Download Aspose.GIS for .NET](https://downloads.aspose.com/gis/net)
++ **Download:** [Download Aspose.GIS for .NET](https://www.nuget.org/packages/Aspose.gis/)
 + **Documentation:** [Aspose.GIS for .NET Documentation](https://docs.aspose.com/display/gisnet/Home)
 + **Forum:** [Aspose.GIS for .NET Forum](https://forum.aspose.com/c/gis)
 + **Blog:** [Aspose.GIS for .NET Blog](https://blog.aspose.com/category/aspose-products/aspose-gis-product-family/)
