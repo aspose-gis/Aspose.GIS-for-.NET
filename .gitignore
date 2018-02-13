@@ -1,0 +1,8 @@
+*_out.*
+Debug
+/Examples/CSharp/bin/Debug/*.exe
+/Examples/CSharp/bin/Debug/*.config
+/Examples/CSharp/bin/Debug/*.pdb
+/Examples/CSharp/bin/Debug/*.dll
+/Examples/CSharp/bin/Debug/*.xml
+_out.*

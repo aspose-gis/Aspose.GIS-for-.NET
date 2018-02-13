@@ -1,0 +1,4 @@
+{"type":"FeatureCollection","features":[
+{"type":"Feature","geometry":{"type":"Point","coordinates":[33.97,-118.25]},"properties":{"name":"John","age":23,"dob":"1982-02-05T16:30:00"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[35.81,-96.28]},"properties":{"name":"Mary","age":54,"dob":"1984-12-15T15:30:00"}}
+]}

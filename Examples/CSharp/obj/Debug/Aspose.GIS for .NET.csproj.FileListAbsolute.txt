@@ -1,0 +1,9 @@
+E:\Aspose.GIS for .NET\Aspose.GIS for .NET\bin\Debug\Aspose.GIS_for.NET.exe.config
+E:\Aspose.GIS for .NET\Aspose.GIS for .NET\bin\Debug\Aspose.GIS_for.NET.exe
+E:\Aspose.GIS for .NET\Aspose.GIS for .NET\bin\Debug\Aspose.GIS_for.NET.pdb
+E:\Aspose.GIS for .NET\Aspose.GIS for .NET\obj\Debug\Aspose.GIS for .NET.csprojResolveAssemblyReference.cache
+E:\Aspose.GIS for .NET\Aspose.GIS for .NET\obj\Debug\Aspose.GIS for .NET.csproj.CoreCompileInputs.cache
+E:\Aspose.GIS for .NET\Aspose.GIS for .NET\obj\Debug\Aspose.GIS_for.NET.exe
+E:\Aspose.GIS for .NET\Aspose.GIS for .NET\obj\Debug\Aspose.GIS_for.NET.pdb
+E:\Aspose.GIS for .NET\Aspose.GIS for .NET\bin\Debug\Aspose.Gis.dll
+E:\Aspose.GIS for .NET\Aspose.GIS for .NET\bin\Debug\Aspose.Gis.xml

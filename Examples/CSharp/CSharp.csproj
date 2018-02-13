@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B9E45E3B-FE3F-402C-80FA-D2A6D8D95498}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Aspose.GIS_for.NET</RootNamespace>
+    <AssemblyName>Aspose.GIS_for.NET</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.GIS, Version=18.2.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.GIS.18.2.0\lib\net47\Aspose.GIS.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Conversion\ConvertGeoJSONToShapeFileWithAttributeAdjustment.cs" />
+    <Compile Include="Conversion\ConvertShapeFileToGeoJSON.cs" />
+    <Compile Include="Geometries\CountGeometriesInGeometry.cs" />
+    <Compile Include="Geometries\CountPointsInGeometry.cs" />
+    <Compile Include="Geometries\CreateGeometryCollection.cs" />
+    <Compile Include="Geometries\CreateMultiLineString.cs" />
+    <Compile Include="Geometries\CreateMultiPoint.cs" />
+    <Compile Include="Geometries\CreateMultiPolygon.cs" />
+    <Compile Include="Geometries\CreatePoint.cs" />
+    <Compile Include="Geometries\CreateLineString.cs" />
+    <Compile Include="Geometries\CreatePolygon.cs" />
+    <Compile Include="Geometries\CreatePolygonWithHole.cs" />
+    <Compile Include="Geometries\GetGeometryType.cs" />
+    <Compile Include="Geometries\IterateOverGeometriesInGeometry.cs" />
+    <Compile Include="Geometries\IterateOverPointsInGeometry.cs" />
+    <Compile Include="Layers\ConvertPolygonShapeFileToLineStringShapeFile.cs" />
+    <Compile Include="Layers\CreateNewShapeFile.cs" />
+    <Compile Include="Layers\ExtractFeaturesFromShapeFileToGeoJSON.cs" />
+    <Compile Include="Layers\FilterFeaturesByAttributeValue.cs" />
+    <Compile Include="Layers\GetFeatureCountInLayer.cs" />
+    <Compile Include="Layers\GetInformationAboutLayerAttributes.cs" />
+    <Compile Include="Layers\GetValueOfAFeatureAttribute.cs" />
+    <Compile Include="Layers\GetValueOfNullFeatureAttribute.cs" />
+    <Compile Include="Layers\IterateOverFeaturesInLayer.cs" />
+    <Compile Include="Layers\SpecifyAttributeValueLength.cs" />
+    <Compile Include="RunExamples.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
