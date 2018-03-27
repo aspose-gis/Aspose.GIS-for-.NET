@@ -6,3 +6,4 @@ Debug
 /Examples/CSharp/bin/Debug/*.dll
 /Examples/CSharp/bin/Debug/*.xml
 _out.*
+/Examples/packages
