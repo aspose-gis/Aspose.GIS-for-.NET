@@ -2,6 +2,8 @@
 using Aspose.GIS.Examples.CSharp.Conversion;
 using Aspose.GIS.Examples.CSharp.Geometries;
 using Aspose.GIS.Examples.CSharp.Layers;
+using Aspose.GIS_for.NET.Geometries;
+using Aspose.GIS_for.NET.Layers;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -39,6 +41,7 @@ namespace Aspose.GIS.Examples.CSharp
             //CountPointsInGeometry.Run();
             //IterateOverPointsInGeometry.Run();
             //IterateOverGeometriesInGeometry.Run();
+            //GeometryValidation.Run();
             #endregion
 
             #region Working with Layers
@@ -52,6 +55,9 @@ namespace Aspose.GIS.Examples.CSharp
             //SpecifyAttributeValueLength.Run();
             //GetValueOfNullFeatureAttribute.Run();
             //ConvertPolygonShapeFileToLineStringShapeFile.Run();
+            //CreateKMLFile.Run();
+            //ReadFeaturesFromKML.Run();
+            //GetValueOrDefaultOfFeature.Run();
             #endregion
 
             #region Conversion
