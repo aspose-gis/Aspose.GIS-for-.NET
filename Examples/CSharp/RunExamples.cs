@@ -4,6 +4,7 @@ using Aspose.GIS.Examples.CSharp.Geometries;
 using Aspose.GIS.Examples.CSharp.Layers;
 using Aspose.GIS_for.NET.Geometries;
 using Aspose.GIS_for.NET.Layers;
+using Aspose.GIS_for.NET.SpatialReferencingSystem;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -42,10 +43,12 @@ namespace Aspose.GIS.Examples.CSharp
             //IterateOverPointsInGeometry.Run();
             //IterateOverGeometriesInGeometry.Run();
             //GeometryValidation.Run();
+            //SetSpatialReferenceSystemForGeometry.Run();
             #endregion
 
             #region Working with Layers
             //CreateNewShapeFile.Run();
+            //CreateVectorLayerWithSpatialReferenceSystem.Run();
             //GetFeatureCountInLayer.Run();
             //GetInformationAboutLayerAttributes.Run();
             //IterateOverFeaturesInLayer.Run();
@@ -63,6 +66,18 @@ namespace Aspose.GIS.Examples.CSharp
             #region Conversion
             //ConvertShapeFileToGeoJSON.Run();
             //ConvertGeoJSONToShapeFileWithAttributeAdjustment.Run();
+            #endregion
+
+            #region Spatial Reference System
+            //CheckDriverForSpatialReferenceSystemSupport.Run();
+
+            //CompareSpatialReferenceSystems.Run();
+
+            //CreateFromWkt.Run();
+
+            //CreateSpatialReferenceSystemWithCustomParams.Run();
+
+            //ExportSpatialReferenceSystemToWKT.Run();
             #endregion
 
             Console.WriteLine("=====================================================");

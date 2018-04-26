@@ -21,7 +21,7 @@ E:\AsposeGit\ForkedRepos\Aspose_GIS_NET\Examples\CSharp\obj\Debug\CSharp.csproj.
 E:\AsposeGit\ForkedRepos\Aspose_GIS_NET\Examples\CSharp\bin\Debug\Aspose.GIS_for.NET.exe.config
 E:\AsposeGit\ForkedRepos\Aspose_GIS_NET\Examples\CSharp\bin\Debug\Aspose.GIS_for.NET.exe
 E:\AsposeGit\ForkedRepos\Aspose_GIS_NET\Examples\CSharp\bin\Debug\Aspose.GIS_for.NET.pdb
-E:\AsposeGit\ForkedRepos\Aspose_GIS_NET\Examples\CSharp\bin\Debug\Aspose.Gis.dll
-E:\AsposeGit\ForkedRepos\Aspose_GIS_NET\Examples\CSharp\bin\Debug\Aspose.Gis.xml
+E:\AsposeGit\ForkedRepos\Aspose_GIS_NET\Examples\CSharp\bin\Debug\Aspose.GIS.dll
+E:\AsposeGit\ForkedRepos\Aspose_GIS_NET\Examples\CSharp\bin\Debug\Aspose.GIS.xml
 E:\AsposeGit\ForkedRepos\Aspose_GIS_NET\Examples\CSharp\obj\Debug\Aspose.GIS_for.NET.exe
 E:\AsposeGit\ForkedRepos\Aspose_GIS_NET\Examples\CSharp\obj\Debug\Aspose.GIS_for.NET.pdb
