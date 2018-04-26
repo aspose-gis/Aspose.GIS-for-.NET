@@ -33,8 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Aspose.GIS, Version=18.3.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aspose.GIS.18.3.0\lib\net47\Aspose.GIS.dll</HintPath>
+    <Reference Include="Aspose.GIS, Version=18.4.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.GIS.18.4.0\lib\net47\Aspose.GIS.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -62,9 +62,11 @@
     <Compile Include="Geometries\GetGeometryType.cs" />
     <Compile Include="Geometries\IterateOverGeometriesInGeometry.cs" />
     <Compile Include="Geometries\IterateOverPointsInGeometry.cs" />
+    <Compile Include="Geometries\SetSpatialReferenceSystemForGeometry.cs" />
     <Compile Include="Layers\ConvertPolygonShapeFileToLineStringShapeFile.cs" />
     <Compile Include="Layers\CreateKMLFile.cs" />
     <Compile Include="Layers\CreateNewShapeFile.cs" />
+    <Compile Include="Layers\CreateVectorLayerWithSpatialReferenceSystem.cs" />
     <Compile Include="Layers\ExtractFeaturesFromShapeFileToGeoJSON.cs" />
     <Compile Include="Layers\FilterFeaturesByAttributeValue.cs" />
     <Compile Include="Layers\GetFeatureCountInLayer.cs" />
@@ -77,6 +79,11 @@
     <Compile Include="Layers\SpecifyAttributeValueLength.cs" />
     <Compile Include="RunExamples.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpatialReferencingSystem\CheckDriverForSpatialReferenceSystemSupport.cs" />
+    <Compile Include="SpatialReferencingSystem\CompareSpatialReferenceSystems.cs" />
+    <Compile Include="SpatialReferencingSystem\CreateFromWkt.cs" />
+    <Compile Include="SpatialReferencingSystem\CreateSpatialReferenceSystemWithCustomParams.cs" />
+    <Compile Include="SpatialReferencingSystem\ExportSpatialReferenceSystemToWKT.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
