@@ -60,6 +60,7 @@ namespace Aspose.GIS.Examples.CSharp
             //ConvertPolygonShapeFileToLineStringShapeFile.Run();
             //CreateKMLFile.Run();
             //ReadFeaturesFromKML.Run();
+            //ReadFeaturesFromOSMXML.Run();
             //GetValueOrDefaultOfFeature.Run();
             #endregion
 

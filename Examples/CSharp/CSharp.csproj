@@ -33,8 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Aspose.GIS, Version=18.4.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aspose.GIS.18.4.0\lib\net47\Aspose.GIS.dll</HintPath>
+    <Reference Include="Aspose.GIS, Version=18.5.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.GIS.18.5.0\lib\net47\Aspose.GIS.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -76,6 +76,7 @@
     <Compile Include="Layers\GetValueOrDefaultOfFeature.cs" />
     <Compile Include="Layers\IterateOverFeaturesInLayer.cs" />
     <Compile Include="Layers\ReadFeaturesFromKML.cs" />
+    <Compile Include="Layers\ReadFeaturesFromOSMXML.cs" />
     <Compile Include="Layers\SpecifyAttributeValueLength.cs" />
     <Compile Include="RunExamples.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
