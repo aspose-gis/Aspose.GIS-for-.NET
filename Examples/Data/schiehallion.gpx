@@ -1,0 +1,330 @@
+<?xml version="1.0"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1" creator="Walkhighlands">
+<metadata>
+	<desc>GPX file from Walkhighlands; file is copyright Walkhighlands and must not be publicly shared on other websites. Do not remove this notice.</desc>
+	<copyright author="Walkhighlands"><year>2017</year></copyright>
+</metadata>
+<rte>
+<name>Schiehallion</name>
+<rtept lat="56.6758328268945" lon="-4.03601769647726">
+<ele>351.247702398777</ele>
+<name>SCH 001</name>
+</rtept>
+<rtept lat="56.6753865835736" lon="-4.03583038137853">
+<ele>344.690721458414</ele>
+<name>SCH 002</name>
+</rtept>
+<rtept lat="56.6735618299578" lon="-4.03614000315429">
+<ele>349.066837113628</ele>
+<name>SCH 003</name>
+</rtept>
+<rtept lat="56.6726922276694" lon="-4.03711323311608">
+<ele>352.76479861559</ele>
+<name>SCH 004</name>
+</rtept>
+<rtept lat="56.6708156570976" lon="-4.03921535478461">
+<ele>358.078238232484</ele>
+<name>SCH 005</name>
+</rtept>
+<rtept lat="56.668930361342" lon="-4.04184722532733">
+<ele>371.315914270806</ele>
+<name>SCH 006</name>
+</rtept>
+<rtept lat="56.668213511889" lon="-4.04446052766014">
+<ele>372.334546538997</ele>
+<name>SCH 007</name>
+</rtept>
+<rtept lat="56.6682858833434" lon="-4.04552528394144">
+<ele>398.610199355698</ele>
+<name>SCH 008</name>
+</rtept>
+<rtept lat="56.6678413316366" lon="-4.04660281552745">
+<ele>439.24188764472</ele>
+<name>SCH 009</name>
+</rtept>
+<rtept lat="56.6661616045966" lon="-4.04765411258453">
+<ele>430.695575764036</ele>
+<name>SCH 010</name>
+</rtept>
+<rtept lat="56.6661461800892" lon="-4.04859165516911">
+<ele>480.027087805891</ele>
+<name>SCH 011</name>
+</rtept>
+<rtept lat="56.6661682564118" lon="-4.04998002402942">
+<ele>510.264411767554</ele>
+<name>SCH 012</name>
+</rtept>
+<rtept lat="56.6652399416136" lon="-4.05041918562081">
+<ele>510.050460809779</ele>
+<name>SCH 013</name>
+</rtept>
+<rtept lat="56.6647376925656" lon="-4.05226859370801">
+<ele>532.231970017433</ele>
+<name>SCH 014</name>
+</rtept>
+<rtept lat="56.6650414290397" lon="-4.0542842076448">
+<ele>574.865789777923</ele>
+<name>SCH 015</name>
+</rtept>
+<rtept lat="56.6654239126298" lon="-4.05561057219045">
+<ele>579.359519856358</ele>
+<name>SCH 016</name>
+</rtept>
+<rtept lat="56.6655323240078" lon="-4.05720761852072">
+<ele>596.375418367434</ele>
+<name>SCH 017</name>
+</rtept>
+<rtept lat="56.6647987798379" lon="-4.05945231429954">
+<ele>641.758549734402</ele>
+<name>SCH 018</name>
+</rtept>
+<rtept lat="56.6648404813131" lon="-4.06100490639477">
+<ele>665.557786155796</ele>
+<name>SCH 019</name>
+</rtept>
+<rtept lat="56.6639578590415" lon="-4.06275177865564">
+<ele>688.314917466211</ele>
+<name>SCH 020</name>
+</rtept>
+<rtept lat="56.6639178489245" lon="-4.06381031031149">
+<ele>672.699645894647</ele>
+<name>SCH 021</name>
+</rtept>
+<rtept lat="56.6640682068479" lon="-4.0642265010295">
+<ele>721.036519969464</ele>
+<name>SCH 022</name>
+</rtept>
+<rtept lat="56.6636317367161" lon="-4.0661608680014">
+<ele>716.22166879406</ele>
+<name>SCH 023</name>
+</rtept>
+<rtept lat="56.6635678988414" lon="-4.06729967594798">
+<ele>741.202770557213</ele>
+<name>SCH 024</name>
+</rtept>
+<rtept lat="56.6645325456174" lon="-4.07008594317652">
+<ele>784.624395685673</ele>
+<name>SCH 025</name>
+</rtept>
+<rtept lat="56.6646271433996" lon="-4.07115187088159">
+<ele>814.345287170172</ele>
+<name>SCH 026</name>
+</rtept>
+<rtept lat="56.6648863100754" lon="-4.07177806089648">
+<ele>812.854262942982</ele>
+<name>SCH 027</name>
+</rtept>
+<rtept lat="56.6653774369754" lon="-4.07331456263909">
+<ele>842.076945524597</ele>
+<name>SCH 028</name>
+</rtept>
+<rtept lat="56.6656332229853" lon="-4.07549094973673">
+<ele>884.141553356552</ele>
+<name>SCH 029</name>
+</rtept>
+<rtept lat="56.6654706790411" lon="-4.07715475708222">
+<ele>893.709917627287</ele>
+<name>SCH 030</name>
+</rtept>
+<rtept lat="56.6658433607951" lon="-4.0803983938441">
+<ele>919.154672416192</ele>
+<name>SCH 031</name>
+</rtept>
+<rtept lat="56.6657085935658" lon="-4.08308369800892">
+<ele>926.544632324767</ele>
+<name>SCH 032</name>
+</rtept>
+<rtept lat="56.6656913596524" lon="-4.08679545454817">
+<ele>939.58383552022</ele>
+<name>SCH 033</name>
+</rtept>
+<rtept lat="56.6656592305536" lon="-4.08871123027875">
+<ele>970.04301422286</ele>
+<name>SCH 034</name>
+</rtept>
+<rtept lat="56.6654891203157" lon="-4.08947699433228">
+<ele>956.86801422286</ele>
+<name>SCH 035</name>
+</rtept>
+<rtept lat="56.6655907727544" lon="-4.09278733564568">
+<ele>984.63551507616</ele>
+<name>SCH 036</name>
+</rtept>
+<rtept lat="56.6654648415451" lon="-4.09359632994024">
+<ele>972.328711188507</ele>
+<name>SCH 037</name>
+</rtept>
+<rtept lat="56.6657530084886" lon="-4.09516268121721">
+<ele>989.414691911125</ele>
+<name>SCH 038</name>
+</rtept>
+<rtept lat="56.6661261281559" lon="-4.09701937330206">
+<ele>993.97252737484</ele>
+<name>SCH 039</name>
+</rtept>
+<rtept lat="56.666583500041" lon="-4.09920718895852">
+<ele>1013.43101768389</ele>
+<name>SCH 040</name>
+</rtept>
+<rtept lat="56.6668895070955" lon="-4.10013813805868">
+<ele>1018.44797226362</ele>
+<name>SCH 041</name>
+</rtept>
+<rtept lat="56.6665747421354" lon="-4.09919364584093">
+<ele>1013.0450176837</ele>
+<name>SCH 042</name>
+</rtept>
+<rtept lat="56.6661293622529" lon="-4.09704076876584">
+<ele>993.896527374649</ele>
+<name>SCH 043</name>
+</rtept>
+<rtept lat="56.665744414777" lon="-4.09513935667372">
+<ele>989.088691910934</ele>
+<name>SCH 044</name>
+</rtept>
+<rtept lat="56.6654684327018" lon="-4.09359652912738">
+<ele>972.560711188126</ele>
+<name>SCH 045</name>
+</rtept>
+<rtept lat="56.6655899846037" lon="-4.09278076411384">
+<ele>984.603515075874</ele>
+<name>SCH 046</name>
+</rtept>
+<rtept lat="56.6654874068318" lon="-4.08947200362192">
+<ele>956.827014222622</ele>
+<name>SCH 047</name>
+</rtept>
+<rtept lat="56.6656509315738" lon="-4.08872382671289">
+<ele>969.57901422267</ele>
+<name>SCH 048</name>
+</rtept>
+<rtept lat="56.6656839627926" lon="-4.0867542466085">
+<ele>939.574835520077</ele>
+<name>SCH 049</name>
+</rtept>
+<rtept lat="56.6657100915772" lon="-4.08304787757306">
+<ele>926.679632324648</ele>
+<name>SCH 050</name>
+</rtept>
+<rtept lat="56.6658488306812" lon="-4.08033994461078">
+<ele>918.622139986992</ele>
+<name>SCH 051</name>
+</rtept>
+<rtept lat="56.6654564502891" lon="-4.07714581434348">
+<ele>893.052917627048</ele>
+<name>SCH 052</name>
+</rtept>
+<rtept lat="56.6656362146319" lon="-4.07541930829843">
+<ele>862.861917570716</ele>
+<name>SCH 053</name>
+</rtept>
+<rtept lat="56.66539109407" lon="-4.07330388920503">
+<ele>841.882945524597</ele>
+<name>SCH 054</name>
+</rtept>
+<rtept lat="56.66488500289" lon="-4.07174861460556">
+<ele>813.230262942934</ele>
+<name>SCH 055</name>
+</rtept>
+<rtept lat="56.6646431682058" lon="-4.07116090969098">
+<ele>815.220287169933</ele>
+<name>SCH 056</name>
+</rtept>
+<rtept lat="56.6645318918242" lon="-4.0700712201935">
+<ele>784.524395685655</ele>
+<name>SCH 057</name>
+</rtept>
+<rtept lat="56.6635714359081" lon="-4.0673031333756">
+<ele>741.412770556927</ele>
+<name>SCH 058</name>
+</rtept>
+<rtept lat="56.6636194380499" lon="-4.0661438762168">
+<ele>716.03566879406</ele>
+<name>SCH 059</name>
+</rtept>
+<rtept lat="56.6640754433675" lon="-4.0642236329916">
+<ele>721.338519969225</ele>
+<name>SCH 060</name>
+</rtept>
+<rtept lat="56.6639243498078" lon="-4.06379761073934">
+<ele>672.347645894718</ele>
+<name>SCH 061</name>
+</rtept>
+<rtept lat="56.6639699420457" lon="-4.06278181269763">
+<ele>689.470917465973</ele>
+<name>SCH 062</name>
+</rtept>
+<rtept lat="56.6648409671923" lon="-4.06097555849278">
+<ele>665.125786155653</ele>
+<name>SCH 063</name>
+</rtept>
+<rtept lat="56.6648155145236" lon="-4.05947281026543">
+<ele>642.711549734163</ele>
+<name>SCH 064</name>
+</rtept>
+<rtept lat="56.6655432055018" lon="-4.05720168380928">
+<ele>596.175418367481</ele>
+<name>SCH 065</name>
+</rtept>
+<rtept lat="56.6654471749405" lon="-4.05561673483686">
+<ele>578.804519856453</ele>
+<name>SCH 066</name>
+</rtept>
+<rtept lat="56.6650316507914" lon="-4.05422329450664">
+<ele>574.06178977778</ele>
+<name>SCH 067</name>
+</rtept>
+<rtept lat="56.6647481060832" lon="-4.05223652177122">
+<ele>531.693970017505</ele>
+<name>SCH 068</name>
+</rtept>
+<rtept lat="56.6652459193012" lon="-4.05038360795913">
+<ele>510.460460809946</ele>
+<name>SCH 069</name>
+</rtept>
+<rtept lat="56.6661662610513" lon="-4.04993748455135">
+<ele>511.071411767769</ele>
+<name>SCH 070</name>
+</rtept>
+<rtept lat="56.6661524647914" lon="-4.04859199626553">
+<ele>479.747087806082</ele>
+<name>SCH 071</name>
+</rtept>
+<rtept lat="56.6661683452242" lon="-4.04762673485601">
+<ele>429.854575764227</ele>
+<name>SCH 072</name>
+</rtept>
+<rtept lat="56.6678603197906" lon="-4.04659568496954">
+<ele>439.490887644589</ele>
+<name>SCH 073</name>
+</rtept>
+<rtept lat="56.6682959867437" lon="-4.04545728516469">
+<ele>397.362199355793</ele>
+<name>SCH 074</name>
+</rtept>
+<rtept lat="56.6682195414525" lon="-4.04442168501949">
+<ele>372.610546539092</ele>
+<name>SCH 075</name>
+</rtept>
+<rtept lat="56.6689449136366" lon="-4.0418365880427">
+<ele>371.24191427086</ele>
+<name>SCH 076</name>
+</rtept>
+<rtept lat="56.670828333406" lon="-4.0392095110979">
+<ele>358.046238232514</ele>
+<name>SCH 077</name>
+</rtept>
+<rtept lat="56.6735601676694" lon="-4.03613175205858">
+<ele>349.065837113637</ele>
+<name>SCH 078</name>
+</rtept>
+<rtept lat="56.6753837567767" lon="-4.03583839065357">
+<ele>344.720721458378</ele>
+<name>SCH 079</name>
+</rtept>
+<rtept lat="56.675826302125" lon="-4.03603203579921">
+<ele>351.061702398706</ele>
+<name>SCH 080</name>
+</rtept>
+</rte>
+</gpx>

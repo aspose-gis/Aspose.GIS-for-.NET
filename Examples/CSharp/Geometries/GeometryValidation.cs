@@ -125,6 +125,7 @@ namespace Aspose.GIS_for.NET.Geometries
                 }
                 catch (GisException e)
                 {
+                    Console.WriteLine(e.Message);
                 }
             }
             //ExEnd: ValidateOnWriteObeyingSpecifications
