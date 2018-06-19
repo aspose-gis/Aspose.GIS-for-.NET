@@ -59,6 +59,7 @@ namespace Aspose.GIS.Examples.CSharp
             //GetValueOfNullFeatureAttribute.Run();
             //ConvertPolygonShapeFileToLineStringShapeFile.Run();
             //CreateKMLFile.Run();
+            //ReadFeaturesFromGPX.Run();
             //ReadFeaturesFromKML.Run();
             //ReadFeaturesFromOSMXML.Run();
             //GetValueOrDefaultOfFeature.Run();
