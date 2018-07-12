@@ -35,7 +35,7 @@ namespace Aspose.GIS_for.NET.Layers
 
             var projectedSrs = SpatialReferenceSystem.CreateProjected(parameters, Identifier.Epsg(3395));
 
-            using (var layer = Drivers.Shapefile.Create(dataDir + "filepath_out.shp", new ShapefileOptions(), projectedSrs))
+            using (var layer = Drivers.Shapefile.CreateLayer(dataDir + "filepath_out.shp", new ShapefileOptions(), projectedSrs))
             {
                 var feature = layer.ConstructFeature();
                 feature.Geometry = new Point(1, 2);
@@ -53,7 +53,7 @@ namespace Aspose.GIS_for.NET.Layers
                 }
             }
 
-            using (var layer = Drivers.Shapefile.Open(dataDir + "filepath_out.shp"))
+            using (var layer = Drivers.Shapefile.OpenLayer(dataDir + "filepath_out.shp"))
             {
                 var srsName = layer.SpatialReferenceSystem.Name; // "WGS 84 / World Mercator"
                 layer.SpatialReferenceSystem.IsEquivalent(projectedSrs); // true

@@ -25,7 +25,7 @@ namespace Aspose.GIS_for.NET.Layers
         private static void ReadGPXFeatures()
         {
             //ExStart: ReadGPXFeatures
-            using (var layer = Drivers.Gpx.Open(dataDir + "schiehallion.gpx"))
+            using (var layer = Drivers.Gpx.OpenLayer(dataDir + "schiehallion.gpx"))
             {
                 foreach (var feature in layer)
                 {
@@ -69,7 +69,7 @@ namespace Aspose.GIS_for.NET.Layers
         {
             //ExStart: CalculateAverageSpeedOfRoute
             var options = new GpxOptions { MAttribute = "speed" };
-            using (var layer = Drivers.Gpx.Open(dataDir + "schiehallion.gpx"))
+            using (var layer = Drivers.Gpx.OpenLayer(dataDir + "schiehallion.gpx"))
             {
                 var routeFeature = layer.Single(feature => feature.Geometry.GeometryType == GeometryType.LineString);
                 var routeGeometry = (ILineString)routeFeature.Geometry;

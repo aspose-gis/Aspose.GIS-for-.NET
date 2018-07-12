@@ -15,7 +15,7 @@ namespace Aspose.GIS_for.NET.Layers
             string dataDir = RunExamples.GetDataDir();
 
             //ExStart: ReadFeaturesFromOSMXML
-            using (var layer = Drivers.OsmXml.Open(dataDir + "fountain.osm"))
+            using (var layer = Drivers.OsmXml.OpenLayer(dataDir + "fountain.osm"))
             {
                 // get feratures count
                 int count = layer.Count;
