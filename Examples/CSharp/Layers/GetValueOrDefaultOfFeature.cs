@@ -20,7 +20,7 @@ namespace Aspose.GIS_for.NET.Layers
 
             //ExStart: GetValueOrDefaultOfFeature
             //You can set default value for a feature of attribute in a layer
-            using (var layer = Drivers.GeoJson.Create(dataDir + "data1_out.json"))
+            using (var layer = Drivers.GeoJson.CreateLayer(dataDir + "data1_out.json"))
             {
                 var attribute = new FeatureAttribute("attribute", AttributeDataType.Integer);
                 attribute.CanBeNull = true;
@@ -35,7 +35,7 @@ namespace Aspose.GIS_for.NET.Layers
             }
 
             //Another example where we set the default value to 100
-            using (var layer = Drivers.GeoJson.Create(dataDir + "data2_out.json"))
+            using (var layer = Drivers.GeoJson.CreateLayer(dataDir + "data2_out.json"))
             {
                 var attribute = new FeatureAttribute("attribute", AttributeDataType.Double);
                 attribute.CanBeNull = false;

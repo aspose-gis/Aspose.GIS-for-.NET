@@ -15,7 +15,7 @@ namespace Aspose.GIS_for.NET.Layers
             string dataDir = RunExamples.GetDataDir();
 
             //ExStart: ReadFeaturesFromKML
-            using (var layer = Drivers.Kml.Open(dataDir + "Kml_File.kml"))
+            using (var layer = Drivers.Kml.OpenLayer(dataDir + "Kml_File.kml"))
             {
                 // get feratures count
                 int count = layer.Count;

@@ -1,0 +1,17 @@
+<xs:schema
+    targetNamespace="http://www.aspose.com"
+    xmlns="http://www.aspose.com"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:gml="http://www.opengis.net/gml">
+    <xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengeospatial.net/gml/2.1.2/feature.xsd"/>
+    <xs:element name="feature" type="feature_type" substitutionGroup="gml:_Feature"/>
+    <xs:complexType name="feature_type">
+        <xs:complexContent>
+            <xs:extension base="gml:AbstractFeatureType">
+                <xs:sequence>
+                    <xs:element name="attribute" type="xs:string" />
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>

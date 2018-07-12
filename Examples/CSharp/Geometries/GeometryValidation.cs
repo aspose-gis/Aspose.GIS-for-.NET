@@ -77,7 +77,7 @@ namespace Aspose.GIS_for.NET.Geometries
             GeoJsonOptions options = new GeoJsonOptions();
             options.ValidateGeometriesOnWrite = false; // false is default
             File.Delete(dataDir + "not_validated_data_out.shp");
-            using (var nonValidatingLayer = Drivers.GeoJson.Create(dataDir + "not_validated_data_out.shp", options))
+            using (var nonValidatingLayer = Drivers.GeoJson.CreateLayer(dataDir + "not_validated_data_out.shp", options))
             {
                 Feature feature = nonValidatingLayer.ConstructFeature();
                 feature.Geometry = invalidPolygon;
@@ -87,7 +87,7 @@ namespace Aspose.GIS_for.NET.Geometries
 
             options.ValidateGeometriesOnWrite = true;
             File.Delete(dataDir + "validated_data_out.shp");
-            using (var validatingLayer = Drivers.GeoJson.Create(dataDir + "validated_data_out.shp", options))
+            using (var validatingLayer = Drivers.GeoJson.CreateLayer(dataDir + "validated_data_out.shp", options))
             {
                 Feature feature = validatingLayer.ConstructFeature();
                 feature.Geometry = invalidPolygon;
@@ -111,7 +111,7 @@ namespace Aspose.GIS_for.NET.Geometries
 
             GeoJsonOptions options = new GeoJsonOptions();
             options.ValidateGeometriesOnWrite = false;
-            using (var layer = Drivers.GeoJson.Create(dataDir + "ValidateOnWriteObeyingSpecifications_out.json", options))
+            using (var layer = Drivers.GeoJson.CreateLayer(dataDir + "ValidateOnWriteObeyingSpecifications_out.json", options))
             {
                 Feature feature = layer.ConstructFeature();
                 // GeoJSON specification says that line string must have at least two coordinates.

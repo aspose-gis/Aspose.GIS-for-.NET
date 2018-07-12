@@ -16,7 +16,7 @@ namespace Aspose.GIS_for.NET.Layers
             string dataDir = RunExamples.GetDataDir();
 
             //ExStart: CreateKMLFile
-            using (var layer = Drivers.Kml.Create(dataDir + "Kml_File.kml"))
+            using (var layer = Drivers.Kml.CreateLayer(dataDir + "Kml_File.kml"))
             {
                 layer.Attributes.Add(new FeatureAttribute("string_data", AttributeDataType.String));
                 layer.Attributes.Add(new FeatureAttribute("int_data", AttributeDataType.Integer));
