@@ -25,3 +25,13 @@ E:\AsposeGit\ForkedRepos\Aspose_GIS_NET\Examples\CSharp\bin\Debug\Aspose.GIS.dll
 E:\AsposeGit\ForkedRepos\Aspose_GIS_NET\Examples\CSharp\bin\Debug\Aspose.GIS.xml
 E:\AsposeGit\ForkedRepos\Aspose_GIS_NET\Examples\CSharp\obj\Debug\Aspose.GIS_for.NET.exe
 E:\AsposeGit\ForkedRepos\Aspose_GIS_NET\Examples\CSharp\obj\Debug\Aspose.GIS_for.NET.pdb
+D:\DotNet Projects\Aspose\Official\Aspose_GIS_NET\Examples\CSharp\bin\Debug\Aspose.GIS_for.NET.exe.config
+D:\DotNet Projects\Aspose\Official\Aspose_GIS_NET\Examples\CSharp\bin\Debug\Aspose.GIS_for.NET.exe
+D:\DotNet Projects\Aspose\Official\Aspose_GIS_NET\Examples\CSharp\bin\Debug\Aspose.GIS_for.NET.pdb
+D:\DotNet Projects\Aspose\Official\Aspose_GIS_NET\Examples\CSharp\bin\Debug\Aspose.GIS.dll
+D:\DotNet Projects\Aspose\Official\Aspose_GIS_NET\Examples\CSharp\bin\Debug\Aspose.GIS.xml
+D:\DotNet Projects\Aspose\Official\Aspose_GIS_NET\Examples\CSharp\obj\Debug\CSharp.csprojAssemblyReference.cache
+D:\DotNet Projects\Aspose\Official\Aspose_GIS_NET\Examples\CSharp\obj\Debug\CSharp.csproj.CoreCompileInputs.cache
+D:\DotNet Projects\Aspose\Official\Aspose_GIS_NET\Examples\CSharp\obj\Debug\CSharp.csproj.CopyComplete
+D:\DotNet Projects\Aspose\Official\Aspose_GIS_NET\Examples\CSharp\obj\Debug\Aspose.GIS_for.NET.exe
+D:\DotNet Projects\Aspose\Official\Aspose_GIS_NET\Examples\CSharp\obj\Debug\Aspose.GIS_for.NET.pdb

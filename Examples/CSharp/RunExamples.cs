@@ -20,7 +20,7 @@ namespace Aspose.GIS.Examples.CSharp
         {
             License lic = new License();
 
-            lic.SetLicense("E:\\Lics\\Aspose.Total.lic");
+            lic.SetLicense("D:\\DotNet Projects\\Aspose\\2018\\Aspose.Total.lic");
 
             Console.WriteLine("Open RunExamples.cs. \nIn Main() method uncomment the example that you want to run.");
             Console.WriteLine("=====================================================");
@@ -44,6 +44,16 @@ namespace Aspose.GIS.Examples.CSharp
             //IterateOverGeometriesInGeometry.Run();
             //GeometryValidation.Run();
             //SetSpatialReferenceSystemForGeometry.Run();
+
+            //DetermineIfGeometriesAreSpatiallyEqual.Run();
+            //DetermineIfGeometriesIntersect.Run();
+            //DetermineIfGeometriesTouchEachOther.Run();
+            //DetermineIfGeometriesCrossEachOther.Run();
+            //DetermineIfGeometriesOverlap.Run();
+            //FindOverlaysOfGeometries.Run();
+            //ReducePrecisionOfAGeometry.Run();
+            //LimitPrecisionWhenWritingGeometries.Run();
+            //LimitPrecisionWhenReadingGeometries.Run();
             #endregion
 
             #region Working with Layers
