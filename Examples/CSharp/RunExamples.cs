@@ -47,9 +47,11 @@ namespace Aspose.GIS.Examples.CSharp
 
             //DetermineIfGeometriesAreSpatiallyEqual.Run();
             //DetermineIfGeometriesIntersect.Run();
+            //DetermineIfOneGeometryContainsAnother.Run();
             //DetermineIfGeometriesTouchEachOther.Run();
             //DetermineIfGeometriesCrossEachOther.Run();
             //DetermineIfGeometriesOverlap.Run();
+            //DetermineSpatialRelationViaRelateMethod.Run();
             //FindOverlaysOfGeometries.Run();
             //ReducePrecisionOfAGeometry.Run();
             //LimitPrecisionWhenWritingGeometries.Run();
