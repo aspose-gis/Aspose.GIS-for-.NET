@@ -74,7 +74,11 @@
     <Compile Include="Geometries\LimitPrecisionWhenWritingGeometries.cs" />
     <Compile Include="Geometries\ReducePrecisionOfAGeometry.cs" />
     <Compile Include="Geometries\SetSpatialReferenceSystemForGeometry.cs" />
+    <Compile Include="Layers\AddLayerToFileGdbDataset.cs" />
+    <Compile Include="Layers\ConvertGeoJsonLayerToLayerInFileGdbDataset.cs" />
     <Compile Include="Layers\ConvertPolygonShapeFileToLineStringShapeFile.cs" />
+    <Compile Include="Layers\CreateFileGdbDataset.cs" />
+    <Compile Include="Layers\CreateFileGdbDatasetWithSingleLayer.cs" />
     <Compile Include="Layers\CreateKMLFile.cs" />
     <Compile Include="Layers\CreateNewShapeFile.cs" />
     <Compile Include="Layers\CreateVectorLayerWithSpatialReferenceSystem.cs" />
@@ -91,6 +95,7 @@
     <Compile Include="Layers\ReadFeaturesFromKML.cs" />
     <Compile Include="Layers\ReadFeaturesFromOSMXML.cs" />
     <Compile Include="Layers\ReadingESRIFileGeoDatabaseFileGDB.cs" />
+    <Compile Include="Layers\RemoveLayersFromFileGdbDataset.cs" />
     <Compile Include="Layers\SpecifyAttributeValueLength.cs" />
     <Compile Include="RunExamples.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -77,6 +77,12 @@ namespace Aspose.GIS.Examples.CSharp
             //ReadFeaturesFromOSMXML.Run();
             //GetValueOrDefaultOfFeature.Run();
             //ReadingESRIFileGeoDatabaseFileGDB.Run();
+
+            //AddLayerToFileGdbDataset.Run();
+            //RemoveLayersFromFileGdbDataset.Run();
+            //CreateFileGdbDataset.Run();
+            //CreateFileGdbDatasetWithSingleLayer.Run();
+            //ConvertGeoJsonLayerToLayerInFileGdbDataset.Run();
             #endregion
 
             #region Conversion
@@ -120,6 +126,28 @@ namespace Aspose.GIS.Examples.CSharp
                 startDirectory = parent.FullName;
             }
             return startDirectory != null ? Path.Combine(startDirectory, "Data\\") : null;
+        }
+
+        public static void CopyDirectory(string sourcePath, string destinationPath)
+        {
+            var sourceDirectory = new DirectoryInfo(sourcePath);
+
+            if (!Directory.Exists(destinationPath))
+            {
+                Directory.CreateDirectory(destinationPath);
+            }
+
+            foreach (var file in sourceDirectory.EnumerateFiles())
+            {
+                string path = Path.Combine(destinationPath, file.Name);
+                file.CopyTo(path, false);
+            }
+
+            foreach (var directory in sourceDirectory.GetDirectories())
+            {
+                string path = Path.Combine(destinationPath, directory.Name);
+                CopyDirectory(directory.FullName, path);
+            }
         }
     }
 }
