@@ -56,6 +56,15 @@ namespace Aspose.GIS.Examples.CSharp
             //ReducePrecisionOfAGeometry.Run();
             //LimitPrecisionWhenWritingGeometries.Run();
             //LimitPrecisionWhenReadingGeometries.Run();
+
+            //GetGeometryBuffer.Run();
+            //GetDistanceBetweenGeometries.Run();
+            //GetConvexHullOfGometry.Run();
+            //GetAreaOfGeometry.Run();
+            //GetLengthOfGeometry.Run();
+            //GetCentroid.Run();
+            //GetPointOnSurface.Run();
+            //DetermineIfOneGeometryCoversAnother.Run();
             #endregion
 
             #region Working with Layers
@@ -83,6 +92,8 @@ namespace Aspose.GIS.Examples.CSharp
             //CreateFileGdbDataset.Run();
             //CreateFileGdbDatasetWithSingleLayer.Run();
             //ConvertGeoJsonLayerToLayerInFileGdbDataset.Run();
+
+            //ReadObjectIdFromFileGdbLayer.Run();
             #endregion
 
             #region Conversion
