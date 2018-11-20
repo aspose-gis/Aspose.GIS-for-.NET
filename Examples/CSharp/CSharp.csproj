@@ -33,8 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Aspose.GIS, Version=18.10.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aspose.GIS.18.10.0\lib\net47\Aspose.GIS.dll</HintPath>
+    <Reference Include="Aspose.GIS, Version=18.11.1.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.GIS.18.11.1\lib\net47\Aspose.GIS.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -54,6 +54,13 @@
     <Compile Include="Geometries\CreateMultiLineString.cs" />
     <Compile Include="Geometries\CreateMultiPoint.cs" />
     <Compile Include="Geometries\CreateMultiPolygon.cs" />
+    <Compile Include="Geometries\SpecifyWktVariantOnTranslation.cs" />
+    <Compile Include="Geometries\TranslateGeometryToWkb.cs" />
+    <Compile Include="Geometries\TranslateGeometryFromWkb.cs" />
+    <Compile Include="Geometries\SpecifyWkbVariantOnTranslation.cs" />
+    <Compile Include="Geometries\ConvertGeometryToEditable.cs" />
+    <Compile Include="Geometries\TranslateGeometryToWkt.cs" />
+    <Compile Include="Geometries\TranslateGeometryFromWkt.cs" />
     <Compile Include="Geometries\CreatePoint.cs" />
     <Compile Include="Geometries\CreateLineString.cs" />
     <Compile Include="Geometries\CreatePolygon.cs" />

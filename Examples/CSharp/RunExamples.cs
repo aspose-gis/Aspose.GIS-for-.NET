@@ -20,7 +20,7 @@ namespace Aspose.GIS.Examples.CSharp
         {
             License lic = new License();
 
-            lic.SetLicense("D:\\DotNet Projects\\Aspose\\2018\\Aspose.Total.lic");
+            lic.SetLicense("E:\\license\\Aspose.Total.lic");
 
             Console.WriteLine("Open RunExamples.cs. \nIn Main() method uncomment the example that you want to run.");
             Console.WriteLine("=====================================================");
@@ -65,6 +65,14 @@ namespace Aspose.GIS.Examples.CSharp
             //GetCentroid.Run();
             //GetPointOnSurface.Run();
             //DetermineIfOneGeometryCoversAnother.Run();
+
+            //TranslateGeometryFromWkt.Run();
+            //TranslateGeometryToWkt.Run();
+            //SpecifyWktVariantOnTranslation.Run();
+            //TranslateGeometryToWkb.Run();
+            //TranslateGeometryFromWkb.Run();
+            //SpecifyWkbVariantOnTranslation.Run();
+            //ConvertGeometryToEditable.Run();
             #endregion
 
             #region Working with Layers
