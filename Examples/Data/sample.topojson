@@ -1,0 +1,38 @@
+{
+    "type": "Topology",
+        "objects": {
+            "named_object_1": {
+                "type": "GeometryCollection",
+                "geometries": [
+                {
+                    "type": "Point",
+                    "id": 0,
+                    "properties": {
+                        "name": "point_feature"
+                    },
+                    "coordinates": [102, 0.5]
+                },
+                {
+                    "type": "LineString",
+                    "id": 1,
+                    "properties": {
+                        "name": "line_feature"
+                    },
+                    "arcs": [0]
+                }
+                ]
+            },
+            "named_object_2": {
+                "type": "Polygon",
+                "id": 2,
+                "properties": {
+                    "name": "polygon_feature"
+                },
+                "arcs": [[-2]]
+            }
+        },
+        "arcs": [
+            [[102, 0], [103, 1], [104, 0], [105, 1]],
+            [[100, 0], [101, 0], [101, 1], [100, 1], [100, 0]]
+        ]
+}

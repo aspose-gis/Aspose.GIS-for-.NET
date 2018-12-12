@@ -1,0 +1,40 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "id": 0,
+            "properties": {
+                "name": "point_feature",
+                "group": "group1"
+            },
+            "geometry": { "type": "Point", "coordinates": [ 102.0, 0.5 ] }
+        },
+        {
+            "type": "Feature",
+            "id": 1,
+            "properties": {
+                "name": "point_feature2",
+                "group": "group1"
+            },
+            "geometry": { "type": "Point", "coordinates": [ 98.0, 3.5 ] }
+        },
+        {
+            "type": "Feature",
+            "id": 2,
+            "properties": {
+                "name": "line_feature"
+            },
+            "geometry": { "type": "LineString", "coordinates": [ [ 102.0, 0.0 ], [ 103.0, 1.0 ], [ 104.0, 0.0 ], [ 105.0, 1.0 ] ] }
+        },
+        {
+            "type": "Feature",
+            "id": 3,
+            "properties": {
+                "name": "polygon_feature",
+                "group": "group2"
+            },
+            "geometry": { "type": "Polygon", "coordinates": [ [ [ 100.0, 0.0 ], [ 100.0, 1.0 ], [ 101.0, 1.0 ], [ 101.0, 0.0 ], [ 100.0, 0.0 ] ] ] }
+        }
+    ]
+}

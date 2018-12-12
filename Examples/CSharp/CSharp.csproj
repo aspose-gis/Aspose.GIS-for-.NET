@@ -33,8 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Aspose.GIS, Version=18.11.1.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aspose.GIS.18.11.1\lib\net47\Aspose.GIS.dll</HintPath>
+    <Reference Include="Aspose.GIS, Version=18.12.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.GIS.18.12.0\lib\net47\Aspose.GIS.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,7 +47,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conversion\ConvertGeoJSONToShapeFileWithAttributeAdjustment.cs" />
+    <Compile Include="Conversion\ConvertGeoJsonToTopoJsonWithQuantization.cs" />
+    <Compile Include="Conversion\ConvertGeoJsonToTopoJsonAndSpecifyObjectName.cs" />
+    <Compile Include="Conversion\ConvertGeoJsonToTopoJson.cs" />
+    <Compile Include="Conversion\ConvertGeoJsonToTopoJsonWithGroupingIntoObjects.cs" />
+    <Compile Include="Conversion\ConvertTopoJsonToGeoJson.cs" />
     <Compile Include="Conversion\ConvertShapeFileToGeoJSON.cs" />
+    <Compile Include="Layers\SpecifyNamesOfObjectIdAndGeometryFields.cs" />
+    <Compile Include="Layers\SpecifyTolerancesForFileGdbLayer.cs" />
+    <Compile Include="Layers\SpecifyPrecisionGridForFileGdbLayer.cs" />
+    <Compile Include="Layers\WriteFeaturesToTopoJson.cs" />
+    <Compile Include="Layers\AccessFeaturesInTopoJson.cs" />
     <Compile Include="Geometries\CountGeometriesInGeometry.cs" />
     <Compile Include="Geometries\CountPointsInGeometry.cs" />
     <Compile Include="Geometries\CreateGeometryCollection.cs" />
