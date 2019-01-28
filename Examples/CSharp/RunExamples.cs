@@ -73,6 +73,15 @@ namespace Aspose.GIS.Examples.CSharp
             //TranslateGeometryFromWkb.Run();
             //SpecifyWkbVariantOnTranslation.Run();
             //ConvertGeometryToEditable.Run();
+
+            //CreateCircularString.Run();
+            //CreateCompoundCurve.Run();
+            //CreateCurvePolygon.Run();
+            //CreateMultiCurve.Run();
+            //CreateMultiSurface.Run();
+            //DetermineIfGeometryHasCurves.Run();
+            //LinearizeGeometry.Run();
+            //SpecifyLinearizationTolerance.Run();
             #endregion
 
             #region Working with Layers
