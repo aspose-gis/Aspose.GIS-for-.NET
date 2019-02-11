@@ -82,6 +82,9 @@ namespace Aspose.GIS.Examples.CSharp
             //DetermineIfGeometryHasCurves.Run();
             //LinearizeGeometry.Run();
             //SpecifyLinearizationTolerance.Run();
+
+            //ReadFeaturesFromMapInfoTab.Run();
+            //ReadFeaturesFromMapInfoInterchange.Run();
             #endregion
 
             #region Working with Layers
