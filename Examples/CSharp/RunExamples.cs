@@ -98,6 +98,7 @@ namespace Aspose.GIS.Examples.CSharp
             //ExtractFeaturesFromShapeFileToGeoJSON.Run();
             //SpecifyAttributeValueLength.Run();
             //GetValueOfNullFeatureAttribute.Run();
+            //ModifyFeatures.Run();
             //ConvertPolygonShapeFileToLineStringShapeFile.Run();
             //CreateKMLFile.Run();
             //ReadFeaturesFromGML.Run();
@@ -152,10 +153,7 @@ namespace Aspose.GIS.Examples.CSharp
             #endregion
 
             Console.WriteLine("=====================================================");
-
             Console.WriteLine("Done with the execution of example.");
-
-            Console.ReadLine();
         }
 
         private static void CleanOutput()
