@@ -38,6 +38,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -136,6 +137,7 @@
     <Compile Include="Layers\ReadObjectIdFromFileGdbLayer.cs" />
     <Compile Include="Layers\SpecifyAttributeValueLength.cs" />
     <Compile Include="Layers\WriteGeoJsonToStream.cs" />
+    <Compile Include="Rendering\RenderMap.cs" />
     <Compile Include="RunExamples.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpatialReferencingSystem\CheckDriverForSpatialReferenceSystemSupport.cs" />

@@ -4,6 +4,7 @@ using Aspose.GIS.Examples.CSharp.Geometries;
 using Aspose.GIS.Examples.CSharp.Layers;
 using Aspose.GIS_for.NET.Geometries;
 using Aspose.GIS_for.NET.Layers;
+using Aspose.GIS_for.NET.Rendering;
 using Aspose.GIS_for.NET.SpatialReferencingSystem;
 using System;
 using System.Collections.Generic;
@@ -138,6 +139,10 @@ namespace Aspose.GIS.Examples.CSharp
             //ConvertGeoJsonToTopoJsonWithQuantization.Run();
             //ConvertGeoJsonToTopoJsonWithGroupingIntoObjects.Run();
             //ConvertTopoJsonToGeoJson.Run();
+            #endregion
+
+            #region Rendering
+            //RenderMap.Run();
             #endregion
 
             #region Spatial Reference System

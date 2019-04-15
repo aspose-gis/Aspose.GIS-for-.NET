@@ -1,0 +1,122 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "population": 8136
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.10986328125,
+          51.49848454717058
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "population": 3166
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.69140625,
+          40.413496049701955
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "population": 2141
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3291015625,
+          48.86471476180277
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "population": 3575
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.447265624999998,
+          52.482780222078226
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "population": 1765
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.005859375,
+          52.26815737376817
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "population": 2884
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.585937499999996,
+          50.401515322782366
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "population": 2873
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.6123046875,
+          41.934976500546604
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "population": 1756
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.984375,
+          47.45780853075031
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "population": 1281
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.425048828125,
+          50.085344397538876
+        ]
+      }
+    }
+  ]
+}
