@@ -22,17 +22,21 @@ namespace Aspose.GIS_for.NET.Rendering
             RenderWithDefaultSettings();
             AddMapLayersAndStyles();
 
+            DefaultMarkerStyle();
             ChangeMarkerStyle();
             ChangeMarkerStyleTriangles();
             ChangeMarkerStyleFeatureBased();
 
+            DefaultLineStyle();
             ChangeLineStyle();
             ChangeLineStyleComplex();
 
+            DefaultFillStyle();
             ChangeFillStyle();
 
             MixedGeometryRendering();
-            LayeredSymbolizers();
+            DrawLayeredSymbolizersByFeatures();
+            DrawLayeredSymbolizersByLayers();
             RuleBasedRendering();
 
         }
@@ -70,10 +74,23 @@ namespace Aspose.GIS_for.NET.Rendering
 
                 map.Render(dataDir + "cities_out.svg", Renderers.Svg);
             }
-            //ExStart: AddMapLayersAndStyles
+            //ExEnd: AddMapLayersAndStyles
         }
 
         #region Marker
+
+        public static void DefaultMarkerStyle()
+        {
+            //ExStart: DefaultMarkerStyle
+            using (var map = new Map(500, 200))
+            {
+                var symbol = new SimpleMarker();
+
+                map.Add(VectorLayer.Open(dataDir + "points.geojson", Drivers.GeoJson), symbol);
+                map.Render(dataDir + "points_out.svg", Renderers.Svg);
+            }
+            //ExEnd: DefaultMarkerStyle
+        }
 
         public static void ChangeMarkerStyle()
         {
@@ -139,6 +156,19 @@ namespace Aspose.GIS_for.NET.Rendering
 
         #region Line
 
+        public static void DefaultLineStyle()
+        {
+            //ExStart: DefaultLineStyle
+            using (var map = new Map(500, 317))
+            {
+                var symbolizer = new SimpleLine();
+
+                map.Add(VectorLayer.Open(dataDir + "lines.geojson", Drivers.GeoJson), symbolizer);
+                map.Render(dataDir + "lines_out.svg", Renderers.Svg);
+            }
+            //ExEnd: DefaultLineStyle
+        }
+
         public static void ChangeLineStyle()
         {
             //ExStart: ChangeLineStyle
@@ -177,6 +207,19 @@ namespace Aspose.GIS_for.NET.Rendering
 
         #region Polygons
 
+        public static void DefaultFillStyle()
+        {
+            //ExStart: DefaultFillStyle
+            using (var map = new Map(500, 450))
+            {
+                var symbolizer = new SimpleFill();
+
+                map.Add(VectorLayer.Open(dataDir + "polygons.geojson", Drivers.GeoJson), symbolizer);
+                map.Render(dataDir + "polygons_out.svg", Renderers.Svg);
+            }
+            //ExEnd: DefaultFillStyle
+        }
+
         public static void ChangeFillStyle()
         {
             //ExStart: ChangeFillStyle
@@ -214,9 +257,9 @@ namespace Aspose.GIS_for.NET.Rendering
 
         #region Layered Symbolizer
 
-        public static void LayeredSymbolizers()
+        public static void DrawLayeredSymbolizersByFeatures()
         {
-            //ExStart: LayeredSymbolizers
+            //ExStart: DrawLayeredSymbolizersByFeatures
             using (var map = new Map(200, 200))
             {
                 var symbolizer = new LayeredSymbolizer(RenderingOrder.ByFeatures);
@@ -226,7 +269,22 @@ namespace Aspose.GIS_for.NET.Rendering
                 map.Add(VectorLayer.Open(dataDir + "intersection.geojson", Drivers.GeoJson), symbolizer);
                 map.Render(dataDir + "intersection_out.svg", Renderers.Svg);
             }
-            //ExEnd: LayeredSymbolizers
+            //ExEnd: DrawLayeredSymbolizersByFeatures
+        }
+
+        public static void DrawLayeredSymbolizersByLayers()
+        {
+            //ExStart: DrawLayeredSymbolizersByLayers
+            using (var map = new Map(200, 200))
+            {
+                var symbolizer = new LayeredSymbolizer(RenderingOrder.ByLayers);
+                symbolizer.Add(new SimpleLine { Width = 10, Color = Color.Black });
+                symbolizer.Add(new SimpleLine { Width = 8, Color = Color.White });
+
+                map.Add(VectorLayer.Open(dataDir + "intersection.geojson", Drivers.GeoJson), symbolizer);
+                map.Render(dataDir + "intersection_out.svg", Renderers.Svg);
+            }
+            //ExEnd: DrawLayeredSymbolizersByLayers
         }
 
         #endregion
