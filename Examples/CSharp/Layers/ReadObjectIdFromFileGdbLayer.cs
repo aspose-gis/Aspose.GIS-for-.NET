@@ -15,7 +15,7 @@ namespace Aspose.GIS.Examples.CSharp.Layers
             string path = dataDir + "test.gdb";
             //ExStart: ReadObjectIdFromFileGdbLayer
             using (var dataset = Dataset.Open(path, Drivers.FileGdb))
-            using (var layer = dataset.OpenLayer("layer_1"))
+            using (var layer = dataset.OpenLayer("layer"))
             {
                 foreach (var feature in layer)
                 {

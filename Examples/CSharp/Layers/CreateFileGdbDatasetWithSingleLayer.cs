@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Aspose.Gis.Formats.FileGdb;
+using Aspose.Gis.SpatialReferencing;
 
 namespace Aspose.GIS_for.NET.Layers
 {
@@ -14,8 +16,9 @@ namespace Aspose.GIS_for.NET.Layers
         public static void Run()
         {
             //ExStart: CreateFileGdbDatasetWithSingleLayer
-            var path = RunExamples.GetDataDir() + "Working\\CreateFileGdbDatasetWithSingleLayer.gdb";
-            using (var layer = VectorLayer.Create(path, Drivers.FileGdb))
+            var path = RunExamples.GetDataDir() + "CreateFileGdbDatasetWithSingleLayer_out.gdb";
+            var options = new FileGdbOptions();
+            using (var layer = VectorLayer.Create(path, Drivers.FileGdb, options, SpatialReferenceSystem.Wgs84))
             // this 'using' is equivalent to
             // using (var dataset = Dataset.Create(path, Drivers.FileGdb))
             // using (var layer = Dataset.CreateLayer("layer"))

@@ -11,8 +11,12 @@ namespace Aspose.GIS.Examples.CSharp.Conversion
     {
         public static void Run()
         {
+            string dataDir = RunExamples.GetDataDir();
+            string shapefilePath = dataDir + "InputShapeFile.shp";
+            string jsonPath = dataDir + "output_out.json";
+
             //ExStart: ConvertShapeFileToGeoJSON
-            VectorLayer.Convert("input.shp", Drivers.Shapefile, "output_out.json", Drivers.GeoJson);
+            VectorLayer.Convert(shapefilePath, Drivers.Shapefile, jsonPath, Drivers.GeoJson);
             //ExEnd: ConvertShapeFileToGeoJSON
         }
     }

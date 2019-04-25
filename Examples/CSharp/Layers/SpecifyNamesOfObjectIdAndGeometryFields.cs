@@ -2,6 +2,7 @@
 using Aspose.Gis.Formats.FileGdb;
 using Aspose.Gis.Geometries;
 using System;
+using Aspose.Gis.SpatialReferencing;
 
 namespace Aspose.GIS.Examples.CSharp.Layers
 {
@@ -22,7 +23,7 @@ namespace Aspose.GIS.Examples.CSharp.Layers
                     GeometryFieldName = "POINT",
                 };
 
-                using (var layer = dataset.CreateLayer("layer_name", options))
+                using (var layer = dataset.CreateLayer("layer_name", options, SpatialReferenceSystem.Wgs84))
                 {
                     var feature = layer.ConstructFeature();
                     feature.Geometry = new Point(12.32, 34.21);

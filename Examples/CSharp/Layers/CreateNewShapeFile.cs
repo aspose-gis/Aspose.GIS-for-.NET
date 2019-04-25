@@ -15,7 +15,7 @@ namespace Aspose.GIS.Examples.CSharp.Layers
             string dataDir = RunExamples.GetDataDir();
 
             //ExStart: CreateNewShapeFile
-            using (VectorLayer layer = VectorLayer.Create(dataDir + "InputShapeFile.shp", Drivers.Shapefile))
+            using (VectorLayer layer = VectorLayer.Create(dataDir + "NewShapeFile_out.shp", Drivers.Shapefile))
             {
                 // add attributes before adding features
                 layer.Attributes.Add(new FeatureAttribute("name", AttributeDataType.String));
