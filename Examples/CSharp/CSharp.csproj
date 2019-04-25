@@ -63,6 +63,7 @@
     <Compile Include="Geometries\CreateCircularString.cs" />
     <Compile Include="Layers\ReadFeaturesFromMapInfoInterchange.cs" />
     <Compile Include="Layers\ReadFeaturesFromMapInfoTab.cs" />
+    <Compile Include="Layers\ReadGeoJsonFromStream.cs" />
     <Compile Include="Layers\SpecifyNamesOfObjectIdAndGeometryFields.cs" />
     <Compile Include="Layers\SpecifyTolerancesForFileGdbLayer.cs" />
     <Compile Include="Layers\SpecifyPrecisionGridForFileGdbLayer.cs" />
@@ -133,6 +134,7 @@
     <Compile Include="Layers\RemoveLayersFromFileGdbDataset.cs" />
     <Compile Include="Layers\ReadObjectIdFromFileGdbLayer.cs" />
     <Compile Include="Layers\SpecifyAttributeValueLength.cs" />
+    <Compile Include="Layers\WriteGeoJsonToStream.cs" />
     <Compile Include="RunExamples.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpatialReferencingSystem\CheckDriverForSpatialReferenceSystemSupport.cs" />

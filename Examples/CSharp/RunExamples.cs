@@ -123,6 +123,9 @@ namespace Aspose.GIS.Examples.CSharp
 
             //ReadFeaturesFromMapInfoTab.Run();
             //ReadFeaturesFromMapInfoInterchange.Run();
+
+            //WriteGeoJsonToStream.Run();
+            //ReadGeoJsonFromStream.Run();
             #endregion
 
             #region Conversion
