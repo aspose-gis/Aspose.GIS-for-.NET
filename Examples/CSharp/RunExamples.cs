@@ -18,13 +18,13 @@ namespace Aspose.GIS.Examples.CSharp
     {
         static void Main(string[] args)
         {
-            License lic = new License();
-
-            lic.SetLicense("E:\\license\\Aspose.Total.lic");
+            // Set the license to avoid the evaluation limitations.
+            // Uncomment this lines if you have a license
+            // License license = new License();
+            // license.SetLicense(Path.Combine(GetDataDir(), "Aspose.GIS.lic"));
 
             Console.WriteLine("Open RunExamples.cs. \nIn Main() method uncomment the example that you want to run.");
             Console.WriteLine("=====================================================");
-
 
             // Uncomment the one you want to try out
 
