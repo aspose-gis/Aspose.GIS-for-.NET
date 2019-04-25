@@ -53,7 +53,6 @@
     <Compile Include="Conversion\ConvertGeoJsonToTopoJsonWithGroupingIntoObjects.cs" />
     <Compile Include="Conversion\ConvertTopoJsonToGeoJson.cs" />
     <Compile Include="Conversion\ConvertShapeFileToGeoJSON.cs" />
-    <Compile Include="Geometries\ReadFeaturesFromMapInfoInterchange.cs" />
     <Compile Include="Geometries\SpecifyLinearizationTolerance.cs" />
     <Compile Include="Geometries\LinearizeGeometry.cs" />
     <Compile Include="Geometries\DetermineIfGeometryHasCurves.cs" />
@@ -62,7 +61,8 @@
     <Compile Include="Geometries\CreateCurvePolygon.cs" />
     <Compile Include="Geometries\CreateCompoundCurve.cs" />
     <Compile Include="Geometries\CreateCircularString.cs" />
-    <Compile Include="Geometries\ReadFeaturesFromMapInfoTab.cs" />
+    <Compile Include="Layers\ReadFeaturesFromMapInfoInterchange.cs" />
+    <Compile Include="Layers\ReadFeaturesFromMapInfoTab.cs" />
     <Compile Include="Layers\SpecifyNamesOfObjectIdAndGeometryFields.cs" />
     <Compile Include="Layers\SpecifyTolerancesForFileGdbLayer.cs" />
     <Compile Include="Layers\SpecifyPrecisionGridForFileGdbLayer.cs" />

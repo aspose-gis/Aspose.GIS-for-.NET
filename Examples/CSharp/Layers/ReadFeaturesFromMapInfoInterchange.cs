@@ -2,15 +2,15 @@
 using System;
 using System.IO;
 
-namespace Aspose.GIS.Examples.CSharp.Geometries
+namespace Aspose.GIS.Examples.CSharp.Layers
 {
-    class ReadFeaturesFromMapInfoTab
+    class ReadFeaturesFromMapInfoInterchange
     {
         public static void Run()
         {
-            //ExStart: ReadFeaturesFromMapInfoTab
-            string TestDataPath = RunExamples.GetDataDir();
-            using (var layer = Drivers.MapInfoTab.OpenLayer(Path.Combine(TestDataPath, "data.tab")))
+            //ExStart: ReadFeaturesFromMapInfoInterchange
+            string dataDir = RunExamples.GetDataDir();
+            using (var layer = Drivers.MapInfoInterchange.OpenLayer(Path.Combine(dataDir, "data.mif")))
             {
                 Console.WriteLine($"Number of features is {layer.Count}.");
 
@@ -22,7 +22,7 @@ namespace Aspose.GIS.Examples.CSharp.Geometries
                     Console.WriteLine(feature.Geometry.AsText());
                 }
             }
-            //ExEnd: ReadFeaturesFromMapInfoTab
+            //ExEnd: ReadFeaturesFromMapInfoInterchange
         }
     }
 }

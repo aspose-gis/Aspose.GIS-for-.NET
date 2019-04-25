@@ -85,9 +85,6 @@ namespace Aspose.GIS.Examples.CSharp
             //DetermineIfGeometryHasCurves.Run();
             //LinearizeGeometry.Run();
             //SpecifyLinearizationTolerance.Run();
-
-            //ReadFeaturesFromMapInfoTab.Run();
-            //ReadFeaturesFromMapInfoInterchange.Run();
             #endregion
 
             #region Working with Layers
@@ -123,6 +120,9 @@ namespace Aspose.GIS.Examples.CSharp
             //SpecifyPrecisionGridForFileGdbLayer.Run();
             //SpecifyTolerancesForFileGdbLayer.Run();
             //SpecifyNamesOfObjectIdAndGeometryFields.Run();
+
+            //ReadFeaturesFromMapInfoTab.Run();
+            //ReadFeaturesFromMapInfoInterchange.Run();
             #endregion
 
             #region Conversion
