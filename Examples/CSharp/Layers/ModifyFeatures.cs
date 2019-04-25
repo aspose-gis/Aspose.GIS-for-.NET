@@ -21,7 +21,7 @@ namespace Aspose.GIS_for.NET.Layers
         {
             //ExStart: ModifyFeaturesInSingleLayer
             string sourcePath = Path.Combine(dataDir, "InputShapeFile.shp");
-            string resultPath = Path.Combine(dataDir, "modified.shp");
+            string resultPath = Path.Combine(dataDir, "modified_out.shp");
 
             using (var source = VectorLayer.Open(sourcePath, Drivers.Shapefile))
             using (var result = VectorLayer.Create(resultPath,
@@ -51,10 +51,14 @@ namespace Aspose.GIS_for.NET.Layers
 
         private static void ModifyFeaturesInDataset()
         {
-            //ExStart: ModifyFeaturesInDataset
-            string path = Path.Combine(dataDir, "ThreeLayers.gdb");
+            // -- copy test dataset, to avoid modification of test data.
+            var path = Path.Combine(RunExamples.GetDataDir(), "ThreeLayers.gdb");
+            var datasetPath = RunExamples.GetDataDir() + "ModifyFeaturesInDataset_out.gdb";
+            RunExamples.CopyDirectory(path, datasetPath);
+            // --
 
-            using (Dataset dataset = Dataset.Open(path, Drivers.FileGdb))
+            //ExStart: ModifyFeaturesInDataset
+            using (Dataset dataset = Dataset.Open(datasetPath, Drivers.FileGdb))
             {
                 using (var source = dataset.OpenLayer("layer2"))
                 using (var result = dataset.CreateLayer("modified", source.SpatialReferenceSystem))
