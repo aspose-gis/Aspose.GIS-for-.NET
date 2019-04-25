@@ -18,6 +18,9 @@ namespace Aspose.GIS.Examples.CSharp
     {
         static void Main(string[] args)
         {
+            // Remove output files from the previous run
+            CleanOutput();
+
             // Set the license to avoid the evaluation limitations.
             // Uncomment this lines if you have a license
             // License license = new License();
@@ -150,6 +153,24 @@ namespace Aspose.GIS.Examples.CSharp
             Console.WriteLine("Done with the execution of example.");
 
             Console.ReadLine();
+        }
+
+        private static void CleanOutput()
+        {
+            // remove all files with '_out' suffix
+            var dataDir = GetDataDir();
+            foreach (var outputEntry in Directory.EnumerateFileSystemEntries(dataDir, "*_out.*"))
+            {
+                if (File.Exists(outputEntry))
+                {
+                    File.Delete(outputEntry);
+                }
+
+                if (Directory.Exists(outputEntry))
+                {
+                    Directory.Delete(outputEntry, recursive: true);
+                }
+            }
         }
 
         public static string GetDataDir()
