@@ -12,7 +12,7 @@ namespace Aspose.GIS.Examples.CSharp.Layers
         public static void Run()
         {
             //ExStart: SpecifyTolerancesForFileGdbLayer
-            var path = RunExamples.GetDataDir() + "TolerancesForFileGdbLayer.gdb";
+            var path = RunExamples.GetDataDir() + "TolerancesForFileGdbLayer_out.gdb";
             using (var dataset = Dataset.Create(path, Drivers.FileGdb))
             {
                 var options = new FileGdbOptions

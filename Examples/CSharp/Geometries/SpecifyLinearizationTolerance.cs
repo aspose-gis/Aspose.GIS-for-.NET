@@ -23,7 +23,7 @@ namespace Aspose.GIS.Examples.CSharp.Geometries
                 LinearizationTolerance = 1e-4,
             };
 
-            string path = RunExamples.GetDataDir() + "SpecifyLinearizationTolerance.json";
+            string path = RunExamples.GetDataDir() + "SpecifyLinearizationTolerance_out.json";
             using (VectorLayer layer = VectorLayer.Create(path, Drivers.GeoJson, options))
             {
                 var curveGeometry = Geometry.FromText("CircularString (0 0, 1 1, 2 0)");

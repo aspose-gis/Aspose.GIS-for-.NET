@@ -13,7 +13,7 @@ namespace Aspose.GIS.Examples.CSharp.Geometries
         public static void Run()
         {
             //ExStart: LinearizeGeometry
-            string path = RunExamples.GetDataDir() + "LinearizeGeometry.kml";
+            string path = RunExamples.GetDataDir() + "LinearizeGeometry_out.kml";
             using (var layer = Drivers.Kml.CreateLayer(path))
             {
                 var feature = layer.ConstructFeature();

@@ -17,7 +17,7 @@ namespace Aspose.GIS.Examples.CSharp.Conversion
             // to reduce file size.
 
             string SampleGeoJsonPath = RunExamples.GetDataDir() + "sample.geojson";
-            var outputFilePath = RunExamples.GetDataDir() + "convertedSample.topojson";
+            var outputFilePath = RunExamples.GetDataDir() + "convertedSampleWithQuantization_out.topojson";
 
             var options = new ConversionOptions
             {

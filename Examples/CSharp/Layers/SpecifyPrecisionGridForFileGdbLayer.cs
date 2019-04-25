@@ -12,7 +12,7 @@ namespace Aspose.GIS.Examples.CSharp.Layers
         public static void Run()
         {
             //ExStart: SpecifyPrecisionGridForFileGdbLayer
-            var path = RunExamples.GetDataDir() + "PrecisionGrid.gdb";
+            var path = RunExamples.GetDataDir() + "PrecisionGrid_out.gdb";
             using (var dataset = Dataset.Create(path, Drivers.FileGdb))
             {
                 var options = new FileGdbOptions

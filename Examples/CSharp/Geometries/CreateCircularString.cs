@@ -13,7 +13,7 @@ namespace Aspose.GIS.Examples.CSharp.Geometries
         public static void Run()
         {
             //ExStart: CreateCircularString
-            string path = RunExamples.GetDataDir() + "CreateCircularString.shp";
+            string path = RunExamples.GetDataDir() + "CreateCircularString_out.shp";
             using (VectorLayer layer = VectorLayer.Create(path, Drivers.Shapefile))
             {
                 var feature = layer.ConstructFeature();

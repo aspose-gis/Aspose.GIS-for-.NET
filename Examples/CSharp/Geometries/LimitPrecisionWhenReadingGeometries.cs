@@ -15,7 +15,7 @@ namespace Aspose.GIS_for.NET.Geometries
         public static void Run()
         {
             //ExStart: LimitPrecisionWhenReadingGeometries
-            string path = RunExamples.GetDataDir() + "LimitPrecisionWhenReadingGeometries.shp";
+            string path = RunExamples.GetDataDir() + "LimitPrecisionWhenReadingGeometries_out.shp";
             using (VectorLayer layer = VectorLayer.Create(path, Drivers.Shapefile))
             {
                 var feature = layer.ConstructFeature();

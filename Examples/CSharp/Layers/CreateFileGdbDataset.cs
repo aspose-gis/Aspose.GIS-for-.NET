@@ -15,7 +15,7 @@ namespace Aspose.GIS_for.NET.Layers
         {
             //ExStart: CreateFileGdbDataset
             Console.WriteLine(Drivers.FileGdb.CanCreateDatasets); // True
-            var path = RunExamples.GetDataDir() + "Working\\CreateFileGdbDataset.gdb";
+            var path = RunExamples.GetDataDir() + "CreateFileGdbDataset_out.gdb";
 
             using (var dataset = Dataset.Create(path, Drivers.FileGdb))
             {

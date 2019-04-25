@@ -8,7 +8,7 @@ namespace Aspose.GIS.Examples.CSharp.Layers
         public static void Run()
         {
             //ExStart: WriteFeaturesToTopoJson
-            var outputPath = RunExamples.GetDataDir() + "sample.topojson";
+            var outputPath = RunExamples.GetDataDir() + "sample_out.topojson";
 
             using (VectorLayer layer = VectorLayer.Create(outputPath, Drivers.TopoJson))
             {

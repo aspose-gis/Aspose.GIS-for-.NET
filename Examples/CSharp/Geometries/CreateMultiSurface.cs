@@ -13,7 +13,7 @@ namespace Aspose.GIS.Examples.CSharp.Geometries
         public static void Run()
         {
             //ExStart: CreateMultiSurface
-            string path = RunExamples.GetDataDir() + "CreateMultiSurface.json";
+            string path = RunExamples.GetDataDir() + "CreateMultiSurface_out.json";
             using (VectorLayer layer = VectorLayer.Create(path, Drivers.GeoJson))
             {
                 var feature = layer.ConstructFeature();

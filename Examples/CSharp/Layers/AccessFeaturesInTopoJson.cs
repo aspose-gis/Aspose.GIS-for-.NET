@@ -9,9 +9,9 @@ namespace Aspose.GIS.Examples.CSharp.Layers
         public static void Run()
         {
             //ExStart: AccessFeaturesInTopoJson
-            string SampleTopoJsonPath = RunExamples.GetDataDir() + "sample.topojson";
+            string sampleTopoJsonPath = RunExamples.GetDataDir() + "sample.topojson";
             StringBuilder builder = new StringBuilder();
-            using (VectorLayer layer = VectorLayer.Open(SampleTopoJsonPath, Drivers.TopoJson))
+            using (VectorLayer layer = VectorLayer.Open(sampleTopoJsonPath, Drivers.TopoJson))
             {
                 foreach (Feature feature in layer)
                 {

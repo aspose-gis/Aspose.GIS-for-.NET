@@ -17,7 +17,7 @@ namespace Aspose.GIS_for.NET.Layers
 
             //var datasetPath = GetOutputPath(".gdb");
             var path = RunExamples.GetDataDir() + "ThreeLayers.gdb";
-            var datasetPath = RunExamples.GetDataDir() + "Working\\RemoveLayersFromFileGdbDataset.gdb";
+            var datasetPath = RunExamples.GetDataDir() + "RemoveLayersFromFileGdbDataset_out.gdb";
             RunExamples.CopyDirectory(path, datasetPath);
 
             // --

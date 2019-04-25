@@ -13,8 +13,8 @@ namespace Aspose.GIS.Examples.CSharp.Conversion
         public static void Run()
         {
             //ExStart: ConvertGeoJsonToTopoJsonAndSpecifyObjectName
-            string SampleGeoJsonPath = RunExamples.GetDataDir() + "sample.geojson";
-            var outputFilePath = RunExamples.GetDataDir() + "convertedSample.topojson";
+            string sampleGeoJsonPath = RunExamples.GetDataDir() + "sample.geojson";
+            var outputFilePath = RunExamples.GetDataDir() + "convertedSampleWithObjectName_out.topojson";
 
             var options = new ConversionOptions
             {
@@ -24,7 +24,7 @@ namespace Aspose.GIS.Examples.CSharp.Conversion
                     DefaultObjectName = "name_of_the_object",
                 }
             };
-            VectorLayer.Convert(SampleGeoJsonPath, Drivers.GeoJson, outputFilePath, Drivers.TopoJson, options);
+            VectorLayer.Convert(sampleGeoJsonPath, Drivers.GeoJson, outputFilePath, Drivers.TopoJson, options);
             //ExEnd: ConvertGeoJsonToTopoJsonAndSpecifyObjectName
         }
     }

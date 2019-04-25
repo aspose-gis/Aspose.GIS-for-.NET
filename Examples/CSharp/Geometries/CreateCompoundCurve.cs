@@ -13,7 +13,7 @@ namespace Aspose.GIS.Examples.CSharp.Geometries
         public static void Run()
         {
             //ExStart: CreateCompoundCurve
-            string path = RunExamples.GetDataDir() + "CreateCompoundCurve.shp";
+            string path = RunExamples.GetDataDir() + "CreateCompoundCurve_out.shp";
             using (VectorLayer layer = VectorLayer.Create(path, Drivers.Shapefile))
             {
                 var feature = layer.ConstructFeature();

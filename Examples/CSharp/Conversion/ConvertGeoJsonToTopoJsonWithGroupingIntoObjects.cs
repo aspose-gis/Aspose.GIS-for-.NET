@@ -8,8 +8,8 @@ namespace Aspose.GIS.Examples.CSharp.Conversion
         public static void Run()
         {
             //ExStart: ConvertGeoJsonToTopoJsonWithGroupingIntoObjects
-            string SampleGeoJsonPath = RunExamples.GetDataDir() + "sample.geojson";
-            var outputFilePath = RunExamples.GetDataDir() + "convertedSample.topojson";
+            string sampleGeoJsonPath = RunExamples.GetDataDir() + "sample.geojson";
+            var outputFilePath = RunExamples.GetDataDir() + "convertedSampleWithGrouping_out.topojson";
 
             var options = new ConversionOptions
             {
@@ -22,7 +22,7 @@ namespace Aspose.GIS.Examples.CSharp.Conversion
                 }
             };
 
-            VectorLayer.Convert(SampleGeoJsonPath, Drivers.GeoJson, outputFilePath, Drivers.TopoJson, options);
+            VectorLayer.Convert(sampleGeoJsonPath, Drivers.GeoJson, outputFilePath, Drivers.TopoJson, options);
             //ExEnd: ConvertGeoJsonToTopoJsonWithGroupingIntoObjects
         }
     }

@@ -11,7 +11,7 @@ namespace Aspose.GIS.Examples.CSharp.Layers
         public static void Run()
         {
             //ExStart: SpecifyNamesOfObjectIdAndGeometryFields
-            var path = RunExamples.GetDataDir() + "NamesOfObjectIdAndGeometryFields.gdb";
+            var path = RunExamples.GetDataDir() + "NamesOfObjectIdAndGeometryFields_out.gdb";
             using (var dataset = Dataset.Create(path, Drivers.FileGdb))
             {
                 var options = new FileGdbOptions

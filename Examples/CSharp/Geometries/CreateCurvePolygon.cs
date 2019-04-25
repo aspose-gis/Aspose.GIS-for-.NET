@@ -13,7 +13,7 @@ namespace Aspose.GIS.Examples.CSharp.Geometries
         public static void Run()
         {
             //ExStart: CreateCurvePolygon
-            string path = RunExamples.GetDataDir() + "CreateCurvePolygon.shp";
+            string path = RunExamples.GetDataDir() + "CreateCurvePolygon_out.shp";
             using (VectorLayer layer = VectorLayer.Create(path, Drivers.Shapefile))
             {
                 var feature = layer.ConstructFeature();

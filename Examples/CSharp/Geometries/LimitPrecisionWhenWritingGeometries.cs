@@ -24,7 +24,7 @@ namespace Aspose.GIS_for.NET.Geometries
                 ZPrecisionModel = PrecisionModel.Exact
             };
 
-            var path = RunExamples.GetDataDir() + "LimitPrecisionWhenWritingGeometries.json";
+            var path = RunExamples.GetDataDir() + "LimitPrecisionWhenWritingGeometries_out.json";
             using (VectorLayer layer = VectorLayer.Create(path, Drivers.GeoJson, options))
             {
                 var point = new Point();

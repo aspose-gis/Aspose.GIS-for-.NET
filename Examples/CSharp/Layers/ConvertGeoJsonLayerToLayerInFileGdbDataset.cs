@@ -15,7 +15,7 @@ namespace Aspose.GIS_for.NET.Layers
         public static void Run()
         {
             //ExStart: ConvertGeoJsonLayerToLayerInFileGdbDataset
-            var geoJsonPath = RunExamples.GetDataDir() + "Working\\ConvertGeoJsonLayerToLayerInFileGdbDataset.gdb";
+            var geoJsonPath = RunExamples.GetDataDir() + "ConvertGeoJsonLayerToLayerInFileGdbDataset_out.json";
             using (VectorLayer layer = VectorLayer.Create(geoJsonPath, Drivers.GeoJson))
             {
                 layer.Attributes.Add(new FeatureAttribute("name", AttributeDataType.String));
@@ -39,7 +39,7 @@ namespace Aspose.GIS_for.NET.Layers
             // -- copy test dataset, to avoid modification of test data.
             
             var sourceFile = RunExamples.GetDataDir() + "ThreeLayers.gdb";
-            var destinationFile = RunExamples.GetDataDir() + "Working\\ThreeLayersCopy.gdb";
+            var destinationFile = RunExamples.GetDataDir() + "ThreeLayersCopy_out.gdb";
             RunExamples.CopyDirectory(sourceFile, destinationFile);
 
             // --

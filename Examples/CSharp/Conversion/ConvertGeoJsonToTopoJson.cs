@@ -12,9 +12,9 @@ namespace Aspose.GIS.Examples.CSharp.Conversion
         public static void Run()
         {
             //ExStart: ConvertGeoJsonToTopoJson
-            string SampleGeoJsonPath = RunExamples.GetDataDir() + "sample.geojson";
-            var outputFilePath = RunExamples.GetDataDir() + "convertedSample.topojson";
-            VectorLayer.Convert(SampleGeoJsonPath, Drivers.GeoJson, outputFilePath, Drivers.TopoJson);
+            string sampleGeoJsonPath = RunExamples.GetDataDir() + "sample.geojson";
+            var outputFilePath = RunExamples.GetDataDir() + "convertedSample_out.topojson";
+            VectorLayer.Convert(sampleGeoJsonPath, Drivers.GeoJson, outputFilePath, Drivers.TopoJson);
             //ExEnd: ConvertGeoJsonToTopoJson
         }
     }

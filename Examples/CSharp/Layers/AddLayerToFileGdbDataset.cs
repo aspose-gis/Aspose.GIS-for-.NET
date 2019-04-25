@@ -17,9 +17,8 @@ namespace Aspose.GIS_for.NET.Layers
             //ExStart: AddLayerToFileGdbDataset
             // -- copy test dataset, to avoid modification of test data.
 
-            //var datasetPath = GetOutputPath(".gdb");
             var path = RunExamples.GetDataDir() + "ThreeLayers.gdb";
-            var datasetPath = RunExamples.GetDataDir() + "Working\\AddLayerToFileGdbDataset.gdb";
+            var datasetPath = RunExamples.GetDataDir() + "AddLayerToFileGdbDataset_out.gdb";
             RunExamples.CopyDirectory(path, datasetPath);
 
             // --
