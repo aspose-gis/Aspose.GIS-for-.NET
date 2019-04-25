@@ -18,7 +18,7 @@ namespace Aspose.GIS.Examples.CSharp.Layers
             {
                 foreach (Feature feature in layer)
                 {
-                    Console.WriteLine(feature.Geometry);
+                    Console.WriteLine(feature.Geometry.AsText());
                 }
             }
             //ExEnd: IterateOverFeaturesInLayer

@@ -40,7 +40,7 @@ namespace Aspose.GIS_for.NET.Layers
                         Console.WriteLine("Layer has {0} features", layer.Count);
                         foreach (var feature in layer)
                         {
-                            Console.WriteLine(feature.Geometry);
+                            Console.WriteLine(feature.Geometry.AsText());
                         }
                     }
                     Console.WriteLine("");
@@ -58,7 +58,7 @@ namespace Aspose.GIS_for.NET.Layers
                 Console.WriteLine("All layers in FileGDB has {0} features", layer.Count);
                 foreach (var feature in layer)
                 {
-                    Console.WriteLine(feature.Geometry);
+                    Console.WriteLine(feature.Geometry.AsText());
                 }
             }
 
@@ -82,7 +82,7 @@ namespace Aspose.GIS_for.NET.Layers
                 {
                     foreach (var feature in layer)
                     {
-                        Console.WriteLine(feature.Geometry);
+                        Console.WriteLine(feature.Geometry.AsText());
                     }
                 }
             }

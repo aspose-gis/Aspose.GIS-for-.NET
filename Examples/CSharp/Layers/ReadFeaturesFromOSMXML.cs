@@ -28,7 +28,7 @@ namespace Aspose.GIS_for.NET.Layers
                 foreach (Feature feature in layer)
                 {
                     // handle feature
-                    Console.WriteLine(feature.Geometry.GeometryType);
+                    Console.WriteLine(feature.Geometry.AsText());
                 }
             }
             //ExEnd: ReadFeaturesFromOSMXML

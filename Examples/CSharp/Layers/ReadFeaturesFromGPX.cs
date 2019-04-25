@@ -47,7 +47,7 @@ namespace Aspose.GIS_for.NET.Layers
 
                             foreach (var point in ls)
                             {
-                                Console.WriteLine(point);
+                                Console.WriteLine(point.AsText());
                             }
                             break;
                         
@@ -56,7 +56,7 @@ namespace Aspose.GIS_for.NET.Layers
                         case GeometryType.MultiLineString:
 
                             //HandleGpxTrack(feature);
-                            Console.WriteLine(feature.Geometry);
+                            Console.WriteLine(feature.Geometry.AsText());
                             break;
                         default: break;
                     }
