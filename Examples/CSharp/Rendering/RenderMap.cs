@@ -16,8 +16,11 @@ namespace Aspose.GIS_for.NET.Rendering
             // Note: a license is required to run this example. 
             // You can request a 30-day temporary license here: https://purchase.aspose.com/temporary-license
             var pathToLicenseFile = ""; // <- change this to the path to your license file
-            var license = new License();
-            license.SetLicense(pathToLicenseFile);
+            if (!string.IsNullOrEmpty(pathToLicenseFile))
+            {
+                var license = new License();
+                license.SetLicense(pathToLicenseFile);
+            }
 
             RenderWithDefaultSettings();
             AddMapLayersAndStyles();
