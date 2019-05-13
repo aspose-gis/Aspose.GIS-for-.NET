@@ -26,7 +26,6 @@ namespace Aspose.GIS_for.NET.Layers
             using (var source = VectorLayer.Open(sourcePath, Drivers.Shapefile))
             using (var result = VectorLayer.Create(resultPath,
                                                    Drivers.Shapefile,
-                                                   new ShapefileOptions(),
                                                    source.SpatialReferenceSystem))
             {
                 result.CopyAttributes(source);
