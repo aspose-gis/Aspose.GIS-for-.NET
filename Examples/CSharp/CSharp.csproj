@@ -66,6 +66,7 @@
     <Compile Include="Layers\ReadFeaturesFromMapInfoInterchange.cs" />
     <Compile Include="Layers\ReadFeaturesFromMapInfoTab.cs" />
     <Compile Include="Layers\ReadGeoJsonFromStream.cs" />
+    <Compile Include="Layers\SpecifyLayerSpatialReference.cs" />
     <Compile Include="Layers\SpecifyNamesOfObjectIdAndGeometryFields.cs" />
     <Compile Include="Layers\SpecifyTolerancesForFileGdbLayer.cs" />
     <Compile Include="Layers\SpecifyPrecisionGridForFileGdbLayer.cs" />
@@ -111,7 +112,8 @@
     <Compile Include="Geometries\LimitPrecisionWhenReadingGeometries.cs" />
     <Compile Include="Geometries\LimitPrecisionWhenWritingGeometries.cs" />
     <Compile Include="Geometries\ReducePrecisionOfAGeometry.cs" />
-    <Compile Include="Geometries\SetSpatialReferenceSystemForGeometry.cs" />
+    <Compile Include="SpatialReferencingSystem\CreateFromEpsgCode.cs" />
+    <Compile Include="SpatialReferencingSystem\SetSpatialReferenceSystemForGeometry.cs" />
     <Compile Include="Layers\AddLayerToFileGdbDataset.cs" />
     <Compile Include="Layers\ConvertGeoJsonLayerToLayerInFileGdbDataset.cs" />
     <Compile Include="Layers\ConvertPolygonShapeFileToLineStringShapeFile.cs" />

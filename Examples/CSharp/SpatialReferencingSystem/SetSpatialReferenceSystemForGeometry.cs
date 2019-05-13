@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Aspose.GIS_for.NET.Geometries
+namespace Aspose.GIS_for.NET.SpatialReferencingSystem
 {
     public class SetSpatialReferenceSystemForGeometry
     {

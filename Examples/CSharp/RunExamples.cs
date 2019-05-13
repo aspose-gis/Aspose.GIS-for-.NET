@@ -47,7 +47,6 @@ namespace Aspose.GIS.Examples.CSharp
             //IterateOverPointsInGeometry.Run();
             //IterateOverGeometriesInGeometry.Run();
             //GeometryValidation.Run();
-            //SetSpatialReferenceSystemForGeometry.Run();
 
             //DetermineIfGeometriesAreSpatiallyEqual.Run();
             //DetermineIfGeometriesIntersect.Run();
@@ -98,6 +97,7 @@ namespace Aspose.GIS.Examples.CSharp
             //FilterFeaturesByAttributeValue.Run();
             //ExtractFeaturesFromShapeFileToGeoJSON.Run();
             //SpecifyAttributeValueLength.Run();
+            //SpecifyLayerSpatialReference.Run();
             //GetValueOfNullFeatureAttribute.Run();
             //ModifyFeatures.Run();
             //ConvertPolygonShapeFileToLineStringShapeFile.Run();
@@ -147,14 +147,13 @@ namespace Aspose.GIS.Examples.CSharp
 
             #region Spatial Reference System
             //CheckDriverForSpatialReferenceSystemSupport.Run();
-
             //CompareSpatialReferenceSystems.Run();
-
             //CreateFromWkt.Run();
-
+            //CreateFromEpsgCode.Run();
             //CreateSpatialReferenceSystemWithCustomParams.Run();
-
             //ExportSpatialReferenceSystemToWKT.Run();
+            //SetSpatialReferenceSystemForGeometry.Run();
+
             #endregion
 
             Console.WriteLine("=====================================================");

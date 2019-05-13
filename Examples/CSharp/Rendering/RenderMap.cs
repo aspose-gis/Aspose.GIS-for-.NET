@@ -1,6 +1,7 @@
 ﻿using Aspose.Gis;
 using Aspose.Gis.Rendering;
 using Aspose.Gis.Rendering.Symbolizers;
+using Aspose.Gis.SpatialReferencing;
 using Aspose.GIS.Examples.CSharp;
 using System;
 using System.Drawing;
@@ -23,6 +24,7 @@ namespace Aspose.GIS_for.NET.Rendering
             }
 
             RenderWithDefaultSettings();
+            RenderToSpecificProjection();
             AddMapLayersAndStyles();
 
             DefaultMarkerStyle();
@@ -53,6 +55,18 @@ namespace Aspose.GIS_for.NET.Rendering
                 map.Render(dataDir + "land_out.svg", Renderers.Svg);
             }
             //ExEnd: RenderWithDefaultSettings
+        }
+
+        public static void RenderToSpecificProjection()
+        {
+            //ExStart: RenderToSpecificProjection
+            using (var map = new Map(800, 400))
+            {
+                map.Add(VectorLayer.Open(dataDir + "land.shp", Drivers.Shapefile));
+                map.SpatialReferenceSystem = SpatialReferenceSystem.CreateFromEpsg(54024); // World Bonne
+                map.Render(dataDir + "land_out.svg", Renderers.Svg);
+            }
+            //ExEnd: RenderToSpecificProjection
         }
 
         public static void AddMapLayersAndStyles()
@@ -90,6 +104,7 @@ namespace Aspose.GIS_for.NET.Rendering
                 var symbol = new SimpleMarker();
 
                 map.Add(VectorLayer.Open(dataDir + "points.geojson", Drivers.GeoJson), symbol);
+                map.Padding = 20;
                 map.Render(dataDir + "points_out.svg", Renderers.Svg);
             }
             //ExEnd: DefaultMarkerStyle
@@ -103,6 +118,7 @@ namespace Aspose.GIS_for.NET.Rendering
                 var symbol = new SimpleMarker() { Size = 7, StrokeWidth = 1, FillColor = Color.Red };
 
                 map.Add(VectorLayer.Open(dataDir + "points.geojson", Drivers.GeoJson), symbol);
+                map.Padding = 20;
                 map.Render(dataDir + "points_out.svg", Renderers.Svg);
             }
             //ExEnd: ChangeMarkerStyle
@@ -123,6 +139,7 @@ namespace Aspose.GIS_for.NET.Rendering
                 };
 
                 map.Add(VectorLayer.Open(dataDir + "points.geojson", Drivers.GeoJson), symbol);
+                map.Padding = 20;
                 map.Render(dataDir + "points_out.svg", Renderers.Svg);
             }
             //ExEnd: ChangeMarkerStyleTriangles
@@ -150,6 +167,7 @@ namespace Aspose.GIS_for.NET.Rendering
                 };
 
                 map.Add(VectorLayer.Open(dataDir + "points.geojson", Drivers.GeoJson), symbol);
+                map.Padding = 20;
                 map.Render(dataDir + "points_out.svg", Renderers.Svg);
             }
             //ExEnd: ChangeMarkerStyleFeatureBased
