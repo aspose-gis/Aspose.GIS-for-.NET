@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aspose.GIS" Version="19.6.0" />
+    <PackageReference Include="Aspose.GIS" Version="19.7.0" />
     <PackageReference Include="Microsoft.Azure.Storage.Blob" Version="9.4.2" />
   </ItemGroup>
 
