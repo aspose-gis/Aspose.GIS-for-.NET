@@ -112,6 +112,7 @@
     <Compile Include="Geometries\LimitPrecisionWhenReadingGeometries.cs" />
     <Compile Include="Geometries\LimitPrecisionWhenWritingGeometries.cs" />
     <Compile Include="Geometries\ReducePrecisionOfAGeometry.cs" />
+    <Compile Include="Rendering\ImportSld.cs" />
     <Compile Include="SpatialReferencingSystem\CreateFromEpsgCode.cs" />
     <Compile Include="SpatialReferencingSystem\SetSpatialReferenceSystemForGeometry.cs" />
     <Compile Include="Layers\AddLayerToFileGdbDataset.cs" />

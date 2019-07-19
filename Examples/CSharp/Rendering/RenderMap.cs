@@ -35,9 +35,11 @@ namespace Aspose.GIS_for.NET.Rendering
             DefaultLineStyle();
             ChangeLineStyle();
             ChangeLineStyleComplex();
+            MarkerLineSymbolizer();
 
             DefaultFillStyle();
             ChangeFillStyle();
+            MarkerFillSymbolizer();
 
             MixedGeometryRendering();
             DrawLayeredSymbolizersByFeatures();
@@ -224,6 +226,28 @@ namespace Aspose.GIS_for.NET.Rendering
             //ExEnd: ChangeLineStyleComplex
         }
 
+        public static void MarkerLineSymbolizer()
+        {
+            //ExStart: MarkerLineSymbolizer
+            using (var map = new Map(500, 317))
+            {
+                var symbolizer = new MarkerLine
+                {
+                    Marker = new SimpleMarker
+                    {
+                        ShapeType = MarkerShapeType.Circle,
+                        FillColor = Color.Coral,
+                        Size = 4
+                    },
+                    Interval = 10
+                };
+
+                map.Add(VectorLayer.Open(dataDir + "lines.geojson", Drivers.GeoJson), symbolizer);
+                map.Render(dataDir + "marker_line_out.png", Renderers.Png);
+            }
+            //ExEnd: MarkerLineSymbolizer
+        }
+
         #endregion
 
         #region Polygons
@@ -252,6 +276,29 @@ namespace Aspose.GIS_for.NET.Rendering
                 map.Render(dataDir + "polygons_out.svg", Renderers.Svg);
             }
             //ExEnd: ChangeFillStyle
+        }
+
+        public static void MarkerFillSymbolizer()
+        {
+            //ExStart: MarkerFillSymbolizer
+            using (var map = new Map(500, 450))
+            {
+                var symbolizer = new MarkerPatternFill
+                {
+                    Marker = new SimpleMarker
+                    {
+                        ShapeType = MarkerShapeType.Triangle,
+                        FillColor = Color.Red,
+                        Size = 5
+                    },
+                    HorizontalInterval = 10,
+                    VerticalInterval = 10
+                };
+
+                map.Add(VectorLayer.Open(dataDir + "polygons.geojson", Drivers.GeoJson), symbolizer);
+                map.Render(dataDir + "polygons_marker_fill_out.png", Renderers.Png);
+            }
+            //ExEnd: MarkerFillSymbolizer
         }
 
         #endregion
