@@ -45,7 +45,6 @@ namespace Aspose.GIS_for.NET.Rendering
             DrawLayeredSymbolizersByFeatures();
             DrawLayeredSymbolizersByLayers();
             RuleBasedRendering();
-
         }
 
         public static void RenderWithDefaultSettings()

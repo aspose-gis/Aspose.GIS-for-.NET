@@ -12,6 +12,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Aspose.Gis.Formats.GeoJson;
 
 namespace Aspose.GIS.Examples.CSharp
 {
@@ -24,8 +25,8 @@ namespace Aspose.GIS.Examples.CSharp
 
             // Set the license to avoid the evaluation limitations.
             // Uncomment this lines if you have a license
-            // License license = new License();
-            // license.SetLicense(Path.Combine(GetDataDir(), "Aspose.GIS.lic"));
+            //License license = new License();
+            //license.SetLicense(Path.Combine(GetDataDir(), "Aspose.GIS.lic"));
 
             Console.WriteLine("Open RunExamples.cs. \nIn Main() method uncomment the example that you want to run.");
             Console.WriteLine("=====================================================");
@@ -144,6 +145,7 @@ namespace Aspose.GIS.Examples.CSharp
             #region Rendering
             //RenderMap.Run();
             //ImportSld.Run();
+            //LabelMap.Run();
             #endregion
 
             #region Spatial Reference System

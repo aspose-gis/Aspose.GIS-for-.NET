@@ -4,6 +4,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Greenville",
         "population": 8136
       },
       "geometry": {
@@ -17,6 +18,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Quibern",
         "population": 3166
       },
       "geometry": {
@@ -30,6 +32,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Lonelypool",
         "population": 2141
       },
       "geometry": {
@@ -43,6 +46,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Portland",
         "population": 3575
       },
       "geometry": {
@@ -56,6 +60,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Misery",
         "population": 1765
       },
       "geometry": {
@@ -69,6 +74,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Seaville",
         "population": 2884
       },
       "geometry": {
@@ -82,6 +88,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Beantown",
         "population": 2873
       },
       "geometry": {
@@ -95,6 +102,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Cantown",
         "population": 1756
       },
       "geometry": {
@@ -108,6 +116,7 @@
     {
       "type": "Feature",
       "properties": {
+        "name": "Townlouse",
         "population": 1281
       },
       "geometry": {
