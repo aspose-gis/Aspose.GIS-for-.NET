@@ -62,6 +62,7 @@
     <Compile Include="Geometries\CreateCurvePolygon.cs" />
     <Compile Include="Geometries\CreateCompoundCurve.cs" />
     <Compile Include="Geometries\CreateCircularString.cs" />
+    <Compile Include="Layers\FilteringAndIndexing.cs" />
     <Compile Include="Layers\ModifyFeatures.cs" />
     <Compile Include="Layers\ReadFeaturesFromMapInfoInterchange.cs" />
     <Compile Include="Layers\ReadFeaturesFromMapInfoTab.cs" />
