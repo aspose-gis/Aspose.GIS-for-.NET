@@ -27,7 +27,6 @@ namespace Aspose.GIS_for.NET.Layers
         public static void FilterFeaturesByAttributeValue()
         {
             //ExStart: FilterFeaturesByAttributeValue
-
             var path = DataDir + "temp_out.shp";
             // -- generate sample data
             var values = new (string name, int age)[]
@@ -79,7 +78,6 @@ namespace Aspose.GIS_for.NET.Layers
                     Console.WriteLine(feature.GetValue<string>("name"));
                 }
             }
-
             //ExEnd: FilterFeaturesByAttributeValue
         }
 
@@ -88,7 +86,6 @@ namespace Aspose.GIS_for.NET.Layers
             var path = DataDir + "railroads.shp";
 
             //ExStart: BuildAttributeIndexToSpeedUpFiltering
-
             using (var layer = VectorLayer.Open(path, Drivers.Shapefile))
             {
                 // Use index files to speed up filtering by attribute's value or spatial extent.
@@ -106,14 +103,12 @@ namespace Aspose.GIS_for.NET.Layers
             var path = DataDir + "railroads.shp";
 
             //ExStart: FindFeatureNearestToPoint
-
             using (var layer = VectorLayer.Open(path, Drivers.Shapefile))
             {
                 var point = new Point(-67, 45);
                 var nearest = layer.NearestTo(point);
                 Console.WriteLine(nearest.Geometry.AsText());
             }
-
             //ExEnd: FindFeatureNearestToPoint
         }
 
@@ -122,7 +117,6 @@ namespace Aspose.GIS_for.NET.Layers
             var path = DataDir + "railroads.shp";
 
             //ExStart: FindFeaturesWithinExtent
-
             using (var layer = VectorLayer.Open(path, Drivers.Shapefile))
             {
                 var polygon = Geometry.FromText("Polygon((-67 45, -60 40, -50 50, -67 45))");
@@ -133,7 +127,6 @@ namespace Aspose.GIS_for.NET.Layers
                     Console.WriteLine(feature.Geometry.AsText());
                 }
             }
-
             //ExEnd: FindFeaturesWithinExtent
         }
 
@@ -143,7 +136,6 @@ namespace Aspose.GIS_for.NET.Layers
             var path = DataDir + "railroads.shp";
 
             //ExStart: SaveFilteredFeaturesToLayer
-
             using (var layer = VectorLayer.Open(path, Drivers.Shapefile))
             {
                 layer.WhereEqual("sov_a3", "USA").SaveTo(DataDir + "USA_railroads_out.shp", Drivers.Shapefile);
@@ -151,7 +143,6 @@ namespace Aspose.GIS_for.NET.Layers
                 layer.WhereEqual("sov_a3", "CAN").SaveTo(DataDir + "Candian_railroads_out.shp", Drivers.Shapefile);
                 layer.WhereEqual("sov_a3", "CUB").SaveTo(DataDir + "Cubaniese_railroads_out.shp", Drivers.Shapefile);
             }
-
             //ExEnd: SaveFilteredFeaturesToLayer
         }
 
@@ -161,14 +152,12 @@ namespace Aspose.GIS_for.NET.Layers
             var outputPath = DataDir + "railroads_out.svg";
 
             //ExStart: RenderFilteredFeatures
-
             using (var map = new Map(600, 400))
             using (var railroads = VectorLayer.Open(railroadsPath, Drivers.Shapefile))
             {
                 map.Add(railroads.WhereEqual("sov_a3", "USA"), new SimpleLine { Color = Color.Blue });
                 map.Render(outputPath, Renderers.Svg);
             }
-
             //ExEnd: RenderFilteredFeatures
         }
     }
