@@ -16,7 +16,7 @@ namespace Aspose.GIS.Examples.CSharp.Layers
             using (VectorLayer layer = VectorLayer.Open(dataDir + "InputShapeFile.shp", Drivers.Shapefile))
             {
                 // all features with the date value in the attribute "dob" later than 1982-01-01.
-                foreach (Feature feature in layer.Where(f => f.GetValue<DateTime?>("dob") > new DateTime(1982, 1, 1,0,0,0)))
+                foreach (Feature feature in layer.WhereGreater("dob", new DateTime(1982, 1, 1, 0, 0, 0)))
                 {
                     Console.WriteLine(feature.GetValue<DateTime>("dob").ToShortDateString());
                 }
