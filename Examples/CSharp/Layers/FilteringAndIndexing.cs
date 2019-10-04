@@ -16,146 +16,153 @@ namespace Aspose.GIS_for.NET.Layers
 
         public static void Run()
         {
-            BuildAttributeIndexToSpeedUpFiltering();
+            IterateFilteredFeatures();
+            SaveFilteredFeaturesToLayer();
             FindFeatureNearestToPoint();
             FindFeaturesWithinExtent();
-            SaveFilteredFeaturesToLayer();
             RenderFilteredFeatures();
-            FilterFeaturesByAttributeValue();
         }
 
-        public static void FilterFeaturesByAttributeValue()
+        public static void FilterLayerByAttributeValue()
         {
-            //ExStart: FilterFeaturesByAttributeValue
-            var path = DataDir + "temp_out.shp";
-            // -- generate sample data
-            var values = new (string name, int age)[]
+            var citiesPath = DataDir + "points.geojson";
+
+            //ExStart: FilterLayerByAttributeValue
+            using (var layer = VectorLayer.Open(citiesPath, Drivers.GeoJson))
             {
-                ("Anna", 12),
-                ("John", 15),
-                ("Mary", 20),
-                ("James", 10),
-                ("Bob", 19),
-                ("Fred", 1),
-                ("Alex", 14),
-            };
-            using (var layer = VectorLayer.Create(path, Drivers.Shapefile))
-            {
-                layer.Attributes.Add(new FeatureAttribute("name", AttributeDataType.String));
-                layer.Attributes.Add(new FeatureAttribute("age", AttributeDataType.Integer));
-                foreach (var (name, age) in values)
+                // Select features based on values of the attribute. This code enumerates all features in the layer
+                // and selects all features that match a condition.
+                var features = layer.WhereGreaterOrEqual("population", 2000).WhereSmaller("population", 5000);
+
+                // Print results.
+                Console.WriteLine("Cities where population >= 2000 and population < 5000:");
+                foreach (var feature in features)
                 {
-                    var feature = layer.ConstructFeature();
-                    feature.SetValue("name", name);
-                    feature.SetValue("age", age);
-                    layer.Add(feature);
+                    var name = feature.GetValue<string>("name");
+                    var population = feature.GetValue<int>("population");
+                    Console.WriteLine(name + ", " + population);
                 }
+                Console.WriteLine();
             }
-            // --
-
-            using (var layer = VectorLayer.Open(path, Drivers.Shapefile))
-            {
-                // Use index files to speed up filtering by attribute's value.
-                // Index is automatically created if it doesn't exist. Any path can be used.
-                var nameIndexPath = Path.ChangeExtension(path, "name_out.ux");
-                var ageIndexPath = Path.ChangeExtension(path, "age_out.ix");
-                layer.UseAttributesIndex(nameIndexPath, "name");
-                layer.UseAttributesIndex(ageIndexPath, "age");
-
-                // Select features with 'age' in range [13, 19]
-                var teens = layer.WhereGreater("age", 12).WhereSmallerOrEqual("age", 19);
-                foreach (var feature in teens)
-                {
-                    Console.WriteLine(feature.GetValue<string>("name"));
-                }
-
-                // Select features with 'name' that starts with 'A' and 'age' greater than '12'.
-                var firstInAlphabet = layer.WhereGreaterOrEqual("name", "A")
-                                           .WhereSmaller("name", "B")
-                                           .WhereGreater("age", 12);
-                foreach (var feature in firstInAlphabet)
-                {
-                    Console.WriteLine(feature.GetValue<string>("name"));
-                }
-            }
-            //ExEnd: FilterFeaturesByAttributeValue
+            //ExEnd: FilterLayerByAttributeValue
         }
 
-        private static void BuildAttributeIndexToSpeedUpFiltering()
+
+        public static void IterateFilteredFeatures()
         {
-            var path = DataDir + "railroads.shp";
+            var citiesPath = DataDir + "points.geojson";
 
-            //ExStart: BuildAttributeIndexToSpeedUpFiltering
-            using (var layer = VectorLayer.Open(path, Drivers.Shapefile))
+            //ExStart: IterateFilteredFeatures
+            using (var layer = VectorLayer.Open(citiesPath, Drivers.GeoJson))
             {
-                // Use index files to speed up filtering by attribute's value or spatial extent.
-                var attributeIndexPath = Path.ChangeExtension(path, "sov_a3_out.ix");
-                layer.UseAttributesIndex(attributeIndexPath, "sov_a3");
-                var spatialIndexPath = Path.ChangeExtension(path, ".spatial_out.ix");
-                layer.UseSpatialIndex(spatialIndexPath);
-            }
+                // Use attribute index to speed up search by 'population' attribute.
+                // Aspose.GIS builds a new index if it doesn't exist, otherwise existing index is reused.
+                // Any path can be used.
+                var attributeIndexPath = Path.ChangeExtension(citiesPath, "population_out.ix");
+                layer.UseAttributesIndex(attributeIndexPath, "population");
 
-            //ExEnd: BuildAttributeIndexToSpeedUpFiltering
+                // Select features based on values of the attribute. Since we use attribute index it is not necessary to
+                // test all features of the layer and filtering time is reduced significantly.
+                var towns = layer.WhereGreaterOrEqual("population", 2000).WhereSmaller("population", 5000);
+
+                // Print results.
+                Console.WriteLine("Cities where population >= 2000 and population < 5000:");
+                foreach (var town in towns)
+                {
+                    var name = town.GetValue<string>("name");
+                    var population = town.GetValue<int>("population");
+                    Console.WriteLine(name + ", " + population);
+                }
+                Console.WriteLine();
+            }
+            //ExEnd: IterateFilteredFeatures
+        }
+
+        public static void SaveFilteredFeaturesToLayer()
+        {
+            var citiesPath = DataDir + "points.geojson";
+
+            //ExStart: SaveFilteredFeaturesToLayer
+            using (var layer = VectorLayer.Open(citiesPath, Drivers.GeoJson))
+            {
+                // Use attribute index to speed up search by 'population' attribute.
+                var attributeIndexPath = Path.ChangeExtension(citiesPath, "population_out.ix");
+                layer.UseAttributesIndex(attributeIndexPath, "population");
+
+                // Save all features with population between 2000 and 5000 to the output file.
+                layer.WhereGreaterOrEqual("population", 2000)
+                    .WhereSmaller("population", 5000)
+                    .SaveTo(DataDir + "towns_out.shp", Drivers.Shapefile);
+            }
+            //ExEnd: SaveFilteredFeaturesToLayer
         }
 
         public static void FindFeatureNearestToPoint()
         {
-            var path = DataDir + "railroads.shp";
+            var path = DataDir + "points.geojson";
 
             //ExStart: FindFeatureNearestToPoint
-            using (var layer = VectorLayer.Open(path, Drivers.Shapefile))
+            using (var layer = VectorLayer.Open(path, Drivers.GeoJson))
             {
-                var point = new Point(-67, 45);
+                // Use spatial index to speed up spatial queries.
+                // Aspose.GIS builds a new index if it doesn't exist, otherwise existing index is reused.
+                // Any path can be used.
+                var spatialIndexPath = Path.ChangeExtension(path, ".spatial_out.ix");
+                layer.UseSpatialIndex(spatialIndexPath);
+
+                var point = new Point(12.30, 50.33);
+
+                // Since we use spatial index, nearest-to finds the closest feature much faster.
                 var nearest = layer.NearestTo(point);
-                Console.WriteLine(nearest.Geometry.AsText());
+                Console.WriteLine("City nearest to (12.30 50.33) is " + nearest.GetValue<string>("name"));
+                Console.WriteLine();
             }
             //ExEnd: FindFeatureNearestToPoint
         }
 
         public static void FindFeaturesWithinExtent()
         {
-            var path = DataDir + "railroads.shp";
+            var path = DataDir + "points.geojson";
 
             //ExStart: FindFeaturesWithinExtent
-            using (var layer = VectorLayer.Open(path, Drivers.Shapefile))
+            using (var layer = VectorLayer.Open(path, Drivers.GeoJson))
             {
-                var polygon = Geometry.FromText("Polygon((-67 45, -60 40, -50 50, -67 45))");
+                // Use spatial index to speed up 'WhereIntersects'.
+                var spatialIndexPath = Path.ChangeExtension(path, ".spatial_out.ix");
+                layer.UseSpatialIndex(spatialIndexPath);
+
+                var polygon = Geometry.FromText("Polygon((12.30 50.33, 22.49 54.87, 21.92 42.53, 12.30 50.33))");
                 var intersecting = layer.WhereIntersects(polygon);
-                Console.WriteLine("Features intersecting with polygon " + polygon.AsText());
+
+                Console.WriteLine("Cities within " + polygon.AsText() + ":");
                 foreach (var feature in intersecting)
                 {
-                    Console.WriteLine(feature.Geometry.AsText());
+                    var name = feature.GetValue<string>("name");
+                    var location = (IPoint) feature.Geometry;
+                    Console.WriteLine($"{name} at ({location.X}, {location.Y})");
                 }
+                Console.WriteLine();
             }
             //ExEnd: FindFeaturesWithinExtent
         }
 
-
-        public static void SaveFilteredFeaturesToLayer()
-        {
-            var path = DataDir + "railroads.shp";
-
-            //ExStart: SaveFilteredFeaturesToLayer
-            using (var layer = VectorLayer.Open(path, Drivers.Shapefile))
-            {
-                layer.WhereEqual("sov_a3", "USA").SaveTo(DataDir + "USA_railroads_out.shp", Drivers.Shapefile);
-                layer.WhereEqual("sov_a3", "MEX").SaveTo(DataDir + "Mexican_railroads_out.shp", Drivers.Shapefile);
-                layer.WhereEqual("sov_a3", "CAN").SaveTo(DataDir + "Candian_railroads_out.shp", Drivers.Shapefile);
-                layer.WhereEqual("sov_a3", "CUB").SaveTo(DataDir + "Cubaniese_railroads_out.shp", Drivers.Shapefile);
-            }
-            //ExEnd: SaveFilteredFeaturesToLayer
-        }
-
         public static void RenderFilteredFeatures()
         {
-            var railroadsPath = DataDir + "railroads.shp";
-            var outputPath = DataDir + "railroads_out.svg";
+            var citiesPath = DataDir + "points.geojson";
+            var outputPath = DataDir + "large_cities_out.svg";
 
             //ExStart: RenderFilteredFeatures
             using (var map = new Map(600, 400))
-            using (var railroads = VectorLayer.Open(railroadsPath, Drivers.Shapefile))
+            using (var cities = VectorLayer.Open(citiesPath, Drivers.GeoJson))
             {
-                map.Add(railroads.WhereEqual("sov_a3", "USA"), new SimpleLine { Color = Color.Blue });
+                map.Padding = 20;
+
+                // Use attribute index to speed up search by 'population' attribute.
+                var attributeIndexPath = Path.ChangeExtension(citiesPath, "population_out.ix");
+                cities.UseAttributesIndex(attributeIndexPath, "population");
+
+                // Render all cities with population greater than 2000.
+                map.Add(cities.WhereGreater("population", 2000), new SimpleMarker { FillColor = Color.Red });
                 map.Render(outputPath, Renderers.Svg);
             }
             //ExEnd: RenderFilteredFeatures
