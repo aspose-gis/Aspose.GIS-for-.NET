@@ -31,6 +31,7 @@ namespace Aspose.GIS_for.NET.Rendering
             ChangeMarkerStyle();
             ChangeMarkerStyleTriangles();
             ChangeMarkerStyleFeatureBased();
+            RasterImageMarkerSymbolizer();
 
             DefaultLineStyle();
             ChangeLineStyle();
@@ -172,6 +173,25 @@ namespace Aspose.GIS_for.NET.Rendering
                 map.Render(dataDir + "points_out.svg", Renderers.Svg);
             }
             //ExEnd: ChangeMarkerStyleFeatureBased
+        }
+
+        public static void RasterImageMarkerSymbolizer()
+        {
+            //ExStart: RasterImageMarkerSymbolizer
+            using (var map = new Map(500, 200))
+            {
+                var symbol = new RasterImageMarker(imagePath: dataDir + "cross.png")
+                {
+                    Width = 30,
+                    Height = 30,
+                    Rotation = 45,
+                };
+
+                map.Add(VectorLayer.Open(dataDir + "points.geojson", Drivers.GeoJson), symbol);
+                map.Padding = 20;
+                map.Render(dataDir + "raster_marker_out.svg", Renderers.Svg);
+            }
+            //ExEnd: RasterImageMarkerSymbolizer
         }
 
         #endregion
