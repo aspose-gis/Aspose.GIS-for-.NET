@@ -46,6 +46,8 @@ namespace Aspose.GIS_for.NET.Rendering
             DrawLayeredSymbolizersByFeatures();
             DrawLayeredSymbolizersByLayers();
             RuleBasedRendering();
+
+            GeometryGenerator();
         }
 
         public static void RenderWithDefaultSettings()
@@ -393,6 +395,36 @@ namespace Aspose.GIS_for.NET.Rendering
                 map.Render(dataDir + "railroads_out.svg", Renderers.Svg);
             }
             //ExEnd: RuleBasedRendering
+        }
+
+        #endregion
+
+        #region Geometry Generator
+        public static void GeometryGenerator()
+        {
+            //ExStart: GeometryGenerator
+            using (var map = new Map(500, 200))
+            {
+                var symbol = new GeometryGenerator
+                {
+                    Expression = f =>
+                    {
+                        return f.Geometry.GetBuffer(30_000);
+                    },
+
+                    Symbolizer = new SimpleFill
+                    {
+                        FillColor = Color.LightBlue,
+                        StrokeColor = Color.Blue,
+                    },
+                };
+
+                map.Add(VectorLayer.Open(dataDir + "points.geojson", Drivers.GeoJson), symbol);
+                map.Padding = 20;
+                map.SpatialReferenceSystem = SpatialReferenceSystem.WebMercator;
+                map.Render(dataDir + "geometry_generator_out.svg", Renderers.Svg);
+            }
+            //ExEnd: GeometryGenerator
         }
 
         #endregion
