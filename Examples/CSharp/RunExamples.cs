@@ -130,6 +130,8 @@ namespace Aspose.GIS.Examples.CSharp
             //WriteGeoJsonToStream.Run();
             //ReadGeoJsonFromStream.Run();
             //FilteringAndIndexing.Run();
+
+            //InteractWithPostGisDatabase.Run();
             #endregion
 
             #region Conversion
