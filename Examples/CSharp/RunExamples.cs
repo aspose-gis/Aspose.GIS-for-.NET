@@ -132,6 +132,8 @@ namespace Aspose.GIS.Examples.CSharp
             //FilteringAndIndexing.Run();
 
             //InteractWithPostGisDatabase.Run();
+            //InteractWithSqlServerDatabase.Run();
+            
             #endregion
 
             #region Conversion
@@ -163,7 +165,8 @@ namespace Aspose.GIS.Examples.CSharp
             #endregion
 
             Console.WriteLine("=====================================================");
-            Console.WriteLine("Done with the execution of example.");
+            Console.WriteLine("Done with the execution of example. Press key to exit.");
+            Console.ReadKey();
         }
 
         private static void CleanOutput()

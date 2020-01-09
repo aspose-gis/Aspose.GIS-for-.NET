@@ -10,7 +10,7 @@ namespace Aspose.GIS.Examples.CSharp.Layers
     {
         public static void Run()
         {
-            // In order to run this examples, please set PG_CONN_STRING environemnt variable to the PostgreSQL connection string.
+            // In order to run this examples, please set PG_CONN_STRING environment variable to the PostgreSQL connection string.
             // Alternatively, you can just assign connection string to the connectionString variable.
             // Connection string should look like "Host=<ip>;Username=<username>;Password=<password>;Database=<database>";
             var connectionString = Environment.GetEnvironmentVariable("PG_CONN_STRING");
