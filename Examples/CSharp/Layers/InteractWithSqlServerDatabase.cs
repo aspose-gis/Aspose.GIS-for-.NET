@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.IO;
 using Aspose.Gis;
+using Aspose.Gis.Geometries;
+using Npgsql;
 
 namespace Aspose.GIS.Examples.CSharp.Layers
 {
@@ -22,18 +25,74 @@ namespace Aspose.GIS.Examples.CSharp.Layers
                 return;
             }
 
+            RemoveSqlServerTable(connectionString);
+            CreateSqlServerTable(connectionString);
             ListSqlServerTables(connectionString);
+            ExportSqlServerTable(connectionString);
+        }
+
+        public static void RemoveSqlServerTable(string connectionString)
+        {
+            // ExStart: RemoveSqlServerTable
+
+            // First, we create the connection to the SQL Server.
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                // Then, we pass this connection to Dataset.Open method in order to access tables in the SQL Server.
+                using (var ds = Dataset.Open(connection, Drivers.SqlServer))
+                {
+                    // remove table with the name "features_table".
+                    // It possible remove a table with geospatial data only.
+                    // An exception isn't thrown if the table doesn't exist.
+                    ds.RemoveLayer("features_table");
+                }
+            }
+
+            // ExEnd: RemoveSqlServerTable
+        }
+
+        public static void CreateSqlServerTable(string connectionString)
+        {
+            // ExStart: CreateSqlServerTable
+
+            // First, we create the connection to the SQL Server.
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                // Then, we pass this connection to Dataset.Open method in order to access tables in the SQL Server.
+                using (var ds = Dataset.Open(connection, Drivers.SqlServer))
+                {
+                    // create table with the name "features_table" and fill it with data.
+                    using (var layer = ds.CreateLayer("features_table"))
+                    {
+                        layer.Attributes.Add(new FeatureAttribute("name", AttributeDataType.String) { Width = 50 });
+
+                        var feature = layer.ConstructFeature();
+                        feature.SetValue("name", "Name1");
+                        feature.Geometry = Geometry.FromText("POINT (10 20 30)");
+                        layer.Add(feature);
+
+                        feature = layer.ConstructFeature();
+                        feature.SetValue("name", "Name2");
+                        feature.Geometry = Geometry.FromText("POINT (-10 -20 -30)");
+                        layer.Add(feature);
+                    }
+                }
+            }
+
+            // ExEnd: CreateSqlServerTable
         }
 
         public static void ListSqlServerTables(string connectionString)
         {
             // ExStart: ListSqlServerTables
 
-            // First, we create the connection to the SQL Server
-            // Then, we pass this connection to Dataset.Open method in order to access tables in the SQL Server.
+            // First, we create the connection to the SQL Server.
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
+                // Then, we pass this connection to Dataset.Open method in order to access tables in the SQL Server.
                 using (var ds = Dataset.Open(connection, Drivers.SqlServer))
                 {
                     // Only spatial tables are exported as layers, so the following code will list all tables
@@ -46,6 +105,31 @@ namespace Aspose.GIS.Examples.CSharp.Layers
             }
 
             // ExEnd: ListSqlServerTables
+        }
+
+        public static void ExportSqlServerTable(string connectionString)
+        {
+            // ExStart: ExportSqlServerTable
+
+            var outputPath = Path.Combine(RunExamples.GetDataDir(), "sql_server_out.kml");
+
+            // First, we create the connection to the SQL Server.
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                // Then, we pass this connection to Dataset.Open method in order to access tables in the SQL Server.
+                using (var ds = Dataset.Open(connection, Drivers.SqlServer))
+                {
+                    // open table with the name "features_table" in SQL Server database and save it to the Kml.
+                    using (var table = ds.OpenLayer("features_table"))
+                    {
+                        table.SaveTo(outputPath, Drivers.Kml);
+                    }
+                    Console.WriteLine("\nExport complete: " + outputPath);
+                }
+            }
+
+            // ExEnd: ExportSqlServerTable
         }
     }
 }
