@@ -3,7 +3,6 @@ using System.Data.SqlClient;
 using System.IO;
 using Aspose.Gis;
 using Aspose.Gis.Geometries;
-using Npgsql;
 
 namespace Aspose.GIS.Examples.CSharp.Layers
 {
@@ -34,7 +33,6 @@ namespace Aspose.GIS.Examples.CSharp.Layers
         public static void RemoveSqlServerTable(string connectionString)
         {
             // ExStart: RemoveSqlServerTable
-
             // First, we create the connection to the SQL Server.
             using (var connection = new SqlConnection(connectionString))
             {
@@ -48,14 +46,12 @@ namespace Aspose.GIS.Examples.CSharp.Layers
                     ds.RemoveLayer("features_table");
                 }
             }
-
             // ExEnd: RemoveSqlServerTable
         }
 
         public static void CreateSqlServerTable(string connectionString)
         {
             // ExStart: CreateSqlServerTable
-
             // First, we create the connection to the SQL Server.
             using (var connection = new SqlConnection(connectionString))
             {
@@ -80,14 +76,12 @@ namespace Aspose.GIS.Examples.CSharp.Layers
                     }
                 }
             }
-
             // ExEnd: CreateSqlServerTable
         }
 
         public static void ListSqlServerTables(string connectionString)
         {
             // ExStart: ListSqlServerTables
-
             // First, we create the connection to the SQL Server.
             using (var connection = new SqlConnection(connectionString))
             {
@@ -103,14 +97,12 @@ namespace Aspose.GIS.Examples.CSharp.Layers
                     }
                 }
             }
-
             // ExEnd: ListSqlServerTables
         }
 
         public static void ExportSqlServerTable(string connectionString)
         {
             // ExStart: ExportSqlServerTable
-
             var outputPath = Path.Combine(RunExamples.GetDataDir(), "sql_server_out.kml");
 
             // First, we create the connection to the SQL Server.
@@ -128,7 +120,6 @@ namespace Aspose.GIS.Examples.CSharp.Layers
                     Console.WriteLine("\nExport complete: " + outputPath);
                 }
             }
-
             // ExEnd: ExportSqlServerTable
         }
     }

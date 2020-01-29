@@ -29,7 +29,6 @@ namespace Aspose.GIS.Examples.CSharp.Layers
         public static void CreatePostGisTable(string postgreSqlConnectionString)
         {
             // ExStart: CreatePostGisTable
-
             // First, we create the connection to the PostgreSQL with Npgsql library (https://www.nuget.org/packages/Npgsql/)
             using (var connection = new NpgsqlConnection(postgreSqlConnectionString))
             {
@@ -54,14 +53,12 @@ namespace Aspose.GIS.Examples.CSharp.Layers
                     }
                 }
             }
-
             // ExEnd: CreatePostGisTable
         }
 
         public static void ListPostGisTables(string postgreSqlConnectionString)
         {
             // ExStart: ListPostGisTables
-
             // First, we create the connection to the PostgreSQL with Npgsql library (https://www.nuget.org/packages/Npgsql/)
             // Then, we pass this connection to Dataset.Open method in order to access tables in the PostgreSQL.
             using (var connection = new NpgsqlConnection(postgreSqlConnectionString))
@@ -77,14 +74,12 @@ namespace Aspose.GIS.Examples.CSharp.Layers
                     }
                 }
             }
-
             // ExEnd: ListPostGisTables
         }
 
         public static void ExportPostGisTable(string postgreSqlConnectionString)
         {
             // ExStart: ExportPostGisTable
-
             var outputPath = Path.Combine(RunExamples.GetDataDir(), "postgres_out.shp");
 
             // First, we create the connection to the PostgreSQL with Npgsql library (https://www.nuget.org/packages/Npgsql/)
@@ -101,7 +96,6 @@ namespace Aspose.GIS.Examples.CSharp.Layers
                     }
                 }
             }
-
             // ExEnd: ExportPostGisTable
         }
     }
