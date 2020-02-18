@@ -103,6 +103,7 @@ namespace Aspose.GIS.Examples.CSharp
             //ModifyFeatures.Run();
             //ConvertPolygonShapeFileToLineStringShapeFile.Run();
             //CreateKMLFile.Run();
+            //ExportStylePropertiesToKml.Run();
             //ReadFeaturesFromGML.Run();
             //ReadFeaturesFromGPX.Run();
             //ReadFeaturesFromKML.Run();
@@ -133,7 +134,7 @@ namespace Aspose.GIS.Examples.CSharp
 
             //InteractWithPostGisDatabase.Run();
             //InteractWithSqlServerDatabase.Run();
-            
+
             #endregion
 
             #region Conversion
