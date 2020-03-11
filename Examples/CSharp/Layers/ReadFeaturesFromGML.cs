@@ -25,7 +25,7 @@ namespace Aspose.GIS_for.NET.Layers
         private static void ReadGMLWithoutSpecifyingGMLOptions()
         {
             //ExStart: ReadGMLWithoutSpecifyingGMLOptions
-            // == Method 1: We try to load schema from Internet.
+            // Case 1: we try to load schema from Internet.
             // first, we create an instance of GmlOptions class.
             GmlOptions options = new GmlOptions
             {
@@ -49,7 +49,7 @@ namespace Aspose.GIS_for.NET.Layers
                 }
             }
 
-            // == Method 2: We try to restore the attributes schema by data in file.
+            // Case 2: we try to restore the attributes schema by data in file.
             Console.WriteLine("");
             Console.WriteLine("restoration by file data...");
             using (VectorLayer layer = VectorLayer.Open(dataDir + "file.gml", Drivers.Gml, new GmlOptions(){RestoreSchema = true}))
