@@ -25,6 +25,7 @@ namespace Aspose.GIS_for.NET.Layers
         private static void ReadGMLWithoutSpecifyingGMLOptions()
         {
             //ExStart: ReadGMLWithoutSpecifyingGMLOptions
+            // == Method 1: We try to load schema from Internet.
             // first, we create an instance of GmlOptions class.
             GmlOptions options = new GmlOptions
             {
@@ -39,7 +40,19 @@ namespace Aspose.GIS_for.NET.Layers
             };
 
             // then, we pass it to 'VectorLayer.Open'
+            Console.WriteLine("from internet loading...");
             using (VectorLayer layer = VectorLayer.Open(dataDir + "file.gml", Drivers.Gml, options))
+            {
+                foreach (Feature feature in layer)
+                {
+                    Console.WriteLine(feature.GetValue<string>("attribute"));
+                }
+            }
+
+            // == Method 2: We try to restore the attributes schema by data in file.
+            Console.WriteLine("");
+            Console.WriteLine("restoration by file data...");
+            using (VectorLayer layer = VectorLayer.Open(dataDir + "file.gml", Drivers.Gml, new GmlOptions(){RestoreSchema = true}))
             {
                 foreach (Feature feature in layer)
                 {
@@ -59,6 +72,8 @@ namespace Aspose.GIS_for.NET.Layers
                 LoadSchemasFromInternet = false,
             };
 
+            Console.WriteLine("");
+            Console.WriteLine("custom schema location...");
             using (VectorLayer layer = VectorLayer.Open(dataDir + "file_without_schema_location.gml", Drivers.Gml, options))
             {
                 foreach (Feature feature in layer)

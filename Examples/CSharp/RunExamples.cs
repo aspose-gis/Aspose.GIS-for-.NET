@@ -94,7 +94,8 @@ namespace Aspose.GIS.Examples.CSharp
             //GetFeatureCountInLayer.Run();
             //GetInformationAboutLayerAttributes.Run();
             //IterateOverFeaturesInLayer.Run();
-            //GetValueOfAFeatureAttribute.Run();      
+            //GetValueOfAFeatureAttribute.Run();
+            //GetValuesOfAFeatureAttribute.Run();
             //FilterFeaturesByAttributeValue.Run();
             //ExtractFeaturesFromShapeFileToGeoJSON.Run();
             //SpecifyAttributeValueLength.Run();
