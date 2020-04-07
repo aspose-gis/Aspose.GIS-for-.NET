@@ -13,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Aspose.Gis.Formats.GeoJson;
+using Aspose.Gis.Formats.Gml;
 
 namespace Aspose.GIS.Examples.CSharp
 {
@@ -111,6 +112,7 @@ namespace Aspose.GIS.Examples.CSharp
             //ReadFeaturesFromOSMXML.Run();
             //GetValueOrDefaultOfFeature.Run();
             //ReadingESRIFileGeoDatabaseFileGDB.Run();
+            //InteractWithRasterFormats.Run();
 
             //AddLayerToFileGdbDataset.Run();
             //RemoveLayersFromFileGdbDataset.Run();
