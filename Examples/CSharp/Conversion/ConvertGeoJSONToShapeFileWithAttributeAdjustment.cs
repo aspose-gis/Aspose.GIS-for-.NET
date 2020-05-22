@@ -25,16 +25,24 @@ namespace Aspose.GIS.Examples.CSharp.Conversion
         //ExStart: AttributesConverterExample
         private class AttributesConverterExample : IAttributesConverter
         {
-            public void ModifyAttribute(FeatureAttribute attribute)
+            public void ModifyAttribute(FeatureAttribute attribute, AttributesConverterActions actions)
             {
                 switch (attribute.Name)
                 {
                     case "name":
+                        // rename and adjust width
+                        attribute.Name = "nickname";
                         attribute.Width = 10;
                         break;
                     case "age":
+                        // change type and adjust width
+                        attribute.DataType = AttributeDataType.String;
                         attribute.Width = 3;
                         attribute.Precision = 0;
+                        break;
+                    case "dob":
+                        // exclude attribute from destination file.
+                        actions.Exclude = true;
                         break;
                 }
             }
