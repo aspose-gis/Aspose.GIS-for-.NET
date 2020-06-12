@@ -75,20 +75,6 @@ Aspose.GIS for .NET API's uniform model is based on 100% managed code. This API 
 
 Are you ready to give Aspose.GIS for .NET a try? Simply execute `Install-Package Aspose.GIS` from Package Manager Console in Visual Studio to fetch the NuGet package. If you already have Aspose.GIS for .NET and want to upgrade the version, please execute `Update-Package Aspose.GIS` to get the latest version.
 
-### How to Run the Examples
-
-- You can either clone the repository using your favorite GitHub client or download the ZIP file from here.
-- Extract the contents of the ZIP file to any folder on your computer. All the examples are located in the Examples folder.
-- There is a Visual Studio solution file, Aspose.GIS.Examples.CSharp.sln in the folder.
-- The project is created in Visual Studio 2013, but the solution file is compatible with Visual Studio 2010 SP1 and higher.
-- Open the solution file in Visual Studio and build the project.
-- On the first run, the dependencies will automatically be downloaded via NuGet.
-- Data folder at the root folder of Examples contains input files used in code examples. It is mandatory that you download the Data folder along with the examples project.
-- Open RunExamples.cs file, all the examples are called from here.
-- Uncomment the examples you want to run from within the project.
-
-Please find more details for how to run the examples [here](https://docs.aspose.com/display/gisnet/How+to+Run+the+Examples).
-
 
 ## Convert a Shapefile to GeoJSON Format with C#
 
