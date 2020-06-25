@@ -2,13 +2,13 @@
 
 [Aspose.GIS for .NET](https://products.aspose.com/gis/net) enables you to access & manipulate geographic information from vector based geospatial data formats. You can read, write & convert most popular GIS file formats such as Shapefile & GeoJSON from within your .NET applications without requiring any additional tools or software.
 
-This repository contains [Demos](Demos), [Examples](Examples) and [Showcases](Showcases) for [Aspose.GIS for .NET](https://products.aspose.com/gis/net) to help you learn and write your own applications.
-
 <p align="center">
 <a title="Download complete Aspose.GIS for .NET source code" href="https://github.com/aspose-gis/Aspose.gis-for-.NET/archive/master.zip">
 	<img src="https://raw.github.com/AsposeExamples/java-examples-dashboard/master/images/downloadZip-Button-Large.png" />
   </a>
 </p>
+
+This repository contains [Demos](Demos), [Examples](Examples) and [Showcases](Showcases) for [Aspose.GIS for .NET](https://products.aspose.com/gis/net) to help you learn and write your own applications.
 
 Directory | Description
 --------- | -----------
