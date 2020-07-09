@@ -113,6 +113,7 @@ namespace Aspose.GIS.Examples.CSharp
             //GetValueOrDefaultOfFeature.Run();
             //ReadingESRIFileGeoDatabaseFileGDB.Run();
             //InteractWithRasterFormats.Run();
+            //WarpRasterFormats.Run();
 
             //AddLayerToFileGdbDataset.Run();
             //RemoveLayersFromFileGdbDataset.Run();
@@ -155,6 +156,7 @@ namespace Aspose.GIS.Examples.CSharp
             //RenderMap.Run();
             //ImportSld.Run();
             //LabelMap.Run();
+            //RenderRasterFormats.Run();
             #endregion
 
             #region Spatial Reference System

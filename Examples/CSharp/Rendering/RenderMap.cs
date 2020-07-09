@@ -3,7 +3,6 @@ using Aspose.Gis.Rendering;
 using Aspose.Gis.Rendering.Symbolizers;
 using Aspose.Gis.SpatialReferencing;
 using Aspose.GIS.Examples.CSharp;
-using System;
 using System.Drawing;
 
 namespace Aspose.GIS_for.NET.Rendering

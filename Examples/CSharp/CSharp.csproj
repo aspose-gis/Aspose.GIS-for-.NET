@@ -107,6 +107,7 @@
     <Compile Include="Layers\SpecifyNamesOfObjectIdAndGeometryFields.cs" />
     <Compile Include="Layers\SpecifyTolerancesForFileGdbLayer.cs" />
     <Compile Include="Layers\SpecifyPrecisionGridForFileGdbLayer.cs" />
+    <Compile Include="Layers\WarpRasterFormats.cs" />
     <Compile Include="Layers\WriteFeaturesToTopoJson.cs" />
     <Compile Include="Layers\AccessFeaturesInTopoJson.cs" />
     <Compile Include="Geometries\CountGeometriesInGeometry.cs" />
@@ -151,6 +152,7 @@
     <Compile Include="Geometries\ReducePrecisionOfAGeometry.cs" />
     <Compile Include="Rendering\ImportSld.cs" />
     <Compile Include="Rendering\LabelMap.cs" />
+    <Compile Include="Rendering\RenderRasterFormats.cs" />
     <Compile Include="SpatialReferencingSystem\CreateFromEpsgCode.cs" />
     <Compile Include="SpatialReferencingSystem\SetSpatialReferenceSystemForGeometry.cs" />
     <Compile Include="Layers\AddLayerToFileGdbDataset.cs" />
