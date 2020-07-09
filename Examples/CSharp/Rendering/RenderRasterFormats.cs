@@ -15,7 +15,7 @@ namespace Aspose.GIS_for.NET.Rendering
         {
             // Note: a license is required to run this example. 
             // You can request a 30-day temporary license here: https://purchase.aspose.com/temporary-license
-            var pathToLicenseFile = @"W:\prj\aspose\gis.net\testdata\licensing\Aspose.GIS.lic"; // <- change this to the path to your license file
+            var pathToLicenseFile = @""; // <- change this to the path to your license file
             if (!string.IsNullOrEmpty(pathToLicenseFile))
             {
                 var license = new License();
