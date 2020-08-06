@@ -139,6 +139,8 @@ namespace Aspose.GIS.Examples.CSharp
             //InteractWithPostGisDatabase.Run();
             //InteractWithSqlServerDatabase.Run();
 
+            //ReadTilesFromXyzFormat.Run();
+
             #endregion
 
             #region Conversion
