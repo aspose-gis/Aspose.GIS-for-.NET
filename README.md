@@ -37,19 +37,19 @@ Directory | Description
 
 ## Read & Write GIS Formats
 
-**ESRI Shapefile:** SHP, SHX, DBF
-**GeoJSON:** JSON, GeoJSON
-**TopoJSON:** JSON, TopoJSON
-**ESRI File Geodatabase:** GDB
+**ESRI Shapefile:** SHP, SHX, DBF\
+**GeoJSON:** JSON, GeoJSON\
+**TopoJSON:** JSON, TopoJSON\
+**ESRI File Geodatabase:** GDB\
 **Google Earth:** KML
 
 ## Read GIS Formats
 
-**Geography Markup Language:** GML
-**GPS Exchange Format:** GPX
-**MapInfo Interchange Format:** MIF
-**MapInfo Tab Format:** TAB, DAT, DBF
-**OpenStreetMap:** OSM
+**Geography Markup Language:** GML\
+**GPS Exchange Format:** GPX\
+**MapInfo Interchange Format:** MIF\
+**MapInfo Tab Format:** TAB, DAT, DBF\
+**OpenStreetMap:** OSM\
 **Other:** GeoTIFF, ESRI ASCII
 
 ## Render GIS Files As Images
