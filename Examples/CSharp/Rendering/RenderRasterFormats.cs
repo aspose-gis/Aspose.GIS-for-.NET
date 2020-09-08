@@ -76,6 +76,14 @@ namespace Aspose.GIS_for.NET.Rendering
             // ExStart: DrawPolarRasterExtent
             string filesPath = RunExamples.GetDataDir();
 
+            // make own multi colorizer it works faster than auto-detection
+            var colorizer = new MultiBandColor()
+            {
+                RedBand = new BandColor() { BandIndex = 0, Min = 0, Max = 255 },
+                GreenBand = new BandColor() { BandIndex = 1, Min = 0, Max = 255 },
+                BlueBand = new BandColor() { BandIndex = 2, Min = 0, Max = 255 }
+            };
+
             using (var map = new Map(500, 500))
             {
                 // setup the polar extent and coordinate system (gnomonic spatial reference)
@@ -83,15 +91,10 @@ namespace Aspose.GIS_for.NET.Rendering
                 map.Extent = new Extent(-180, 60, 180, 90) { SpatialReferenceSystem = SpatialReferenceSystem.Wgs84 };
                 map.BackgroundColor = Color.Azure;
 
+                // open geo-tiff
                 var layer = Drivers.GeoTiff.OpenLayer(Path.Combine(filesPath, "raster_countries.tif"));
 
-                // make gray colorizer
-                var colorizer = new MultiBandColor()
-                {
-                    RedBand = new BandColor() { BandIndex = 0, Min = 0, Max = 255 },
-                    GreenBand = new BandColor() { BandIndex = 0, Min = 0, Max = 255 },
-                    BlueBand = new BandColor() {BandIndex = 0, Min = 0, Max = 255}
-                };
+                // draw
                 map.Add(layer, colorizer);
                 map.Render(filesPath + "raster_countries_gnomonic_out.png", Renderers.Png);
             }

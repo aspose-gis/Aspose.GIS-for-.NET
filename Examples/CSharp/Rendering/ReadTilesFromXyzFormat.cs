@@ -39,11 +39,12 @@ namespace Aspose.GIS_for.NET.Rendering
             // ExStart: OpenStreetXyzTile
             var mapPath = Path.Combine(RunExamples.GetDataDir(), "out_osm_tile.png");
 
+            // we use the osm tile server
             string url = "http://tile.openstreetmap.org/{z}/{x}/{y}.png";
             using (var layer = Drivers.XyzTiles.OpenLayer(new XyzConnection(url)))
             {
                 // print tile info
-                var tile = layer.GetTile(0, 0, 0);
+                var tile = layer.GetTile(2, 3, 1);
                 Console.WriteLine($"CellX: {tile.CellX}, CellY: {tile.CellY}" );
                 Console.WriteLine($"Path: {tile.AsPath()}");
 
@@ -65,12 +66,13 @@ namespace Aspose.GIS_for.NET.Rendering
             // ExStart: OpenStreetXyzTiles
             var mapPath = Path.Combine(RunExamples.GetDataDir(), "out_osm_tiles.png");
 
+            // we use the osm tile server
             string url = "http://tile.openstreetmap.org/{z}/{x}/{y}.png";
             using (var layer = Drivers.XyzTiles.OpenLayer(new XyzConnection(url)))
             {
                 // print tiles info
-                var extent = new Extent(-180, -85, 180, 85) {SpatialReferenceSystem = SpatialReferenceSystem.Wgs84};
-                var tiles = layer.GetTiles(1, extent).ToList();
+                var extent = new Extent(-90, -40, 90, 40) {SpatialReferenceSystem = SpatialReferenceSystem.Wgs84};
+                var tiles = layer.GetTiles(2, extent).ToList();
 
                 // render tiles
                 var resampling = new RasterMapResampling() { Height = 800, Width = 800 };

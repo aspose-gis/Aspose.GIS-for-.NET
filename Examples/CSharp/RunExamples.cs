@@ -1,19 +1,7 @@
-﻿using Aspose.Gis;
-using Aspose.GIS.Examples.CSharp.Conversion;
-using Aspose.GIS.Examples.CSharp.Geometries;
-using Aspose.GIS.Examples.CSharp.Layers;
-using Aspose.GIS_for.NET.Geometries;
-using Aspose.GIS_for.NET.Layers;
-using Aspose.GIS_for.NET.Rendering;
-using Aspose.GIS_for.NET.SpatialReferencingSystem;
+﻿using Aspose.GIS_for.NET.Rendering;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Aspose.Gis.Formats.GeoJson;
-using Aspose.Gis.Formats.Gml;
+
 
 namespace Aspose.GIS.Examples.CSharp
 {

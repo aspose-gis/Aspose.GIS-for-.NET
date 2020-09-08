@@ -4,6 +4,7 @@ using Aspose.Gis.Rendering.Symbolizers;
 using Aspose.Gis.SpatialReferencing;
 using Aspose.GIS.Examples.CSharp;
 using System.Drawing;
+using System.Linq;
 
 namespace Aspose.GIS_for.NET.Rendering
 {
@@ -15,7 +16,7 @@ namespace Aspose.GIS_for.NET.Rendering
         {
             // Note: a license is required to run this example. 
             // You can request a 30-day temporary license here: https://purchase.aspose.com/temporary-license
-            var pathToLicenseFile = ""; // <- change this to the path to your license file
+            var pathToLicenseFile = @""; // <- change this to the path to your license file
             if (!string.IsNullOrEmpty(pathToLicenseFile))
             {
                 var license = new License();
@@ -47,6 +48,8 @@ namespace Aspose.GIS_for.NET.Rendering
             RuleBasedRendering();
 
             GeometryGenerator();
+
+            ClusterMarkerSymbolizer();
         }
 
         public static void RenderWithDefaultSettings()
@@ -193,6 +196,42 @@ namespace Aspose.GIS_for.NET.Rendering
                 map.Render(dataDir + "raster_marker_out.svg", Renderers.Svg);
             }
             //ExEnd: RasterImageMarkerSymbolizer
+        }
+
+        public static void ClusterMarkerSymbolizer()
+        {
+            //ExStart: ClusterMarkerSymbolizer
+            using (var map = new Map(500, 300))
+            {
+                // take only part of the word
+                map.Extent = new Extent(-100, -60, 100, 60){SpatialReferenceSystem = SpatialReferenceSystem.Wgs84};
+
+                // use difference colors for nested cluster points.
+                Color[] colors = new Color[] { Color.Green, Color.Aquamarine, Color.Gold, Color.Fuchsia, Color.Red, Color.Blue, Color.Brown, Color.Thistle, Color.Cyan, };
+                var count = 0;
+
+                // create a cluster symbolizer and setup a cluster size
+                var symbolizer = new MarkerCluster(Measurement.Pixels(15))
+                {
+                    // use own a style for each a cluster
+                    FeaturesBasedConfiguration = (features, cluster) =>
+                    {
+                        // use more size for more points 
+                        var itemsInCluster = features.Count();
+                        cluster.Marker = new SimpleMarker() {FillColor = Color.Red, Size = 3 + itemsInCluster % 10};
+
+                        // allow draw inner cluster points (by default is none)
+                        cluster.NestedMarker = new SimpleMarker() {FillColor = colors[count % colors.Length], Size = 3, StrokeStyle = StrokeStyle.None };
+                        count++;
+                    },
+                };
+
+                map.Add(VectorLayer.Open(dataDir + "land.shp", Drivers.Shapefile));
+                map.Add(VectorLayer.Open(dataDir + "places.shp", Drivers.Shapefile), symbolizer);
+                map.Padding = 20;
+                map.Render(dataDir + "out_cluster_countries.svg", Renderers.Svg);
+            }
+            //ExEnd: ClusterMarkerSymbolizer
         }
 
         #endregion
