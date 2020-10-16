@@ -2,6 +2,7 @@
 using Aspose.Gis.Formats.Shapefile;
 using Aspose.GIS.Examples.CSharp;
 using System.IO;
+using Aspose.Gis.Geometries;
 
 namespace Aspose.GIS_for.NET.Layers
 {
@@ -13,8 +14,31 @@ namespace Aspose.GIS_for.NET.Layers
         {
             dataDir = RunExamples.GetDataDir();
 
+            AddFeaturesInExistShapeFile();
             ModifyFeaturesInSingleLayer();
             ModifyFeaturesInDataset();
+        }
+
+        private static void AddFeaturesInExistShapeFile()
+        {
+            // -- copy test files, to avoid modification of test data.
+            var fromPath = Path.Combine(RunExamples.GetDataDir(), "point_xyz");
+            var toPath = RunExamples.GetDataDir() + "point_xyz_out";
+            RunExamples.CopyDirectory(fromPath, toPath);
+            // --
+
+            //ExStart: AddFeaturesInExistShapeFile
+            string path = Path.Combine(dataDir, "point_xyz_out", "point_xyz.shp");
+
+            using (var layer = Drivers.Shapefile.EditLayer(path))
+            {
+                var feature = layer.ConstructFeature();
+                feature.SetValue<int>("ID", 5);
+                feature.Geometry = new Point(-5, 5) {Z = 2};
+                layer.Add(feature);
+            }
+
+            //ExEnd: AddFeaturesInExistShapeFile
         }
 
         private static void ModifyFeaturesInSingleLayer()
