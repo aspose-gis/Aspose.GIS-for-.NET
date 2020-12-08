@@ -33,8 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Aspose.GIS, Version=20.10.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aspose.GIS.20.10.0\lib\net47\Aspose.GIS.dll</HintPath>
+    <Reference Include="Aspose.GIS, Version=20.12.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.GIS.20.12.0\lib\net47\Aspose.GIS.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
@@ -100,6 +100,7 @@
     <Compile Include="Layers\InteractWithPostGisDatabase.cs" />
     <Compile Include="Layers\InteractWithSqlServerDatabase.cs" />
     <Compile Include="Layers\ModifyFeatures.cs" />
+    <Compile Include="Layers\AbstractPathDemo.cs" />
     <Compile Include="Layers\ReadFeaturesFromMapInfoInterchange.cs" />
     <Compile Include="Layers\ReadFeaturesFromMapInfoTab.cs" />
     <Compile Include="Layers\ReadGeoJsonFromStream.cs" />
@@ -150,6 +151,7 @@
     <Compile Include="Geometries\LimitPrecisionWhenReadingGeometries.cs" />
     <Compile Include="Geometries\LimitPrecisionWhenWritingGeometries.cs" />
     <Compile Include="Geometries\ReducePrecisionOfAGeometry.cs" />
+    <Compile Include="Layers\ZipPath.cs" />
     <Compile Include="Rendering\ImportSld.cs" />
     <Compile Include="Rendering\LabelMap.cs" />
     <Compile Include="Rendering\RenderRasterFormats.cs" />

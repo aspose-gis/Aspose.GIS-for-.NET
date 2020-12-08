@@ -1,6 +1,7 @@
 ﻿using Aspose.GIS_for.NET.Rendering;
 using System;
 using System.IO;
+using Aspose.GIS.Examples.CSharp.Layers;
 
 
 namespace Aspose.GIS.Examples.CSharp
@@ -158,6 +159,10 @@ namespace Aspose.GIS.Examples.CSharp
             //ExportSpatialReferenceSystemToWKT.Run();
             //SetSpatialReferenceSystemForGeometry.Run();
 
+            #endregion
+
+            #region AbstractPath
+            AbstractPathDemo.Run();
             #endregion
 
             Console.WriteLine("=====================================================");
