@@ -162,7 +162,7 @@ namespace Aspose.GIS.Examples.CSharp
             #endregion
 
             #region AbstractPath
-            AbstractPathDemo.Run();
+            //AbstractPathDemo.Run();
             #endregion
 
             Console.WriteLine("=====================================================");
