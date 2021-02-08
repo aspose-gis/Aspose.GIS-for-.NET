@@ -1,3 +1,5 @@
+![Nuget](https://img.shields.io/nuget/v/Aspose.Gis) ![Nuget](https://img.shields.io/nuget/dt/Aspose.Gis) ![GitHub](https://img.shields.io/github/license/aspose-gis/Aspose.Gis-for-.NET)
+
 # GIS Data Manipulation & Conversion API for .NET
 
 [Aspose.GIS for .NET](https://products.aspose.com/gis/net) API helps developers render maps, read, write & convert geographic information fetched from vector-based geospatial data formats without needing any other GIS software. The GIS .NET API supports working with Shapefile, GeoJSON, ESRI File Geodatabase (FileGDB), Geography Markup Language (GML), Keyhole Markup Language (KML), Scalable Vector Graphics (SVG) and many others.
@@ -12,7 +14,7 @@ It allows to read and write GIS data, [convert GIS file formats](https://docs.as
 
 Directory | Description
 --------- | -----------
-[Demos](Demos)  | Source code for live demos hosted at https://products.aspose.app/gis/family.
+[Demos](Demos)  | Source code for live demos hosted [here](https://products.aspose.app/gis/conversion).
 [Examples](Examples)  | A collection of .NET examples that help you learn the product features.
 [Showcases](Showcases)  | Standalone ready-to-use applications that demonstrate some specific use cases.
 
@@ -32,7 +34,7 @@ Directory | Description
 - Perform complex drawing by combining several symbolizers.
 - Apply layer rendering rules to control feature visual representation.
 - Use value attributes to calculate styling parameters of a feature.
-- Perform vector analysis & [manipulate geometries](https://docs.aspose.com/gis/net/working-with-geometries/).
+- Perform vector analysis & [manipulate geometries](https://docs.aspose.com/gis/net/geometries/).
 - Support for [Spatial Reference Systems](https://docs.aspose.com/gis/net/spatial-reference-systems/).
 
 ## Read & Write GIS Formats
@@ -70,4 +72,4 @@ Are you ready to give Aspose.GIS for .NET a try? Simply execute `Install-Package
 VectorLayer.Convert(dir + "template.shp", Drivers.Shapefile, dir + "output.json", Drivers.GeoJson);
 ```
 
-[Home](https://www.aspose.com/) | [Product Page](https://products.aspose.com/gis/net) | [Docs](https://docs.aspose.com/gis/net/) | [Demos](https://products.aspose.app/gis/family) | [API Reference](https://apireference.aspose.com/gis/net) | [Examples](https://github.com/aspose-gis/Aspose.GIS-for-.NET) | [Blog](https://blog.aspose.com/category/gis/) | [Free Support](https://forum.aspose.com/c/gis) |  [Temporary License](https://purchase.aspose.com/temporary-license)
+[Home](https://www.aspose.com/) | [Product Page](https://products.aspose.com/gis/net) | [Docs](https://docs.aspose.com/gis/net/) | [Demos](https://products.aspose.app/gis/conversion) | [API Reference](https://apireference.aspose.com/gis/net) | [Examples](https://github.com/aspose-gis/Aspose.GIS-for-.NET) | [Blog](https://blog.aspose.com/category/gis/) | [Free Support](https://forum.aspose.com/c/gis) |  [Temporary License](https://purchase.aspose.com/temporary-license)
