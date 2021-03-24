@@ -7,3 +7,4 @@ _out.*
 Examples/*/bin
 Examples/*/obj
 *.user
+*.lic
