@@ -175,7 +175,7 @@
     <Compile Include="Layers\IterateOverFeaturesInLayer.cs" />
     <Compile Include="Layers\ReadFeaturesFromGML.cs" />
     <Compile Include="Layers\ReadFeaturesFromGPX.cs" />
-    <Compile Include="Layers\ReadFeaturesFromKML.cs" />
+    <Compile Include="Layers\KmlLayer.cs" />
     <Compile Include="Layers\ReadFeaturesFromOSMXML.cs" />
     <Compile Include="Layers\ReadingESRIFileGeoDatabaseFileGDB.cs" />
     <Compile Include="Layers\RemoveLayersFromFileGdbDataset.cs" />
