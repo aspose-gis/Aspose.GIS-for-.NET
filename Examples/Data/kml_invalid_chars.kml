@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml><Placemark>
+    <name>VerticalTab0</name>
+    <description><![CDATA[EndofText0]]></description >                
+    <Point><coordinates>1,2</coordinates></Point>
+            </Placemark><Placemark>
+    <name>VerticalTab1</name>
+    <description><![CDATA[EndofText1]]></description >                
+    <Point><coordinates>1,2</coordinates></Point>
+    </Placemark>
+</kml>

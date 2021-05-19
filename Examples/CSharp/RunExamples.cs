@@ -38,6 +38,7 @@ namespace Aspose.GIS.Examples.CSharp
             //IterateOverPointsInGeometry.Run();
             //IterateOverGeometriesInGeometry.Run();
             //GeometryValidation.Run();
+            //GIS_for.NET.Geometries.ConvertCoordinates.Run();
 
             //DetermineIfGeometriesAreSpatiallyEqual.Run();
             //DetermineIfGeometriesIntersect.Run();
@@ -93,11 +94,11 @@ namespace Aspose.GIS.Examples.CSharp
             //GetValueOfNullFeatureAttribute.Run();
             //ModifyFeatures.Run();
             //ConvertPolygonShapeFileToLineStringShapeFile.Run();
-            //CreateKMLFile.Run();
-            //ExportStylePropertiesToKml.Run();
+
+            //GIS_for.NET.Layers.KmlLayer.Run();
+
             //ReadFeaturesFromGML.Run();
             //ReadFeaturesFromGPX.Run();
-            //ReadFeaturesFromKML.Run();
             //ReadFeaturesFromOSMXML.Run();
             //GetValueOrDefaultOfFeature.Run();
             //ReadingESRIFileGeoDatabaseFileGDB.Run();
