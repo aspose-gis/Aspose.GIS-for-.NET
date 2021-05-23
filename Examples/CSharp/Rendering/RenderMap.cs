@@ -4,6 +4,9 @@ using Aspose.Gis.Rendering.Symbolizers;
 using Aspose.Gis.SpatialReferencing;
 using Aspose.GIS.Examples.CSharp;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Text;
+using System.IO;
 using System.Linq;
 
 namespace Aspose.GIS_for.NET.Rendering
@@ -50,6 +53,7 @@ namespace Aspose.GIS_for.NET.Rendering
             GeometryGenerator();
 
             ClusterMarkerSymbolizer();
+            ClusterTextSymbolizer();
         }
 
         public static void RenderWithDefaultSettings()
@@ -232,6 +236,82 @@ namespace Aspose.GIS_for.NET.Rendering
                 map.Render(dataDir + "out_cluster_countries.svg", Renderers.Svg);
             }
             //ExEnd: ClusterMarkerSymbolizer
+        }
+
+        public static void ClusterTextSymbolizer()
+        {
+            //ExStart: ClusterTextSymbolizer
+            using (var map = new Map(500, 300))
+            {
+                // take only part of the word
+                map.Extent = new Extent(-100, -60, 100, 60) { SpatialReferenceSystem = SpatialReferenceSystem.Wgs84 };
+
+                // create a cluster symbolizer and setup a cluster size
+                var clusterSymbolizer = new MarkerCluster(Measurement.Pixels(25))
+                {
+                    // Use own a style for each a cluster
+                    FeaturesBasedConfiguration = (features, cluster) =>
+                    {
+                        var itemsInCluster = features.Count();
+
+                        // First, we create an image with a drawn number for the cluster. This code not optimized of memory using.
+                        // It is better to load prepare pictures from your file system.
+                        var digitText = itemsInCluster.ToString();
+                        Stream memoryStream;
+                        using (Bitmap digitBitmap = new Bitmap(40, 40))
+                        {
+                            using (Graphics graphics = Graphics.FromImage(digitBitmap))
+                            {
+                                // increase text quality
+                                graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                                graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+
+                                if (digitText.Length == 1)
+                                {
+                                    graphics.DrawString(digitText, new Font("Arial", 30, GraphicsUnit.Pixel),
+                                        new SolidBrush(Color.Black), 5, 3);
+                                }
+                                else
+                                {
+                                    graphics.DrawString(digitText, new Font("Arial", 30, GraphicsUnit.Pixel),
+                                        new SolidBrush(Color.Black), -4, 3);
+
+                                }
+
+                                graphics.Flush();
+                            }
+                            // store the bitmap to a stream
+                            memoryStream = new MemoryStream();
+                            digitBitmap.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);
+                        }
+
+                        var pathToDigit = AbstractPath.FromStream(memoryStream);
+
+                        // Secondly, we use RasterImageMarker which renders our image (bitmap). 
+                        var symbolizer = new RasterImageMarker(pathToDigit)
+                        {
+                            Width = Measurement.Pixels(12),
+                            Height = Measurement.Pixels(12),
+                            VerticalAnchorPoint = VerticalAnchor.Center,
+                            HorizontalAnchorPoint = HorizontalAnchor.Center
+                        };
+
+                        // As result, we create a complex symbolizer to join a background circle and the drawn digit.
+                        var complexMarker = new LayeredSymbolizer();
+                        complexMarker.Add(new SimpleMarker() {Size = Measurement.Pixels(16), FillColor = Color.Azure});
+                        complexMarker.Add(symbolizer);
+                        cluster.Marker = complexMarker;
+                    },
+                };
+
+                // add layers with symbolizers
+                map.Padding = 20;
+                map.Add(VectorLayer.Open(dataDir + "land.shp", Drivers.Shapefile), new SimpleLine(){Width = 0.5 });
+                map.Add(VectorLayer.Open(dataDir + "places.shp", Drivers.Shapefile), clusterSymbolizer);
+                // complete our map creation 
+                map.Render(dataDir + "out_cluster_texts.svg", Renderers.Svg);
+            }
+            //ExEnd: ClusterTextSymbolizer
         }
 
         #endregion
