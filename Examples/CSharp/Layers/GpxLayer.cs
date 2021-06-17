@@ -3,27 +3,24 @@ using Aspose.Gis.Formats.Gpx;
 using Aspose.Gis.Geometries;
 using Aspose.GIS.Examples.CSharp;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Aspose.GIS_for.NET.Layers
 {
-    public class ReadFeaturesFromGPX
+    public class GpxLayer
     {
-        static string dataDir = RunExamples.GetDataDir();
-
         public static void Run()
         {
             ReadGPXFeatures();
-
+            WriteGpxPolygonsAsLines();
             //CalculateAverageSpeedOfRoute();
-
         }
 
         private static void ReadGPXFeatures()
         {
+            Console.WriteLine($"== Start Demo: {nameof(ReadGPXFeatures)}");
+            var dataDir = RunExamples.GetDataDir();
+
             //ExStart: ReadGPXFeatures
             using (var layer = Drivers.Gpx.OpenLayer(dataDir + "schiehallion.gpx"))
             {
@@ -65,8 +62,31 @@ namespace Aspose.GIS_for.NET.Layers
             //ExEnd: ReadGPXFeatures
         }
 
+        private static void WriteGpxPolygonsAsLines()
+        {
+            Console.WriteLine($"== Start Demo: {nameof(WriteGpxPolygonsAsLines)}");
+            var dataDir = RunExamples.GetDataDir();
+
+            //ExStart: WriteGpxPolygonsAsLines
+            using (var layer = Drivers.Gpx.CreateLayer(dataDir + "lines_out.gpx", new GpxOptions()
+            {
+                WritePolygonsAsLines = true
+            }))
+            {
+                // The GPX format does not support polygons,
+                // but we use the WritePolygonsAsLines options to resolve this issue.
+                Feature feature = layer.ConstructFeature();
+                feature.Geometry = Geometry.FromText("POLYGON((1 2, 1 4, 3 4, 3 2))");
+                layer.Add(feature);
+            }
+            //ExEnd: WriteGpxPolygonsAsLines
+        }
+
         private static void CalculateAverageSpeedOfRoute()
         {
+            Console.WriteLine($"== Start Demo: {nameof(CalculateAverageSpeedOfRoute)}");
+            var dataDir = RunExamples.GetDataDir();
+
             //ExStart: CalculateAverageSpeedOfRoute
             var options = new GpxOptions { MAttribute = "speed" };
             using (var layer = Drivers.Gpx.OpenLayer(dataDir + "schiehallion.gpx"))

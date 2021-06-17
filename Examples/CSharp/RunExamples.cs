@@ -76,6 +76,7 @@ namespace Aspose.GIS.Examples.CSharp
             //CreateMultiSurface.Run();
             //DetermineIfGeometryHasCurves.Run();
             //LinearizeGeometry.Run();
+            Geometries.ReplacePolygonsByLines.Run();
             //SpecifyLinearizationTolerance.Run();
             #endregion
 
@@ -98,7 +99,8 @@ namespace Aspose.GIS.Examples.CSharp
             //GIS_for.NET.Layers.KmlLayer.Run();
 
             //ReadFeaturesFromGML.Run();
-            //ReadFeaturesFromGPX.Run();
+            //GIS_for.NET.Layers.GpxLayer.Run();
+            //GIS_for.NET.Layers.CsvLayer.Run();
             //ReadFeaturesFromOSMXML.Run();
             //GetValueOrDefaultOfFeature.Run();
             //ReadingESRIFileGeoDatabaseFileGDB.Run();
