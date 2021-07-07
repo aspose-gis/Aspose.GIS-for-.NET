@@ -1,0 +1,3 @@
+title,geom_data,x,y,z,m
+"Geom0","LINESTRING (0 0, 1 1)",1,2,3,4
+"Geom1","LINESTRING (10 10, 5 5)",10,20,,,

@@ -106,6 +106,7 @@ namespace Aspose.GIS.Examples.CSharp
             //ReadingESRIFileGeoDatabaseFileGDB.Run();
             //InteractWithRasterFormats.Run();
             //WarpRasterFormats.Run();
+            CropLayer.Run();
 
             //AddLayerToFileGdbDataset.Run();
             //RemoveLayersFromFileGdbDataset.Run();
