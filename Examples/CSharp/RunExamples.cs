@@ -2,6 +2,7 @@
 using System;
 using System.IO;
 using Aspose.GIS.Examples.CSharp.Layers;
+using Aspose.GIS_for.NET.Layers;
 
 
 namespace Aspose.GIS.Examples.CSharp
@@ -76,7 +77,7 @@ namespace Aspose.GIS.Examples.CSharp
             //CreateMultiSurface.Run();
             //DetermineIfGeometryHasCurves.Run();
             //LinearizeGeometry.Run();
-            Geometries.ReplacePolygonsByLines.Run();
+            //Geometries.ReplacePolygonsByLines.Run();
             //SpecifyLinearizationTolerance.Run();
             #endregion
 
@@ -106,7 +107,8 @@ namespace Aspose.GIS.Examples.CSharp
             //ReadingESRIFileGeoDatabaseFileGDB.Run();
             //InteractWithRasterFormats.Run();
             //WarpRasterFormats.Run();
-            CropLayer.Run();
+            //CropLayer.Run();
+            //JoinedLayer.Run();
 
             //AddLayerToFileGdbDataset.Run();
             //RemoveLayersFromFileGdbDataset.Run();
