@@ -109,6 +109,7 @@ namespace Aspose.GIS.Examples.CSharp
             //WarpRasterFormats.Run();
             //CropLayer.Run();
             //JoinedLayer.Run();
+            //EditLayer.Run();
 
             //AddLayerToFileGdbDataset.Run();
             //RemoveLayersFromFileGdbDataset.Run();
