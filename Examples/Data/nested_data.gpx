@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<gpx version='1.0'>
+ <trk>
+  <name>track</name>
+  <trkseg>
+   <trkpt lon='0' lat='0' />
+   <trkpt lon='1' lat='1'>
+    <geoidheight>1</geoidheight>
+    <name>track point A</name>
+   </trkpt>
+   <trkpt lon='2' lat='2' />
+   <trkpt lon='3' lat='3' />
+  </trkseg>
+  <trkseg></trkseg>
+  <trkseg/>
+  <trkseg>
+   <trkpt lon='10' lat='10'></trkpt>
+   <trkpt lon='11' lat='11'>
+    <name>track point B</name>
+    <extensions>
+      <attribute>2</attribute>
+    </extensions>
+   </trkpt>
+   <trkpt lon='12' lat='12'></trkpt>
+   <trkpt lon='13' lat='13' />
+  </trkseg>
+ </trk>
+</gpx>

@@ -12,6 +12,7 @@ namespace Aspose.GIS_for.NET.Layers
         public static void Run()
         {
             ReadGPXFeatures();
+            ReadGPXNestedAttributes();
             WriteGpxPolygonsAsLines();
             //CalculateAverageSpeedOfRoute();
         }
@@ -60,6 +61,57 @@ namespace Aspose.GIS_for.NET.Layers
                 }
             }
             //ExEnd: ReadGPXFeatures
+        }
+
+        private static void ReadGPXNestedAttributes()
+        {
+            Console.WriteLine($"== Start Demo: {nameof(ReadGPXNestedAttributes)}");
+            var dataDir = RunExamples.GetDataDir();
+
+            //ExStart: ReadGPXNestedAttributes
+            // specify option
+            GpxOptions options = new GpxOptions()
+            {
+                ReadNestedAttributes = true
+            };
+            
+            // open GPX layer to read features
+            using (var layer = Drivers.Gpx.OpenLayer(dataDir + "nested_data.gpx", options))
+            {
+                foreach (var feature in layer)
+                {
+                    if (feature.Geometry.GeometryType == GeometryType.MultiLineString)
+                    {
+                        // read segment
+                        var lines = (MultiLineString) feature.Geometry;
+                        for (int i = 0; i < lines.Count; i++)
+                        {
+                            Console.WriteLine($"....segment({i})......");
+                            var segment = (LineString)lines[i];
+
+                            // read points in segment
+                            for (int j = 0; j < segment.Count; j++)
+                            {
+                                // look for attribute
+                                string attributeName = $"name__{i}__{j}";
+                                if (layer.Attributes.Contains(attributeName) && feature.IsValueSet(attributeName))
+                                {
+                                    // print a point and attribute
+                                    var value = feature.GetValue<string>(attributeName);
+                                    Console.WriteLine($"{segment[j].AsText()} - {attributeName}: {value}, ");
+                                }
+                                else
+                                {
+                                    // print a point only
+                                    Console.WriteLine(segment[j].AsText());
+                                }
+                            }
+                        }
+                        Console.WriteLine("..........");
+                    }
+                }
+            }
+            //ExEnd: ReadGPXNestedAttributes
         }
 
         private static void WriteGpxPolygonsAsLines()
