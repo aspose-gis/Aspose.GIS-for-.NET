@@ -14,10 +14,10 @@ namespace Geo.Geometry.Viewer
     /// </summary>
     class GeometryOutput
     {
-		/// <summary>
-		/// Puts the passed geometry in a file
-		/// </summary>
-		public static void DisplayOnMap(IGeometry geometryObj, string fileName = "test", float mapSize = 500)
+	/// <summary>
+	/// Puts the passed geometry in a file
+	/// </summary>
+	public static void DisplayOnMap(IGeometry geometryObj, string fileName = "test", float mapSize = 500)
         {
             /// Creates an InMemory layer to store the geometry
             using (var layer = Drivers.InMemory.CreateLayer())
@@ -31,9 +31,7 @@ namespace Geo.Geometry.Viewer
                     map.Add(layer);
                     map.Render(pathString, Renderers.Svg);
                 }
-
             }
-
         }
     }
 }
