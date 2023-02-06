@@ -26,23 +26,7 @@ namespace Geo.Geometry.Viewer
                 feature.Geometry = geometryObj;
                 layer.Add(feature);
 
-				///The final layer is displayed and stored in the file of one of the supported format variants
-				string pathString = fileName + ".svg";
-				if (!System.IO.File.Exists(pathString))
-				{
-					using (System.IO.FileStream fs = System.IO.File.Create(pathString))
-					{
-						for (byte i = 0; i < 100; i++)
-						{
-							fs.WriteByte(i);
-						}
-					}
-				}
-				else
-				{
-					Console.WriteLine("File \"{0}\" already exists.", fileName);
-				}
-				using (var map = new Map(mapSize, mapSize))
+		using (var map = new Map(mapSize, mapSize))
                 {
                     map.Add(layer);
                     map.Render(pathString, Renderers.Svg);
