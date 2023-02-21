@@ -1,0 +1,38 @@
+﻿@page "/"
+@using Aspose.Gis.Geometries;
+@using Aspose.Gis.GeoTools;
+
+<PageTitle>Index</PageTitle>
+
+<div class="container">
+    <div class="row justify-content-between">
+        <div class="col">
+            <button type="button" class="btn btn-light" @onclick="presenter.ToolCloseLinearRing">CloseLinearRing</button> <br />
+            <button type="button" class="btn btn-light" @onclick="presenter.ToolCreateMidpoints">CreateMidpoints</button> <br />
+            <button type="button" class="btn btn-light" @onclick="presenter.ToolDeleteNearPoints">DeleteNearPoints</button> <br />
+            <button type="button" class="btn btn-light" @onclick="presenter.ToolSimplifySegments">SimplifySegments</button>
+        </div>
+        <div class="col-6">
+            <div id="display">
+                @presenter.SelectedWkt
+            </div>
+        </div>
+        <div class="col-sm-1">
+            <div class="verticalLine tools"></div>
+        </div>
+        <div class="col">
+            <ul id="modifiers">
+                @for (int i = 0; i < presenter.Titles.Length; i++)
+                {
+                    var local = i;
+                    <li @onclick="() => { presenter.SelectedIndex = local;}">@presenter.Titles[i]</li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+@code {
+    GeometryToolsPresenter presenter = new();
+}
