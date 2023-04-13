@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Geo.Advanced.Viewer\Geo.Advanced.Viewer.csproj" />
+    <ProjectReference Include="..\Geo.Coordinates.Convert\Geo.Coordinates.Convert.csproj" />
+    <ProjectReference Include="..\Geo.Coordinates.Transformation\Geo.Coordinates.Transformation.csproj" />
+    <ProjectReference Include="..\Geo.Layers.Conversion\Geo.Layers.Conversion.csproj" />
+    <ProjectReference Include="..\Geo.Map.Generator\Geo.Map.Generator.csproj" />
+    <ProjectReference Include="..\Geo.Viewer\Geo.Viewer.WPF.csproj" />
+  </ItemGroup>
+
+</Project>

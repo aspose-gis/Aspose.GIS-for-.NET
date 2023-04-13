@@ -1,0 +1,77 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Photos\20230402_162019.jpg" />
+    <None Remove="Photos\20230402_162253_best.jpg" />
+    <None Remove="Photos\20230402_162438.jpg" />
+    <None Remove="Photos\20230402_162901.jpg" />
+    <None Remove="Photos\20230402_163412.jpg" />
+    <None Remove="Photos\20230402_164044_best.jpg" />
+    <None Remove="Photos\20230402_164454.jpg" />
+    <None Remove="Photos\20230402_164728.jpg" />
+    <None Remove="Photos\20230402_165350.jpg" />
+    <None Remove="Photos\20230402_165817_best.jpg" />
+    <None Remove="Photos\20230402_170347.jpg" />
+    <None Remove="Photos\20230402_170529.jpg" />
+    <None Remove="Photos\20230402_170721.jpg" />
+    <None Remove="Photos\20230402_171432.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Photos\20230402_162019.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Photos\20230402_162253_best.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Photos\20230402_162438.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Photos\20230402_162901.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Photos\20230402_163412.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Photos\20230402_164044_best.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Photos\20230402_164454.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Photos\20230402_164728.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Photos\20230402_165350.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Photos\20230402_165817_best.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Photos\20230402_170347.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Photos\20230402_170529.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Photos\20230402_170721.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Photos\20230402_171432.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspose.GIS" Version="23.3.0" />
+    <PackageReference Include="ExifLib.Standard" Version="1.7.0" />
+  </ItemGroup>
+
+</Project>

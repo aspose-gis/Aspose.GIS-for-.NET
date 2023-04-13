@@ -1,0 +1,26 @@
+﻿<Window x:Class="Geo.Demo.Run.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Geo.Demo.Run"
+        mc:Ignorable="d"
+        Title="PanelDemoHub" Height="450" Width="800">
+    <DockPanel x:Name="MyPanel">
+        <Border  DockPanel.Dock="Top">
+            <TextBlock/>
+        </Border>
+        <Border Background="Orange" DockPanel.Dock="Left" Width="300">
+            <ListBox x:Name="DemoList">
+                <ListBoxItem Content="{Binding Path=Title}"></ListBoxItem>
+            </ListBox>
+        </Border>
+        <Border Background="Blue" DockPanel.Dock="Bottom" Height="100">
+            <Button Content="Launch" Click="LaunchButton_Click" FontSize="18px" />
+        </Border>
+        <Border Background="WhiteSmoke" >
+            <TextBlock x:Name="myDescription" HorizontalAlignment="Left"
+           TextWrapping="Wrap" Margin="10" />
+        </Border>
+    </DockPanel>
+</Window>

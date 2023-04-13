@@ -1,0 +1,33 @@
+﻿<Window x:Class="Geo.Map.Generator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Geo.Map.Generator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="460" Width="800">
+    <DockPanel x:Name="MyPanel">
+        <Border  DockPanel.Dock="Top">
+            <TextBlock/>
+        </Border>
+        <Border Background="WhiteSmoke" DockPanel.Dock="Top" Height="335">
+            <Image x:Name="pOutput" HorizontalAlignment="Center" Margin="10" />
+        </Border>
+        
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Height="52" Width="795">
+            <Border Background="Blue" Width="266">
+                <Button Content="RandomPoints" Click="MapPoints_Click" FontSize="18px" />
+            </Border>
+            <Border Background="Blue" Width="267">
+                <Button Content="RandomPolygons" Click="MapPolygons_Click" FontSize="18px" />
+            </Border>
+            <Border Background="Blue" Width="267">
+                <Button Content="RandomLines" Click="MapLines_Click" FontSize="18px" />
+            </Border>
+        </StackPanel>
+        <TextBlock HorizontalAlignment="Center">Input sample amount</TextBlock>
+        <Border Background="WhiteSmoke" DockPanel.Dock="Bottom" Height="25px">
+            <TextBox PreviewTextInput="PreviewTextInput" x:Name="objsCount"></TextBox>
+        </Border>
+    </DockPanel>
+</Window>
