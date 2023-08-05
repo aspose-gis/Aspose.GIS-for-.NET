@@ -17,6 +17,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Geo.Advanced.Viewer", "Geo.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Geo.Map.Generator", "Geo.Map.Generator\Geo.Map.Generator.csproj", "{1B8BEF90-E9E9-47E9-97AC-AE4E5B5AB10E}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Geo.Rasters.Viewer", "Geo.Rasters.Viewer\Geo.Rasters.Viewer.csproj", "{92240CA4-0183-4E7D-AD5B-7955EAE547AB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Geo.Epsg.Viewer", "Geo.Epsg.Viewer\Geo.Epsg.Viewer.csproj", "{17F69DFA-C390-4CF2-B6A5-953164580C21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{1B8BEF90-E9E9-47E9-97AC-AE4E5B5AB10E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B8BEF90-E9E9-47E9-97AC-AE4E5B5AB10E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B8BEF90-E9E9-47E9-97AC-AE4E5B5AB10E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92240CA4-0183-4E7D-AD5B-7955EAE547AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92240CA4-0183-4E7D-AD5B-7955EAE547AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92240CA4-0183-4E7D-AD5B-7955EAE547AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92240CA4-0183-4E7D-AD5B-7955EAE547AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17F69DFA-C390-4CF2-B6A5-953164580C21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17F69DFA-C390-4CF2-B6A5-953164580C21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17F69DFA-C390-4CF2-B6A5-953164580C21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17F69DFA-C390-4CF2-B6A5-953164580C21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

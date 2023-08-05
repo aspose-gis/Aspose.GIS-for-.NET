@@ -8,12 +8,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Data\sample.asc" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Data\sample.asc" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Geo.Advanced.Viewer\Geo.Advanced.Viewer.csproj" />
     <ProjectReference Include="..\Geo.Coordinates.Convert\Geo.Coordinates.Convert.csproj" />
     <ProjectReference Include="..\Geo.Coordinates.Transformation\Geo.Coordinates.Transformation.csproj" />
+    <ProjectReference Include="..\Geo.Epsg.Viewer\Geo.Epsg.Viewer.csproj" />
     <ProjectReference Include="..\Geo.Layers.Conversion\Geo.Layers.Conversion.csproj" />
     <ProjectReference Include="..\Geo.Map.Generator\Geo.Map.Generator.csproj" />
+    <ProjectReference Include="..\Geo.Rasters.Viewer\Geo.Rasters.Viewer.csproj" />
     <ProjectReference Include="..\Geo.Viewer\Geo.Viewer.WPF.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Maps\" />
   </ItemGroup>
 
 </Project>

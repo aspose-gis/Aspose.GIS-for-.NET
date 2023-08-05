@@ -15,6 +15,8 @@ namespace Geo.Demo.Run
             Projects.Add(new LayerConvertor());
             Projects.Add(new CoordinatesConvertor());
             Projects.Add(new CoordinatesTransformer());
+            Projects.Add(new RastersViewer());
+            Projects.Add(new EpsgViewer());
         }
 
         public IDemoProject GetProjectByTitle(string title)
@@ -33,5 +35,7 @@ namespace Geo.Demo.Run
         public class LayerConvertor : Layers.Conversion.ProjectInfo, IDemoProject { }        
         public class CoordinatesConvertor : Coordinates.Convert.ProjectInfo, IDemoProject { }
         public class CoordinatesTransformer : Coordinates.Transformation.ProjectInfo, IDemoProject { }
+        public class RastersViewer : Rasters.Viewer.ProjectInfo, IDemoProject { }
+        public class EpsgViewer : Epsg.Viewer.ProjectInfo, IDemoProject { }
     }    
 }
