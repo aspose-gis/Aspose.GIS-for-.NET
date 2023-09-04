@@ -22,42 +22,26 @@ namespace Geo.Map.Generator
         {
             InitializeComponent();
         }
+
+        ProjectPresenter _projectPresenter = new();
        
         private void MapPoints_Click(object sender, RoutedEventArgs e)
         {
-            var geometries = GeoGenerator.ProducePoints(new Extent(0, 0, 100, 100),
-                        new PointGeneratorOptions()
-                        {
-                            Count = CheckInput(),
-                            Place = GeneratorPlaces.Random
-                        });
-            var current = geometries.ToList<IGeometry>();
+            var current = _projectPresenter.MapPoints(CheckInput());
 
             ShowMap(current);
         }
 
         private void MapPolygons_Click(object sender, RoutedEventArgs e)
         {
-            var geometries = GeoGenerator.ProducePolygons(new Extent(0, 0, 100, 100),
-                        new PolygonGeneratorOptions()
-                        {
-                            Count = CheckInput(),
-                            Place = GeneratorPlaces.Random
-                        });
-            var current = geometries.ToList<IGeometry>();
+            var current = _projectPresenter.MapPolygons(CheckInput());
 
             ShowMap(current);
         }
 
         private void MapLines_Click(object sender, RoutedEventArgs e)
         {
-            var geometries = GeoGenerator.ProduceLines(new Extent(0, 0, 100, 100),
-            new LineGeneratorOptions()
-            {
-                Count = CheckInput(),
-                Place = GeneratorPlaces.Random
-            });
-            var current = geometries.ToList<IGeometry>();
+            var current = _projectPresenter.MapLines(CheckInput());
 
             ShowMap(current);
         }

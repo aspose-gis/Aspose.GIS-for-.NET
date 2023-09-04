@@ -21,6 +21,8 @@ namespace Geo.Coordinates.Transformation
     /// </summary>
     public partial class MainWindow : Window
     {
+        private ProjectPresenter _projectPresenter = new ProjectPresenter();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -28,26 +30,8 @@ namespace Geo.Coordinates.Transformation
 
         private void LaunchButton_Click(object sender, RoutedEventArgs e)
         {
-            var output = new StringBuilder();
-            output.AppendLine("START").AppendLine();
-
-            // Source and destination SRS
-            var utm32N = SpatialReferenceSystem.CreateFromEpsg(32632);
-            var latLong = SpatialReferenceSystem.CreateFromEpsg(4326);
-            var transformation = utm32N.CreateTransformationTo(latLong);
-
-            // Transform geometry
-            var utmPoint = new Aspose.Gis.Geometries.Point(510000, 7042000);
-            var geoPoint = transformation.Transform(utmPoint) as Aspose.Gis.Geometries.Point;
-
-            // Write result
-            output.AppendLine("UTM Easting: " + utmPoint.X);
-            output.AppendLine("UTM Northing: " + utmPoint.Y);
-            output.AppendLine("Longitude: " + geoPoint.X);
-            output.AppendLine("Latitude: " + geoPoint.Y);
-
-            output.AppendLine().AppendLine("OK");
-            pOutput.Text = output.ToString();
+            var report = _projectPresenter.TransformAndReport();
+            pOutput.Text = report.ToString();
         }
     }
 }

@@ -12,11 +12,14 @@ namespace Geo.Demo.Run
             Projects.Add(new AdvancedViewer());            
             Projects.Add(new DemoGeometryListViewer());
             Projects.Add(new MapGenerator());
+            Projects.Add(new MapRendering());
             Projects.Add(new LayerConvertor());
             Projects.Add(new CoordinatesConvertor());
             Projects.Add(new CoordinatesTransformer());
             Projects.Add(new RastersViewer());
             Projects.Add(new EpsgViewer());
+            Projects.Add(new FeaturesEditor());
+            Projects.Add(new MLayerEditor());
         }
 
         public IDemoProject GetProjectByTitle(string title)
@@ -30,12 +33,15 @@ namespace Geo.Demo.Run
         }
 
         public class AdvancedViewer : Advanced.Viewer.ProjectInfo, IDemoProject { }
-        public class DemoGeometryListViewer : DemoGeometryViewer, IDemoProject { }        
+        public class DemoGeometryListViewer : ProjectInfo, IDemoProject { }        
         public class MapGenerator : Map.Generator.ProjectInfo, IDemoProject { }
+        public class MapRendering : Map.Rendering.ProjectInfo, IDemoProject { }
         public class LayerConvertor : Layers.Conversion.ProjectInfo, IDemoProject { }        
         public class CoordinatesConvertor : Coordinates.Convert.ProjectInfo, IDemoProject { }
         public class CoordinatesTransformer : Coordinates.Transformation.ProjectInfo, IDemoProject { }
         public class RastersViewer : Rasters.Viewer.ProjectInfo, IDemoProject { }
         public class EpsgViewer : Epsg.Viewer.ProjectInfo, IDemoProject { }
+        public class FeaturesEditor : Features.Editor.ProjectInfo, IDemoProject { }
+        public class MLayerEditor : Layers.InMemory.ProjectInfo, IDemoProject { }
     }    
 }

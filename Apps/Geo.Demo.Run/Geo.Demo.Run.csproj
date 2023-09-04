@@ -20,8 +20,11 @@
     <ProjectReference Include="..\Geo.Coordinates.Convert\Geo.Coordinates.Convert.csproj" />
     <ProjectReference Include="..\Geo.Coordinates.Transformation\Geo.Coordinates.Transformation.csproj" />
     <ProjectReference Include="..\Geo.Epsg.Viewer\Geo.Epsg.Viewer.csproj" />
+    <ProjectReference Include="..\Geo.Features.Editor\Geo.Features.Editor.csproj" />
     <ProjectReference Include="..\Geo.Layers.Conversion\Geo.Layers.Conversion.csproj" />
-    <ProjectReference Include="..\Geo.Map.Generator\Geo.Map.Generator.csproj" />
+    <ProjectReference Include="..\Geo.Layers.InMemory\Geo.Layers.InMemory.csproj" /> 
+    <ProjectReference Include="..\Geo.Map.Generator\Geo.Map.Generator.csproj" /> 
+    <ProjectReference Include="..\Geo.Map.Rendering\Geo.Map.Rendering.csproj" />
     <ProjectReference Include="..\Geo.Rasters.Viewer\Geo.Rasters.Viewer.csproj" />
     <ProjectReference Include="..\Geo.Viewer\Geo.Viewer.WPF.csproj" />
   </ItemGroup>

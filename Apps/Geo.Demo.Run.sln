@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Geo.Viewer.WPF", "Geo.Viewe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Geo.Layers.Conversion", "Geo.Layers.Conversion\Geo.Layers.Conversion.csproj", "{3EDE19DA-541D-4B16-8356-AB1F3EA083A2}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Geo.Layers.InMemory", "Geo.Layers.InMemory\Geo.Layers.InMemory.csproj", "{02283291-1966-4DD5-8E0B-BCBCD0D497BB}"
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Geo.Coordinates.Convert", "Geo.Coordinates.Convert\Geo.Coordinates.Convert.csproj", "{39FADE85-729C-4CC2-B6BE-5CDFD043D780}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Geo.Coordinates.Transformation", "Geo.Coordinates.Transformation\Geo.Coordinates.Transformation.csproj", "{0501FEAF-3918-4C10-A5CF-9980EF51C136}"
@@ -20,6 +22,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Geo.Rasters.Viewer", "Geo.Rasters.Viewer\Geo.Rasters.Viewer.csproj", "{92240CA4-0183-4E7D-AD5B-7955EAE547AB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Geo.Epsg.Viewer", "Geo.Epsg.Viewer\Geo.Epsg.Viewer.csproj", "{17F69DFA-C390-4CF2-B6A5-953164580C21}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Geo.Features.Editor", "Geo.Features.Editor\Geo.Features.Editor.csproj", "{D599B148-1611-4D69-B469-E71FB928A011}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Geo.Map.Rendering", "Geo.Map.Rendering\Geo.Map.Rendering.csproj", "{B8C7D17E-807F-4AAA-ABA3-D806DF24B845}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +45,10 @@ Global
 		{3EDE19DA-541D-4B16-8356-AB1F3EA083A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EDE19DA-541D-4B16-8356-AB1F3EA083A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EDE19DA-541D-4B16-8356-AB1F3EA083A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02283291-1966-4DD5-8E0B-BCBCD0D497BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02283291-1966-4DD5-8E0B-BCBCD0D497BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02283291-1966-4DD5-8E0B-BCBCD0D497BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02283291-1966-4DD5-8E0B-BCBCD0D497BB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{39FADE85-729C-4CC2-B6BE-5CDFD043D780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{39FADE85-729C-4CC2-B6BE-5CDFD043D780}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39FADE85-729C-4CC2-B6BE-5CDFD043D780}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -63,6 +73,14 @@ Global
 		{17F69DFA-C390-4CF2-B6A5-953164580C21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17F69DFA-C390-4CF2-B6A5-953164580C21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17F69DFA-C390-4CF2-B6A5-953164580C21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D599B148-1611-4D69-B469-E71FB928A011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D599B148-1611-4D69-B469-E71FB928A011}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D599B148-1611-4D69-B469-E71FB928A011}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D599B148-1611-4D69-B469-E71FB928A011}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8C7D17E-807F-4AAA-ABA3-D806DF24B845}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8C7D17E-807F-4AAA-ABA3-D806DF24B845}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8C7D17E-807F-4AAA-ABA3-D806DF24B845}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8C7D17E-807F-4AAA-ABA3-D806DF24B845}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

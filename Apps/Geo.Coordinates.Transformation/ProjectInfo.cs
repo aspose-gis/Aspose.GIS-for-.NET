@@ -1,14 +1,19 @@
-﻿namespace Geo.Coordinates.Transformation
+﻿using System.IO;
+using System.Reflection;
+
+namespace Geo.Coordinates.Transformation
 {
     public class ProjectInfo
     {
-        public string Description { get; } = "The Coordinate Transformation is a demo for converting coordinates from one SRS (Spatial Reference System) to another SRS and display the result";
+        public string Description => new StreamReader(Assembly.GetExecutingAssembly()
+            .GetManifestResourceStream("Geo.Coordinates.Transformation.ReadMe.md")!).ReadToEnd();
 
         public string Title { get; } = "Coordinates Transformation";
 
         public void Run()
         {
             var newForm = new MainWindow();
+            newForm.Title = Title;
             newForm.Show();
         }
     }

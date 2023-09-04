@@ -25,33 +25,12 @@ namespace Geo.Epsg.Viewer
             InitializeComponent();
         }
 
+        private ProjectPresenter _projectPresenter = new();
+
         private void LaunchButton_Click(object sender, RoutedEventArgs e)
         {
-            var output = new StringBuilder();
-            output.AppendLine("START").AppendLine();
-
-            if (!isTextFilled)
-            {
-                output.AppendLine("ERROR: NO VALUES PASSED");
-                return;
-            }
-
-            var status = Aspose.Gis.SpatialReferencing.SpatialReferenceSystem.TryCreateFromEpsg(4326, out var referenceSystem);
-            output.AppendLine("Is succesful: " + status.ToString());
-
-            if (status)
-            {
-                output.AppendLine("WKT: " + referenceSystem.ExportToWkt());
-                output.AppendLine("Datum: " + referenceSystem.GeographicDatum.ToString());
-            }
-
-            output.AppendLine().AppendLine("OK");
-            pOutput.Text = output.ToString();
-        }
-        bool isTextFilled = false;
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            isTextFilled = !string.IsNullOrEmpty(eWorkFolder.Text);
+            var report = _projectPresenter.ReadAndReport(eWorkFolder.Text);
+            pOutput.Text = report.ToString();
         }
     }
 }

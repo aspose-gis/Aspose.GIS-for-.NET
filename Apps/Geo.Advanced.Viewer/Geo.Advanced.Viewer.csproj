@@ -22,6 +22,8 @@
     <None Remove="Photos\20230402_170529.jpg" />
     <None Remove="Photos\20230402_170721.jpg" />
     <None Remove="Photos\20230402_171432.jpg" />
+    <None Remove="ReadMe-Ru.md" />
+    <None Remove="ReadMe.md" />
   </ItemGroup>
 
   <ItemGroup>
@@ -67,10 +69,12 @@
     <EmbeddedResource Include="Photos\20230402_171432.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReadMe-Ru.md" />
+    <EmbeddedResource Include="ReadMe.md" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aspose.GIS" Version="23.3.0" />
+    <PackageReference Include="Aspose.GIS" Version="23.8.0" />
     <PackageReference Include="ExifLib.Standard" Version="1.7.0" />
   </ItemGroup>
 

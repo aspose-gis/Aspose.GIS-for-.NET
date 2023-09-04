@@ -1,11 +1,8 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using Geo.Advanced.Viewer.Maps;
-using Geo.Advanced.Viewer.DataAccess;
 using Aspose.Gis;
 using System.Linq;
 
@@ -22,28 +19,21 @@ namespace Geo.Advanced.Viewer
             Show_Click(null!, null!);
         }
 
+        ProjectPresenter _projectPresenter = new();
+
         private void Show_Click(object sender, RoutedEventArgs e)
         {
-            var storage = new PhotoStorage();
-            var photoList = storage.LoadPhotos();
-
-            var currentLayer = new LayerConstructor();
-            var placeLayer = currentLayer.CreatePlacesLayer(photoList);
-            var wayLayer = currentLayer.CreateWayLayer(photoList);
-            string mapFileName = MapConstructor.CreateMap(placeLayer, wayLayer);
+            var (placeLayer, mapStream) = _projectPresenter.CreateMap();
 
             DrawAttributes(placeLayer);
-            DrawMap(mapFileName);
+            DrawMap(mapStream);
         }
-
-        private void DrawMap(string mapFileName)
+        private void DrawMap(Stream mapStream)
         {
-            Image finalImage = (Image) myGrid.FindName("LayerContainer");
+            Image finalImage = (Image)myGrid.FindName("LayerContainer");
             BitmapImage logo = new BitmapImage();
-            logo.BeginInit();
-            logo.UriSource = new Uri(new FileInfo(mapFileName).FullName);
-            logo.EndInit();
-            finalImage.Source = logo;           
+            logo.BeginInit(); logo.StreamSource = mapStream;
+            logo.EndInit(); finalImage.Source = logo;
         }
 
         private void DrawAttributes(VectorLayer placeLayer)

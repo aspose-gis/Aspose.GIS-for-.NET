@@ -9,16 +9,20 @@
 
   <ItemGroup>
     <None Remove="data\sample.geojson" />
+    <None Remove="ReadMe-Ru.md" />
+    <None Remove="ReadMe.md" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="data\sample.geojson">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReadMe-Ru.md" />
+    <EmbeddedResource Include="ReadMe.md" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aspose.GIS" Version="23.2.0" />
+    <PackageReference Include="Aspose.GIS" Version="23.8.0" />
   </ItemGroup>
 
 </Project>

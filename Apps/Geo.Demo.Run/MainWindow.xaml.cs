@@ -27,7 +27,7 @@ namespace Geo.Demo.Run
             DemoList.SelectionChanged += ChangeDescription;
         }
 
-        void ChangeDescription(object sender, SelectionChangedEventArgs e)
+        private void ChangeDescription(object sender, SelectionChangedEventArgs e)
         {
             current = projects.GetProjectByTitle((DemoList.SelectedItem as ListBoxItem).Content.ToString());
             myDescription.Text = current.Description;

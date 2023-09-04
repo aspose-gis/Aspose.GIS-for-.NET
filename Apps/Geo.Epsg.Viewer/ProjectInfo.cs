@@ -1,14 +1,19 @@
-﻿namespace Geo.Epsg.Viewer
+﻿using System.IO;
+using System.Reflection;
+
+namespace Geo.Epsg.Viewer
 {
     public class ProjectInfo
     {
-        public string Description { get; } = "This app is designed for quickly getting all available information about an SRS by entering the appropriate EPSG code.";
+        public string Description => new StreamReader(Assembly.GetExecutingAssembly()
+            .GetManifestResourceStream("Geo.Epsg.Viewer.ReadMe.md")!).ReadToEnd();
 
         public string Title { get; } = "Epsg Viewer";
 
         public void Run()
         {
             var newForm = new MainWindow();
+            newForm.Title = Title;
             newForm.Show();
         }
     }
