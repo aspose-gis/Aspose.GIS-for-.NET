@@ -26,6 +26,7 @@
     <ProjectReference Include="..\Geo.Map.Generator\Geo.Map.Generator.csproj" /> 
     <ProjectReference Include="..\Geo.Map.Rendering\Geo.Map.Rendering.csproj" />
     <ProjectReference Include="..\Geo.Rasters.Viewer\Geo.Rasters.Viewer.csproj" />
+    <ProjectReference Include="..\Geo.Tools.Paths\Geo.Tools.Paths.csproj" />
     <ProjectReference Include="..\Geo.Viewer\Geo.Viewer.WPF.csproj" />
   </ItemGroup>
 

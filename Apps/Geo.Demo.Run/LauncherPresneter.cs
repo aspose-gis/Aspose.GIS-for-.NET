@@ -20,6 +20,7 @@ namespace Geo.Demo.Run
             Projects.Add(new EpsgViewer());
             Projects.Add(new FeaturesEditor());
             Projects.Add(new MLayerEditor());
+            Projects.Add(new DataExtractor());
         }
 
         public IDemoProject GetProjectByTitle(string title)
@@ -43,5 +44,6 @@ namespace Geo.Demo.Run
         public class EpsgViewer : Epsg.Viewer.ProjectInfo, IDemoProject { }
         public class FeaturesEditor : Features.Editor.ProjectInfo, IDemoProject { }
         public class MLayerEditor : Layers.InMemory.ProjectInfo, IDemoProject { }
-    }    
+        public class DataExtractor : Tools.Paths.ProjectInfo, IDemoProject { }
+    }
 }
