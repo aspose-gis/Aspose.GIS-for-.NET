@@ -1,10 +1,8 @@
 ﻿using Aspose.Gis;
-using System;
-using System.IO;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
+using System.Windows.Data;
 
 namespace Geo.Layers.Join
 {
@@ -22,58 +20,75 @@ namespace Geo.Layers.Join
 
         private void Show_Click(object sender, RoutedEventArgs e)
         {
-            var layer = _projectPresenter.JoinByIndex();
-            ShowMap(layer);
+            var (layerA, layerB, joinedLaeyr) = _projectPresenter.JoinByIndex();
 
-            CreateList(layer);
+            var listBox1 = CreateGrid(layerA);
+            var listBox2 = CreateGrid(layerB);
+            var listBox3 = CreateGrid(joinedLaeyr);
+
+            Grid.SetRow(listBox1, 1);
+            Grid.SetColumn(listBox1, 0);
+
+            Grid.SetRow(listBox2, 1);
+            Grid.SetColumn(listBox2, 1);
+
+            Grid.SetRow(listBox2, 1);
+            Grid.SetColumn(listBox2, 1);
+
+            Grid.SetRow(listBox3, 1);
+            Grid.SetColumn(listBox3, 2);
+
+            myGrid.Children.Add(listBox1);
+            myGrid.Children.Add(listBox2);
+            myGrid.Children.Add(listBox3);
+
+            Content = myGrid;
         }
 
         private void Show2_Click(object sender, RoutedEventArgs e)
         {
-            var layer = _projectPresenter.JoinByCoords();
-            ShowMap(layer);
+            var (layerA, layerB, joinedLaeyr) = _projectPresenter.JoinByCoords();
 
-            CreateList(layer);
-        }
+            var listBox1 = CreateGrid(layerA);
+            var listBox2 = CreateGrid(layerB);
+            var listBox3 = CreateGrid(joinedLaeyr);
 
-        private void CreateList(VectorLayer layer)
-        {
-            ListBox listBox = new ListBox();
-            listBox.SelectionMode = SelectionMode.Single;
+            Grid.SetRow(listBox1, 1);
+            Grid.SetColumn(listBox1, 0);
 
-            listBox.Items.Add(new ListBoxItem()
-            {
-                Content = layer.GeometryType
-            });
+            Grid.SetRow(listBox2, 1);
+            Grid.SetColumn(listBox2, 1);
 
-            for (int i = 0; i < layer.Attributes.Count; i++)
-            {
-                listBox.Items.Add(new ListBoxItem() { Content = layer.Attributes[i].Name, Background = new SolidColorBrush(Color.FromRgb((byte)217, (byte)217, (byte)214)) });
-                foreach (var feature in layer)
-                {
-                    var dump = feature.GetValuesDump();
-                    listBox.Items.Add(new ListBoxItem() { Content = dump[i], Background = new SolidColorBrush(Color.FromRgb((byte)217, (byte)217, (byte)214)) });
-                }
-            }
-            listBox.EndInit();
+            Grid.SetRow(listBox2, 1);
+            Grid.SetColumn(listBox2, 1);
 
-            Grid.SetRow(listBox, 1);
-            Grid.SetColumn(listBox, 2);
+            Grid.SetRow(listBox3, 1);
+            Grid.SetColumn(listBox3, 2);
 
-            myGrid.Children.Add(listBox);
+            myGrid.Children.Add(listBox1);
+            myGrid.Children.Add(listBox2);
+            myGrid.Children.Add(listBox3);
+
             Content = myGrid;
         }
 
-        private void ShowMap(VectorLayer current)
+        private DataGrid CreateGrid(VectorLayer layer)
         {
-            if (current == null)
-                return;
-            Image finalImage = pOutput;
-            BitmapImage logo = new BitmapImage();
-            logo.BeginInit();
-            logo.UriSource = new Uri(new FileInfo(LayerOutput.SaveLayerAsMap(current, "map")).FullName);
-            logo.EndInit();
-            finalImage.Source = logo;
+            
+            var data = layer.Select(t => t.GetValuesDump()).ToList();
+            var grid = new DataGrid();
+            grid.AutoGenerateColumns = false;
+            var i = 0;
+            foreach (var item in layer.Attributes)
+            {
+                var col = new DataGridTextColumn();
+                col.Header = item .Name;
+                col.Binding = new Binding(string.Format("[{0}]", i));
+                grid.Columns.Add(col);
+                i++;
+            }
+            grid.ItemsSource = data;
+            return grid;
         }
     }
 }

@@ -9,10 +9,12 @@
 
   <ItemGroup>
     <None Remove="Data\sample.asc" />
+    <None Remove="Data\test.json" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Data\sample.asc" />
+    <EmbeddedResource Include="Data\test.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,7 +24,8 @@
     <ProjectReference Include="..\Geo.Epsg.Viewer\Geo.Epsg.Viewer.csproj" />
     <ProjectReference Include="..\Geo.Features.Editor\Geo.Features.Editor.csproj" />
     <ProjectReference Include="..\Geo.Layers.Conversion\Geo.Layers.Conversion.csproj" />
-    <ProjectReference Include="..\Geo.Layers.InMemory\Geo.Layers.InMemory.csproj" /> 
+    <ProjectReference Include="..\Geo.Layers.InMemory\Geo.Layers.InMemory.csproj" />
+    <ProjectReference Include="..\Geo.Layers.Join\Geo.Layers.Join.csproj" /> 
     <ProjectReference Include="..\Geo.Map.Generator\Geo.Map.Generator.csproj" /> 
     <ProjectReference Include="..\Geo.Map.Rendering\Geo.Map.Rendering.csproj" />
     <ProjectReference Include="..\Geo.Rasters.Viewer\Geo.Rasters.Viewer.csproj" />

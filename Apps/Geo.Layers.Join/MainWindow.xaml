@@ -3,22 +3,25 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Geo.Layers.Join"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="1086">
     <Grid x:Name="myGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="10px"/>
+            <RowDefinition Height="28px"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="50px"/>
+            <RowDefinition Height="70px"/>
         </Grid.RowDefinitions>
-        <Image x:Name="pOutput" HorizontalAlignment="Center" Margin="10" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" />
-        <Button Grid.Column="1" Grid.Row="2" Content="JoinByIndex" Click="Show_Click" FontSize="18"/>
-        <Button Grid.Column="0" Grid.Row="2" Content="JoinByCoords" Click="Show2_Click" FontSize="18"/>
+        <TextBlock  Grid.Row="0" Grid.Column="0" FontSize="18">Main Data Grid</TextBlock>
+        <TextBlock  Grid.Row="0" Grid.Column="1" FontSize="18">Append Data Grid</TextBlock>
+        <TextBlock  Grid.Row="0" Grid.Column="2" FontSize="18">Joined Data Grid</TextBlock>
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="JoinByIndex" Click="Show_Click" FontSize="18" Margin="3" Padding="5"/>
+            <Button Content="JoinByCoords" Click="Show2_Click" FontSize="18" Margin="3" Padding="5"/>
+        </StackPanel>
     </Grid>
 </Window>
