@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ReadMe-Ru.md" />
+    <None Remove="ReadMe.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="ReadMe-Ru.md" />
+    <EmbeddedResource Include="ReadMe.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspose.GIS" Version="23.9.0" />
+  </ItemGroup>
+
+</Project>
