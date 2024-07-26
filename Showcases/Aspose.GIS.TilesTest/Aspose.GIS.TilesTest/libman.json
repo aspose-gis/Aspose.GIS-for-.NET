@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "leaflet@1.9.4",
+      "destination": "wwwroot/lib/leaflet/"
+    },
+    {
+      "library": "bootstrap@5.3.3",
+      "destination": "wwwroot/lib/bootstrap/",
+      "files": [
+        "css/bootstrap-reboot.min.css"
+      ]
+    }
+  ]
+}

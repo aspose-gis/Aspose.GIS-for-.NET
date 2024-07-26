@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div id="map"></div>
+
+@section Styles {
+    <link href="~/lib/leaflet/leaflet.min.css" rel="stylesheet" />
+    <link href="~/css/map.css" rel="stylesheet" asp-append-version="true"/>
+}
+
+@section Scripts {
+    <script src="~/lib/leaflet/leaflet.min.js"></script>
+    <script src="~/js/map.js" asp-append-version="true"></script>
+}
