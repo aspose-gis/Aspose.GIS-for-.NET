@@ -1,5 +1,4 @@
-﻿using Aspose.Gis.Formats.Database;
-using Aspose.Gis;
+﻿using Aspose.Gis;
 using Microsoft.AspNetCore.Mvc;
 using Npgsql;
 using Aspose.Gis.Rendering;
@@ -55,19 +54,11 @@ namespace Aspose.GIS.TilesTest.Controllers
                         FROM public.planet_osm_line CROSS JOIN envelope
                         WHERE ST_Intersects(way, envelope.box)";
 
-            VectorLayer adminLayer8;
-            VectorLayer adminLayer10;
-            VectorLayer buildingsLayer;
-            VectorLayer pointsAndLinesLayer;
-            VectorLayer citiesLayer;
-            VectorLayer forestLayer;
-            VectorLayer waterLayer;
+            VectorLayer inputLayer;
 
             using (var conn = new NpgsqlConnection("Host=127.0.0.1;Username=gis;Password=password;Database=Hungary"))
             {
-                var builder = new DatabaseDataSourceBuilder();
-
-                builder
+                var dataSource = Drivers.PostGis
                     .FromQuery(query)
                     .GeometryField("way")
                     .AddAttribute("osm_id", AttributeDataType.Long)
@@ -78,40 +69,26 @@ namespace Aspose.GIS.TilesTest.Controllers
                     .AddAttribute("admin_level", AttributeDataType.Integer)
                     .AddAttribute("place", AttributeDataType.String)
                     .AddAttribute("landuse", AttributeDataType.String)
-                    .AddAttribute("water", AttributeDataType.String);
+                    .AddAttribute("water", AttributeDataType.String)
+                    .Build();
 
                 conn.Open();
 
-                var inputLayer = await builder.Build().ReadAsync(conn);
-
-                var adminAreas = inputLayer.Where(x => x.GetValue<string>("source") == "polygon" && !x.IsValueNull("admin_level"));
-
-                var adminAreas10 = adminAreas.Where(x => x.GetValue<int>("admin_level") == 10);
-                adminLayer10 = CopyToNewLayer(adminAreas10, inputLayer);
-
-                var adminAreas8 = adminAreas.Where(x => x.GetValue<int>("admin_level") == 8);
-                adminLayer8 = CopyToNewLayer(adminAreas8, inputLayer);
-
-                var buildings = inputLayer.Where(x => x.GetValue<string>("source") == "polygon" && !x.IsValueNull("building"));
-                buildingsLayer = CopyToNewLayer(buildings, inputLayer);
-
-                var cities = inputLayer.Where(x => x.GetValue<string>("place") == "city");
-                citiesLayer = CopyToNewLayer(cities, inputLayer);
-
-                var forest = inputLayer.Where(x => x.GetValue<string>("landuse") == "forest");
-                forestLayer = CopyToNewLayer(forest, inputLayer);
-
-                var water = inputLayer.Where(x => !x.IsValueNull("water"));
-                waterLayer = CopyToNewLayer(water, inputLayer);
-
-                var pointsAndLines = inputLayer.Where(x =>
-                {
-                    var src = x.GetValue<string>("source");
-                    return src == "roads" || src == "point" || src == "line";
-                });
-                
-                pointsAndLinesLayer = CopyToNewLayer(pointsAndLines, inputLayer);
+                inputLayer = await dataSource.ReadAsync(conn);
             }
+
+            var adminAreas = inputLayer.WhereLinq(x => x.GetValue<string>("source") == "polygon" && !x.IsValueNull("admin_level"));
+            var adminLayer10 = adminAreas.WhereLinq(x => x.GetValue<int>("admin_level") == 10);
+            var adminLayer8 = adminAreas.WhereLinq(x => x.GetValue<int>("admin_level") == 8);
+            var buildingsLayer = inputLayer.WhereLinq(x => x.GetValue<string>("source") == "polygon" && !x.IsValueNull("building"));
+            var citiesLayer = inputLayer.WhereLinq(x => x.GetValue<string>("place") == "city");
+            var forestLayer = inputLayer.WhereLinq(x => x.GetValue<string>("landuse") == "forest");
+            var waterLayer = inputLayer.WhereLinq(x => !x.IsValueNull("water"));
+            var pointsAndLinesLayer = inputLayer.WhereLinq(x =>
+            {
+                var src = x.GetValue<string>("source");
+                return src == "roads" || src == "point" || src == "line";
+            });
 
             using var map = new Map(256, 256);
             var pngStream = new MemoryStream();
@@ -134,22 +111,6 @@ namespace Aspose.GIS.TilesTest.Controllers
             pngStream.Seek(0, SeekOrigin.Begin);
 
             return File(pngStream, "image/png");
-        }
-
-        private VectorLayer CopyToNewLayer(IEnumerable<Feature> features, VectorLayer originalLayer)
-        {
-            var outputLayer = Drivers.InMemory.CreateLayer();
-            outputLayer.CopyAttributes(originalLayer);
-
-            foreach (Feature feature in features)
-            {
-                var outputFeature = outputLayer.ConstructFeature();
-                outputFeature.Geometry = feature.Geometry.Clone();
-                outputFeature.CopyValues(feature);
-                outputLayer.Add(outputFeature);
-            };
-
-            return outputLayer;
         }
     }
 }
