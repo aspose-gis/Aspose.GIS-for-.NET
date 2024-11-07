@@ -78,9 +78,8 @@ namespace Aspose.GIS.TilesTest.Controllers
             }
 
             var adminAreas = inputLayer.WhereLinq(x => x.GetValue<string>("source") == "polygon" && !x.IsValueNull("admin_level"));
-            var adminLayer10 = adminAreas.WhereLinq(x => x.GetValue<int>("admin_level") == 10);
             var adminLayer8 = adminAreas.WhereLinq(x => x.GetValue<int>("admin_level") == 8);
-            var buildingsLayer = inputLayer.WhereLinq(x => x.GetValue<string>("source") == "polygon" && !x.IsValueNull("building"));
+            var adminLayer10 = adminAreas.WhereLinq(x => x.GetValue<int>("admin_level") == 10);
             var citiesLayer = inputLayer.WhereLinq(x => x.GetValue<string>("place") == "city");
             var forestLayer = inputLayer.WhereLinq(x => x.GetValue<string>("landuse") == "forest");
             var waterLayer = inputLayer.WhereLinq(x => !x.IsValueNull("water"));
@@ -89,6 +88,7 @@ namespace Aspose.GIS.TilesTest.Controllers
                 var src = x.GetValue<string>("source");
                 return src == "roads" || src == "point" || src == "line";
             });
+            var buildingsLayer = inputLayer.WhereLinq(x => x.GetValue<string>("source") == "polygon" && !x.IsValueNull("building"));
 
             using var map = new Map(256, 256);
             var pngStream = new MemoryStream();

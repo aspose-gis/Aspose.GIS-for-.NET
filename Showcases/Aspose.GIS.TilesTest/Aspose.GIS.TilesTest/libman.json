@@ -12,6 +12,11 @@
       "files": [
         "css/bootstrap-reboot.min.css"
       ]
+    },
+    {
+      "provider": "jsdelivr",
+      "library": "@contagt/leaflet-geoman-free@2.14.2",
+      "destination": "wwwroot/lib/contagt/leaflet-geoman-free/"
     }
   ]
 }
