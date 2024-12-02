@@ -33,7 +33,16 @@ map.on('click', function (e) {
     });
 
     if (!featureFound) {
-        loadGeoJSON(latlng.lat, latlng.lng);
+        loadGeoJSON(latlng.lat, latlng.lng)
+            .then((addedFeatureLayer) => {
+                if (addedFeatureLayer) {
+                    addedFeatureLayer.addTo(featuresLayer);
+                    addedFeatureLayer.pm.enable();
+                    console.log('Feature added.');
+                } else {
+                    console.log('No feature to add.');
+                }
+            });
     }
 
     featureFound = false;
@@ -71,15 +80,14 @@ function sendGeoJSONToServer() {
 }
 
 function loadGeoJSON(lat, lng) {
-    fetch(`/features?lat=${lat}&lng=${lng}`)
+    return fetch(`/features?lat=${lat}&lng=${lng}`)
         .then(response => response.json())
         .then(data => {
             if (data && data.features && data.features.length > 0) {
-                var geojsonLayer = L.geoJSON(data).addTo(featuresLayer);
-                geojsonLayer.pm.enable();
-                console.log('Feature added.');
+                return L.geoJSON(data);
+                
             } else {
-                console.log('No feature to add.');
+                return null;
             }
         })
         .catch(error => console.error('Error loading a feature:', error));

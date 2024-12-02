@@ -1,3 +1,5 @@
+using Aspose.GIS.TilesTest.Options;
+
 namespace Aspose.GIS.TilesTest
 {
     public class Program
@@ -8,6 +10,10 @@ namespace Aspose.GIS.TilesTest
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.Configure<ConnectionStrings>(
+                builder.Configuration.GetSection("ConnectionStrings"));
+
 
             var app = builder.Build();
 

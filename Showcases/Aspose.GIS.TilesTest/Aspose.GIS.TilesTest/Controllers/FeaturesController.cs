@@ -1,7 +1,9 @@
 ﻿using Aspose.Gis;
 using Aspose.Gis.Geometries;
 using Aspose.Gis.SpatialReferencing;
+using Aspose.GIS.TilesTest.Options;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using Npgsql;
 using System.Globalization;
 using System.Text;
@@ -12,6 +14,13 @@ namespace Aspose.GIS.TilesTest.Controllers
     [Route("[controller]")]
     public class FeaturesController : ControllerBase
     {
+        private readonly string _dbConnectionString;
+
+        public FeaturesController(IOptions<ConnectionStrings> options)
+        {
+            _dbConnectionString = options.Value.Db;
+        }
+
         [HttpGet]
         public async Task<IActionResult> IndexAsync(double lat, double lng)
         {
@@ -23,7 +32,7 @@ namespace Aspose.GIS.TilesTest.Controllers
 
             VectorLayer inputLayer;
 
-            using (var conn = new NpgsqlConnection("Host=127.0.0.1;Username=gis;Password=password;Database=belarus"))
+            using (var conn = new NpgsqlConnection(_dbConnectionString))
             {
                 var dataSource = Drivers.PostGis
                     .FromQuery(query)
@@ -79,24 +88,23 @@ namespace Aspose.GIS.TilesTest.Controllers
                     .AsTrackableForChanges("public.planet_osm_polygon", "osm_id", true)
                     .Build();
 
-                using var conn = new NpgsqlConnection("Host=127.0.0.1;Username=gis;Password=password;Database=belarus");
+                using var conn = new NpgsqlConnection(_dbConnectionString);
                 await conn.OpenAsync();
                 using var transaction = await conn.BeginTransactionAsync();
 
-                var editLayer = await dataSource.ReadAsync(conn);
+                using var editLayer = await dataSource.ReadAsync(conn, transaction);
 
                 var transformer = SpatialReferenceSystem.Wgs84.CreateTransformationTo(SpatialReferenceSystem.WebMercator);
 
                 foreach (var feature in inputLayer)
                 {
+                    // transformation
                     feature.Geometry = transformer.Transform(feature.Geometry);
                     ((Geometry)feature.Geometry).HasZ = false;
-                }
 
-                foreach (var feature in inputLayer)
-                {
+                    // replace on the edited layer
                     var replacingId = feature.GetValue<long>("osm_id");
-                    var toReplaceIndex = editLayer.TakeWhile(x => x.GetValue<long>("osm_id") != replacingId).Count();
+                    var toReplaceIndex = editLayer.FindIndex(x => x.GetValue<long>("osm_id") == replacingId);
                     editLayer.ReplaceAt(toReplaceIndex, feature);
                 }
 

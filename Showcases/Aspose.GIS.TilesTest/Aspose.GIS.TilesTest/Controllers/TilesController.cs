@@ -7,12 +7,20 @@ using Aspose.Gis.SpatialReferencing;
 using Aspose.Gis.Rendering.Labelings;
 using Aspose.Gis.Rendering.Symbolizers;
 using System.Drawing;
+using Aspose.GIS.TilesTest.Options;
+using Microsoft.Extensions.Options;
 
 namespace Aspose.GIS.TilesTest.Controllers
 {
     public class TilesController : Controller
     {
+        private readonly string _dbConnectionString;
         private const double _halfOfWorld = 20037508.34;
+
+        public TilesController(IOptions<ConnectionStrings> options)
+        {
+            _dbConnectionString = options.Value.Db;
+        }
 
         public async Task<ActionResult> Index(int z, int x, int y)
         {
@@ -56,7 +64,7 @@ namespace Aspose.GIS.TilesTest.Controllers
 
             VectorLayer inputLayer;
 
-            using (var conn = new NpgsqlConnection("Host=127.0.0.1;Username=gis;Password=password;Database=Hungary"))
+            using (var conn = new NpgsqlConnection(_dbConnectionString))
             {
                 var dataSource = Drivers.PostGis
                     .FromQuery(query)
