@@ -9,6 +9,7 @@ using Aspose.Gis.Rendering.Symbolizers;
 using System.Drawing;
 using Aspose.GIS.TilesTest.Options;
 using Microsoft.Extensions.Options;
+using Aspose.Gis.Geometries;
 
 namespace Aspose.GIS.TilesTest.Controllers
 {
@@ -46,19 +47,19 @@ namespace Aspose.GIS.TilesTest.Controllers
             string query = $@"WITH envelope (box) AS (
                             VALUES(ST_MakeEnvelope({ext_min_x.ToString(cult)}, {ext_min_y.ToString(cult)}, {ext_max_x.ToString(cult)}, {ext_max_y.ToString(cult)}, 3857))
                         )
-                        SELECT osm_id, ""addr:housename"", ""addr:housenumber"", 'polygon' as ""source"", building, admin_level, place, landuse, water, name, ST_AsEWKB(ST_ClipByBox2D(way, envelope.box)) as way
+                        SELECT osm_id, ""addr:housename"", ""addr:housenumber"", 'polygon' as ""source"", building, admin_level, place, landuse, water, name, ST_AsEWKB(ST_ClipByBox2D(way, envelope.box)) as way, ST_AsText(ST_Centroid(way)) as centroid
                         FROM public.planet_osm_polygon CROSS JOIN envelope
                         WHERE ST_Intersects(way, envelope.box) AND ({z} < 15 AND ST_Area(way) > 5000 OR {z} >= 15)
                         UNION ALL
-                        SELECT osm_id, ""addr:housename"", ""addr:housenumber"", 'roads' as ""source"", building, admin_level, place, landuse, water, name, ST_AsEWKB(ST_ClipByBox2D(way, envelope.box)) as way
+                        SELECT osm_id, ""addr:housename"", ""addr:housenumber"", 'roads' as ""source"", building, admin_level, place, landuse, water, name, ST_AsEWKB(ST_ClipByBox2D(way, envelope.box)) as way, ST_AsText(ST_Centroid(way)) as centroid
                         FROM public.planet_osm_roads CROSS JOIN envelope
                         WHERE ST_Intersects(way, envelope.box)
                         UNION ALL
-                        SELECT osm_id, ""addr:housename"", ""addr:housenumber"", 'point' as ""source"", building, admin_level, place, landuse, water, name, ST_AsEWKB(ST_ClipByBox2D(way, envelope.box)) as way
+                        SELECT osm_id, ""addr:housename"", ""addr:housenumber"", 'point' as ""source"", building, admin_level, place, landuse, water, name, ST_AsEWKB(ST_ClipByBox2D(way, envelope.box)) as way, ST_AsText(ST_Centroid(way)) as centroid
                         FROM public.planet_osm_point CROSS JOIN envelope
                         WHERE ST_Intersects(way, envelope.box) AND {z} >= 15
                         UNION ALL
-                        SELECT osm_id, ""addr:housename"", ""addr:housenumber"", 'line' as ""source"", building, admin_level, place, landuse, water, name, ST_AsEWKB(ST_ClipByBox2D(way, envelope.box)) as way
+                        SELECT osm_id, ""addr:housename"", ""addr:housenumber"", 'line' as ""source"", building, admin_level, place, landuse, water, name, ST_AsEWKB(ST_ClipByBox2D(way, envelope.box)) as way, ST_AsText(ST_Centroid(way)) as centroid
                         FROM public.planet_osm_line CROSS JOIN envelope
                         WHERE ST_Intersects(way, envelope.box)";
 
@@ -78,6 +79,7 @@ namespace Aspose.GIS.TilesTest.Controllers
                     .AddAttribute("place", AttributeDataType.String)
                     .AddAttribute("landuse", AttributeDataType.String)
                     .AddAttribute("water", AttributeDataType.String)
+                    .AddAttribute("centroid", AttributeDataType.String)
                     .Build();
 
                 conn.Open();
@@ -98,23 +100,30 @@ namespace Aspose.GIS.TilesTest.Controllers
             });
             var buildingsLayer = inputLayer.WhereLinq(x => x.GetValue<string>("source") == "polygon" && !x.IsValueNull("building"));
 
-            using var map = new Map(256, 256);
-            var pngStream = new MemoryStream();
-            var labeling = new RuleBasedLabeling
+            var extent = new Extent(min_x, min_y, max_x, max_y, SpatialReferenceSystem.WebMercator);
+
+            var polygonFilter = (Feature x) =>
             {
-                { x => x.GetValue<string>("source") == "polygon",  new SimpleLabeling("addr:housenumber")},
-                LabelingRule.CreateElseRule(new SimpleLabeling("name"))
+                var centroid = Geometry.FromText(x.GetValue<string>("centroid"), SpatialReferenceSystem.WebMercator);
+                return x.GetValue<string>("source") == "polygon" && extent.Contains(centroid);
             };
 
+            var polygonLabeling = new RuleBasedLabeling();
+            polygonLabeling.Add(polygonFilter, new SimpleLabeling("addr:housenumber"));
+            polygonLabeling.Add(polygonFilter, new SimpleLabeling("name"));
+
+            using var map = new Map(256, 256);
+            var pngStream = new MemoryStream();
+
             map.SpatialReferenceSystem = SpatialReferenceSystem.WebMercator;
-            map.Extent = new Extent(min_x, min_y, max_x, max_y, SpatialReferenceSystem.WebMercator);            
-            map.Add(adminLayer8, new SimpleFill { FillColor = Color.WhiteSmoke }, labeling);
-            map.Add(adminLayer10, new SimpleFill { FillColor = Color.PapayaWhip }, labeling);
-            map.Add(citiesLayer, new SimpleFill { FillColor = Color.PeachPuff }, labeling);
-            map.Add(forestLayer, new SimpleFill { FillColor = Color.PaleGreen }, labeling);
-            map.Add(waterLayer, new SimpleFill { FillColor = Color.SkyBlue }, labeling);
-            map.Add(pointsAndLinesLayer, null, labeling);
-            map.Add(buildingsLayer, new SimpleFill { FillColor = Color.SandyBrown }, labeling);
+            map.Extent = extent;
+            map.Add(adminLayer8, new SimpleFill { FillColor = Color.WhiteSmoke }, polygonLabeling);
+            map.Add(adminLayer10, new SimpleFill { FillColor = Color.PapayaWhip }, polygonLabeling);
+            map.Add(citiesLayer, new SimpleFill { FillColor = Color.PeachPuff }, polygonLabeling);
+            map.Add(forestLayer, new SimpleFill { FillColor = Color.PaleGreen }, polygonLabeling);
+            map.Add(waterLayer, new SimpleFill { FillColor = Color.SkyBlue }, polygonLabeling);
+            map.Add(pointsAndLinesLayer, null, new SimpleLabeling("name"));
+            map.Add(buildingsLayer, new SimpleFill { FillColor = Color.SandyBrown }, polygonLabeling);
             map.Render(AbstractPath.FromStream(pngStream), Renderers.Png);
             pngStream.Seek(0, SeekOrigin.Begin);
 
