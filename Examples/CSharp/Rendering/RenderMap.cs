@@ -241,7 +241,7 @@ namespace Aspose.GIS_for.NET.Rendering
         public static void ClusterTextSymbolizer()
         {
             //ExStart: ClusterTextSymbolizer
-            using (var map = new Map(500, 300))
+            /*  using (var map = new Map(500, 300))
             {
                 // take only part of the word
                 map.Extent = new Extent(-100, -60, 100, 60) { SpatialReferenceSystem = SpatialReferenceSystem.Wgs84 };
@@ -258,7 +258,7 @@ namespace Aspose.GIS_for.NET.Rendering
                         // It is better to load prepare pictures from your file system.
                         var digitText = itemsInCluster.ToString();
                         Stream memoryStream;
-                        using (Bitmap digitBitmap = new Bitmap(40, 40))
+                      using (Bitmap digitBitmap = new Bitmap(40, 40))
                         {
                             using (Graphics graphics = Graphics.FromImage(digitBitmap))
                             {
@@ -268,12 +268,12 @@ namespace Aspose.GIS_for.NET.Rendering
 
                                 if (digitText.Length == 1)
                                 {
-                                    graphics.DrawString(digitText, new Font("Arial", 30, GraphicsUnit.Pixel),
+                                    graphics.DrawString(digitText, new System.Drawing.Font("Arial", 30, GraphicsUnit.Pixel),
                                         new SolidBrush(Color.Black), 5, 3);
                                 }
                                 else
                                 {
-                                    graphics.DrawString(digitText, new Font("Arial", 30, GraphicsUnit.Pixel),
+                                    graphics.DrawString(digitText, new System.Drawing.Font("Arial", 30, GraphicsUnit.Pixel),
                                         new SolidBrush(Color.Black), -4, 3);
 
                                 }
@@ -310,8 +310,10 @@ namespace Aspose.GIS_for.NET.Rendering
                 map.Add(VectorLayer.Open(dataDir + "places.shp", Drivers.Shapefile), clusterSymbolizer);
                 // complete our map creation 
                 map.Render(dataDir + "out_cluster_texts.svg", Renderers.Svg);
-            }
+                      
+        }
             //ExEnd: ClusterTextSymbolizer
+              */
         }
 
         #endregion

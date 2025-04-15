@@ -3,6 +3,9 @@ using System;
 using System.IO;
 using Aspose.GIS.Examples.CSharp.Layers;
 using Aspose.GIS_for.NET.Layers;
+using Aspose.GIS.Examples.CSharp.Geometries;
+using Aspose.GIS_for.NET.Geometries;
+using Aspose.Gis;
 
 
 namespace Aspose.GIS.Examples.CSharp
@@ -11,13 +14,14 @@ namespace Aspose.GIS.Examples.CSharp
     {
         static void Main(string[] args)
         {
+            AppContext.SetSwitch("System.Drawing.Common.EnableUnixSupport", true);
             // Remove output files from the previous run
             CleanOutput();
 
             // Set the license to avoid the evaluation limitations.
             // Uncomment this lines if you have a license
-            //License license = new License();
-            //license.SetLicense(Path.Combine(GetDataDir(), "Aspose.GIS.lic"));
+            License license = new License();
+            license.SetLicense(@"C:\Projects\gis-net\testdata\licensing\Aspose.GIS.lic");
 
             Console.WriteLine("Open RunExamples.cs. \nIn Main() method uncomment the example that you want to run.");
             Console.WriteLine("=====================================================");
@@ -25,117 +29,117 @@ namespace Aspose.GIS.Examples.CSharp
             // Uncomment the one you want to try out
 
             #region Working with Geometries
-            //CreatePoint.Run();
-            //CreateMultiPoint.Run();
-            //CreateLineString.Run();
-            //CreateMultiLineString.Run();
-            //CreatePolygon.Run();
-            //CreatePolygonWithHole.Run();
-            //CreateMultiPolygon.Run();
-            //GetGeometryType.Run();
-            //CreateGeometryCollection.Run();
-            //CountGeometriesInGeometry.Run();
-            //CountPointsInGeometry.Run();
-            //IterateOverPointsInGeometry.Run();
-            //IterateOverGeometriesInGeometry.Run();
-            //GeometryValidation.Run();
-            //GIS_for.NET.Geometries.ConvertCoordinates.Run();
+            CreatePoint.Run();
+            CreateMultiPoint.Run();
+            CreateLineString.Run();
+            CreateMultiLineString.Run();
+            CreatePolygon.Run();
+            CreatePolygonWithHole.Run();
+            CreateMultiPolygon.Run();
+            GetGeometryType.Run();
+            CreateGeometryCollection.Run();
+            CountGeometriesInGeometry.Run();
+            CountPointsInGeometry.Run();
+            IterateOverPointsInGeometry.Run();
+            IterateOverGeometriesInGeometry.Run();
+            GeometryValidation.Run();
+            GIS_for.NET.Geometries.ConvertCoordinates.Run();
 
-            //DetermineIfGeometriesAreSpatiallyEqual.Run();
-            //DetermineIfGeometriesIntersect.Run();
-            //DetermineIfOneGeometryContainsAnother.Run();
-            //DetermineIfGeometriesTouchEachOther.Run();
-            //DetermineIfGeometriesCrossEachOther.Run();
-            //DetermineIfGeometriesOverlap.Run();
-            //DetermineSpatialRelationViaRelateMethod.Run();
-            //FindOverlaysOfGeometries.Run();
-            //ReducePrecisionOfAGeometry.Run();
-            //LimitPrecisionWhenWritingGeometries.Run();
-            //LimitPrecisionWhenReadingGeometries.Run();
+            DetermineIfGeometriesAreSpatiallyEqual.Run();
+            DetermineIfGeometriesIntersect.Run();
+            DetermineIfOneGeometryContainsAnother.Run();
+            DetermineIfGeometriesTouchEachOther.Run();
+            DetermineIfGeometriesCrossEachOther.Run();
+            DetermineIfGeometriesOverlap.Run();
+            DetermineSpatialRelationViaRelateMethod.Run();
+            FindOverlaysOfGeometries.Run();
+            ReducePrecisionOfAGeometry.Run();
+            LimitPrecisionWhenWritingGeometries.Run();
+            LimitPrecisionWhenReadingGeometries.Run();
 
-            //GetGeometryBuffer.Run();
-            //GetDistanceBetweenGeometries.Run();
-            //GetConvexHullOfGometry.Run();
-            //GetAreaOfGeometry.Run();
-            //GetLengthOfGeometry.Run();
-            //GetCentroid.Run();
-            //GetPointOnSurface.Run();
-            //DetermineIfOneGeometryCoversAnother.Run();
+            GetGeometryBuffer.Run();
+            GetDistanceBetweenGeometries.Run();
+            GetConvexHullOfGometry.Run();
+            GetAreaOfGeometry.Run();
+            GetLengthOfGeometry.Run();
+            GetCentroid.Run();
+            GetPointOnSurface.Run();
+            DetermineIfOneGeometryCoversAnother.Run();
 
-            //TranslateGeometryFromWkt.Run();
-            //TranslateGeometryToWkt.Run();
-            //SpecifyWktVariantOnTranslation.Run();
-            //TranslateGeometryToWkb.Run();
-            //TranslateGeometryFromWkb.Run();
-            //SpecifyWkbVariantOnTranslation.Run();
-            //ConvertGeometryToEditable.Run();
+            TranslateGeometryFromWkt.Run();
+            TranslateGeometryToWkt.Run();
+            SpecifyWktVariantOnTranslation.Run();
+            TranslateGeometryToWkb.Run();
+            TranslateGeometryFromWkb.Run();
+            SpecifyWkbVariantOnTranslation.Run();
+            ConvertGeometryToEditable.Run();
 
-            //CreateCircularString.Run();
-            //CreateCompoundCurve.Run();
-            //CreateCurvePolygon.Run();
-            //CreateMultiCurve.Run();
-            //CreateMultiSurface.Run();
-            //DetermineIfGeometryHasCurves.Run();
-            //LinearizeGeometry.Run();
-            //Geometries.ReplacePolygonsByLines.Run();
-            //SpecifyLinearizationTolerance.Run();
+            CreateCircularString.Run();
+            CreateCompoundCurve.Run();
+            CreateCurvePolygon.Run();
+            CreateMultiCurve.Run();
+            CreateMultiSurface.Run();
+            DetermineIfGeometryHasCurves.Run();
+            LinearizeGeometry.Run();
+            Geometries.ReplacePolygonsByLines.Run();
+            SpecifyLinearizationTolerance.Run();
             #endregion
 
             #region Working with Layers
-            //CreateNewShapeFile.Run();
-            //CreateVectorLayerWithSpatialReferenceSystem.Run();
-            //GetFeatureCountInLayer.Run();
-            //GetInformationAboutLayerAttributes.Run();
-            //IterateOverFeaturesInLayer.Run();
-            //GetValueOfAFeatureAttribute.Run();
-            //GetValuesOfAFeatureAttribute.Run();
-            //FilterFeaturesByAttributeValue.Run();
-            //ExtractFeaturesFromShapeFileToGeoJSON.Run();
-            //SpecifyAttributeValueLength.Run();
-            //SpecifyLayerSpatialReference.Run();
-            //GetValueOfNullFeatureAttribute.Run();
-            //ModifyFeatures.Run();
-            //ConvertPolygonShapeFileToLineStringShapeFile.Run();
+            CreateNewShapeFile.Run();
+            CreateVectorLayerWithSpatialReferenceSystem.Run();
+            GetFeatureCountInLayer.Run();
+            GetInformationAboutLayerAttributes.Run();
+            IterateOverFeaturesInLayer.Run();
+            GetValueOfAFeatureAttribute.Run();
+            GetValuesOfAFeatureAttribute.Run();
+            FilterFeaturesByAttributeValue.Run();
+            ExtractFeaturesFromShapeFileToGeoJSON.Run();
+            SpecifyAttributeValueLength.Run();
+            SpecifyLayerSpatialReference.Run();
+            GetValueOfNullFeatureAttribute.Run();
+            ModifyFeatures.Run();
+            ConvertPolygonShapeFileToLineStringShapeFile.Run();
 
-            //GIS_for.NET.Layers.KmlLayer.Run();
+            GIS_for.NET.Layers.KmlLayer.Run();
 
-            //ReadFeaturesFromGML.Run();
-            //GIS_for.NET.Layers.GpxLayer.Run();
-            //GIS_for.NET.Layers.CsvLayer.Run();
-            //ReadFeaturesFromOSMXML.Run();
-            //GetValueOrDefaultOfFeature.Run();
-            //ReadingESRIFileGeoDatabaseFileGDB.Run();
-            //InteractWithRasterFormats.Run();
-            //WarpRasterFormats.Run();
-            //CropLayer.Run();
-            //JoinedLayer.Run();
-            //EditLayer.Run();
+            ReadFeaturesFromGML.Run();
+            GIS_for.NET.Layers.GpxLayer.Run();
+            GIS_for.NET.Layers.CsvLayer.Run();
+            ReadFeaturesFromOSMXML.Run();
+            GetValueOrDefaultOfFeature.Run();
+            ReadingESRIFileGeoDatabaseFileGDB.Run();
+            InteractWithRasterFormats.Run();
+            WarpRasterFormats.Run();
+            CropLayer.Run();
+            JoinedLayer.Run();
+            EditLayer.Run();
 
-            //AddLayerToFileGdbDataset.Run();
-            //RemoveLayersFromFileGdbDataset.Run();
-            //CreateFileGdbDataset.Run();
-            //CreateFileGdbDatasetWithSingleLayer.Run();
-            //ConvertGeoJsonLayerToLayerInFileGdbDataset.Run();
+            AddLayerToFileGdbDataset.Run();
+            RemoveLayersFromFileGdbDataset.Run();
+            CreateFileGdbDataset.Run();
+            CreateFileGdbDatasetWithSingleLayer.Run();
+            ConvertGeoJsonLayerToLayerInFileGdbDataset.Run();
 
-            //ReadObjectIdFromFileGdbLayer.Run();
+            ReadObjectIdFromFileGdbLayer.Run();
 
-            //AccessFeaturesInTopoJson.Run();
-            //WriteFeaturesToTopoJson.Run();
-            //SpecifyPrecisionGridForFileGdbLayer.Run();
-            //SpecifyTolerancesForFileGdbLayer.Run();
-            //SpecifyNamesOfObjectIdAndGeometryFields.Run();
+            AccessFeaturesInTopoJson.Run();
+            WriteFeaturesToTopoJson.Run();
+            SpecifyPrecisionGridForFileGdbLayer.Run();
+            SpecifyTolerancesForFileGdbLayer.Run();
+            SpecifyNamesOfObjectIdAndGeometryFields.Run();
 
-            //ReadFeaturesFromMapInfoTab.Run();
-            //ReadFeaturesFromMapInfoInterchange.Run();
+            ReadFeaturesFromMapInfoTab.Run();
+            ReadFeaturesFromMapInfoInterchange.Run();
 
-            //WriteGeoJsonToStream.Run();
-            //ReadGeoJsonFromStream.Run();
-            //FilteringAndIndexing.Run();
+            WriteGeoJsonToStream.Run();
+            ReadGeoJsonFromStream.Run();
+            FilteringAndIndexing.Run();
 
-            //InteractWithPostGisDatabase.Run();
-            //InteractWithSqlServerDatabase.Run();
+            InteractWithPostGisDatabase.Run();
+            InteractWithSqlServerDatabase.Run();
 
-            //ReadTilesFromXyzFormat.Run();
+            ReadTilesFromXyzFormat.Run();
 
             #endregion
 
@@ -197,6 +201,7 @@ namespace Aspose.GIS.Examples.CSharp
 
         public static string GetDataDir()
         {
+            return @"C:\Projects\Aspose.GIS-for-.NET\Examples\Data\";
             var parent = Directory.GetParent(Directory.GetCurrentDirectory()).Parent;
             string startDirectory = null;
             if (parent != null)
