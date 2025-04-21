@@ -1,29 +1,53 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFrameworks>net6.0;net8.0;netcoreapp3.1;net4.7</TargetFrameworks>
+		<RootNamespace>Aspose.GIS_for.NET</RootNamespace>
+		<AssemblyName>Aspose.GIS_for.NET</AssemblyName>
+		<DefineConstants></DefineConstants>
+		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+		<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+	</PropertyGroup>
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net6</TargetFramework>
-    <RootNamespace>Aspose.GIS_for.NET</RootNamespace>
-    <AssemblyName>Aspose.GIS_for.NET</AssemblyName>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-  </PropertyGroup>
+	<ItemGroup Condition="'$(TargetFramework)'=='net6.0' OR '$(TargetFramework)'=='net8.0'">
+		<PackageReference Include="Npgsql" Version="9.0.3" />
+		<PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
+		<PackageReference Include="Aspose.Drawing.Common" Version="25.3.0" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Npgsql" Version="9.0.3" />
-    <PackageReference Include="System.Drawing.Common" Version="5.0.3" />
-  </ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)'=='netcoreapp3.1'">
+		<PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
+		<PackageReference Include="System.Drawing.Common" Version="5.0.3" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="Aspose.GIS">
-      <HintPath>..\..\..\gis-net\build-out\bin\Release\netstandard2.0\publish\Aspose.GIS.dll</HintPath>
-    </Reference>
-  </ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)'=='net4.7'">
+		<PackageReference Include="Npgsql" Version="4.1.7" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Aspose.GIS" Version="25.4.0" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Update="App.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
+	<PropertyGroup Condition="'$(TargetFramework)'=='net6.0'">
+		<DefineConstants>$(DefineConstants);USE_ASPOSE_DRAWING;USE_INTEGRATION_FEATURES</DefineConstants>
+		<BaseIntermediateOutputPath>obj2</BaseIntermediateOutputPath>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(TargetFramework)'=='net8.0'">
+		<DefineConstants>$(DefineConstants);USE_ASPOSE_DRAWING;USE_INTEGRATION_FEATURES</DefineConstants>
+		<BaseIntermediateOutputPath>obj2</BaseIntermediateOutputPath>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(TargetFramework)'=='net4.7'">
+		<DefineConstants>$(DefineConstants);USE_INTEGRATION_FEATURES</DefineConstants>
+
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(TargetFramework)'=='netcoreapp3.1'">
+		<DefineConstants>$(DefineConstants)</DefineConstants>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Update="App.config">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
 
 	<PropertyGroup>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>

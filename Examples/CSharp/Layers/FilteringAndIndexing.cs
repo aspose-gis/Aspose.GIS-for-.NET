@@ -1,5 +1,9 @@
 ﻿using System;
+#if USE_ASPOSE_DRAWING
+using Aspose.Drawing;
+#else
 using System.Drawing;
+#endif
 using System.IO;
 using Aspose.Gis;
 using Aspose.Gis.Geometries;

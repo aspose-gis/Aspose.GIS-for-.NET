@@ -1,5 +1,9 @@
 ﻿using System;
+#if USE_ASPOSE_DRAWING
+using Aspose.Drawing;
+#else
 using System.Drawing;
+#endif
 using Aspose.Gis;
 using Aspose.Gis.Rendering;
 using Aspose.Gis.Rendering.Labelings;
@@ -20,7 +24,7 @@ namespace Aspose.GIS_for.NET.Rendering
             var pathToLicenseFile = ""; // <- change this to the path to your license file
             if (!string.IsNullOrEmpty(pathToLicenseFile))
             {
-                var license = new License();
+                var license = new Aspose.Gis.License();
                 license.SetLicense(pathToLicenseFile);
             }
 

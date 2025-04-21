@@ -1,6 +1,8 @@
 ﻿using Aspose.Gis;
 using Aspose.Gis.Geometries;
+#if USE_INTEGRATION_FEATURES
 using Npgsql;
+#endif
 using System;
 using System.IO;
 
@@ -21,11 +23,16 @@ namespace Aspose.GIS.Examples.CSharp.Layers
                 return;
             }
 
+#if USE_INTEGRATION_FEATURES
+
             CreatePostGisTable(connectionString);
             ListPostGisTables(connectionString);
             ExportPostGisTable(connectionString);
+
+#endif
         }
 
+#if USE_INTEGRATION_FEATURES
         public static void CreatePostGisTable(string postgreSqlConnectionString)
         {
             // ExStart: CreatePostGisTable
@@ -98,5 +105,6 @@ namespace Aspose.GIS.Examples.CSharp.Layers
             }
             // ExEnd: ExportPostGisTable
         }
+#endif
     }
 }

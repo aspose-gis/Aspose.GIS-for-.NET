@@ -1,7 +1,11 @@
 ﻿using Aspose.Gis;
 using Aspose.GIS.Examples.CSharp;
 using System;
+#if USE_ASPOSE_DRAWING
+using Aspose.Drawing;
+#else
 using System.Drawing;
+#endif
 using System.Threading;
 using Aspose.Gis.Formats.Kml;
 using Aspose.Gis.Formats.Kml.Styles;

@@ -34,7 +34,7 @@ namespace Aspose.GIS.Examples.CSharp.Layers
         {
             // ExStart: RemoveSqlServerTable
             // First, we create the connection to the SQL Server.
-       /*     using (var connection = new SqlConnection(connectionString))
+            using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
                 // Then, we pass this connection to Dataset.Open method in order to access tables in the SQL Server.
@@ -45,7 +45,7 @@ namespace Aspose.GIS.Examples.CSharp.Layers
                     // An exception isn't thrown if the table doesn't exist.
                     ds.RemoveLayer("features_table");
                 }
-            }*/
+            }
             // ExEnd: RemoveSqlServerTable
         }
 
@@ -53,7 +53,7 @@ namespace Aspose.GIS.Examples.CSharp.Layers
         {
             // ExStart: CreateSqlServerTable
             // First, we create the connection to the SQL Server.
-            /*using (var connection = new SqlConnection(connectionString))
+            using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
                 // Then, we pass this connection to Dataset.Open method in order to access tables in the SQL Server.
@@ -75,7 +75,7 @@ namespace Aspose.GIS.Examples.CSharp.Layers
                         layer.Add(feature);
                     }
                 }
-            }*/
+            }
             // ExEnd: CreateSqlServerTable
         }
 
@@ -83,7 +83,7 @@ namespace Aspose.GIS.Examples.CSharp.Layers
         {
             // ExStart: ListSqlServerTables
             // First, we create the connection to the SQL Server.
-         /*   using (var connection = new SqlConnection(connectionString))
+            using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
                 // Then, we pass this connection to Dataset.Open method in order to access tables in the SQL Server.
@@ -96,7 +96,7 @@ namespace Aspose.GIS.Examples.CSharp.Layers
                         Console.WriteLine(ds.GetLayerName(i));
                     }
                 }
-            }*/
+            }
             // ExEnd: ListSqlServerTables
         }
 
@@ -106,7 +106,7 @@ namespace Aspose.GIS.Examples.CSharp.Layers
             var outputPath = Path.Combine(RunExamples.GetDataDir(), "sql_server_out.kml");
 
             // First, we create the connection to the SQL Server.
-      /*      using (var connection = new SqlConnection(connectionString))
+            using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
                 // Then, we pass this connection to Dataset.Open method in order to access tables in the SQL Server.
@@ -119,7 +119,7 @@ namespace Aspose.GIS.Examples.CSharp.Layers
                     }
                     Console.WriteLine("\nExport complete: " + outputPath);
                 }
-            }*/
+            }
             // ExEnd: ExportSqlServerTable
         }
     }

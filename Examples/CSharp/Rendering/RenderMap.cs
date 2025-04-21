@@ -3,9 +3,18 @@ using Aspose.Gis.Rendering;
 using Aspose.Gis.Rendering.Symbolizers;
 using Aspose.Gis.SpatialReferencing;
 using Aspose.GIS.Examples.CSharp;
+#if USE_ASPOSE_DRAWING
+using Aspose.Drawing;
+using Aspose.Drawing.Drawing2D;
+using Aspose.Drawing.Text;
+using Aspose.Drawing.Imaging;
+#else
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
+using System.Drawing.Imaging;
+#endif
+
 using System.IO;
 using System.Linq;
 
@@ -22,7 +31,7 @@ namespace Aspose.GIS_for.NET.Rendering
             var pathToLicenseFile = @""; // <- change this to the path to your license file
             if (!string.IsNullOrEmpty(pathToLicenseFile))
             {
-                var license = new License();
+                var license = new Aspose.Gis.License();
                 license.SetLicense(pathToLicenseFile);
             }
 
@@ -241,7 +250,7 @@ namespace Aspose.GIS_for.NET.Rendering
         public static void ClusterTextSymbolizer()
         {
             //ExStart: ClusterTextSymbolizer
-            /*  using (var map = new Map(500, 300))
+            using (var map = new Map(500, 300))
             {
                 // take only part of the word
                 map.Extent = new Extent(-100, -60, 100, 60) { SpatialReferenceSystem = SpatialReferenceSystem.Wgs84 };
@@ -268,13 +277,25 @@ namespace Aspose.GIS_for.NET.Rendering
 
                                 if (digitText.Length == 1)
                                 {
+#if USE_ASPOSE_DRAWING
+         graphics.DrawString(digitText, new Aspose.Drawing.Font("Arial", 30, GraphicsUnit.Pixel),
+                                                                 new Aspose.Drawing.SolidBrush(Aspose.Drawing.Color.Black), 5, 3);
+
+#else
                                     graphics.DrawString(digitText, new System.Drawing.Font("Arial", 30, GraphicsUnit.Pixel),
-                                        new SolidBrush(Color.Black), 5, 3);
+                                                                          new SolidBrush(Color.Black), 5, 3);
+#endif
                                 }
                                 else
                                 {
+#if USE_ASPOSE_DRAWING
+                                 graphics.DrawString(digitText, new Aspose.Drawing.Font("Arial", 30, GraphicsUnit.Pixel),
+                                      new Aspose.Drawing.SolidBrush(Color.Black), -4, 3);
+                                  
+#else
                                     graphics.DrawString(digitText, new System.Drawing.Font("Arial", 30, GraphicsUnit.Pixel),
-                                        new SolidBrush(Color.Black), -4, 3);
+                                      new SolidBrush(Color.Black), -4, 3);
+#endif
 
                                 }
 
@@ -282,7 +303,7 @@ namespace Aspose.GIS_for.NET.Rendering
                             }
                             // store the bitmap to a stream
                             memoryStream = new MemoryStream();
-                            digitBitmap.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);
+                            digitBitmap.Save(memoryStream, ImageFormat.Png);
                         }
 
                         var pathToDigit = AbstractPath.FromStream(memoryStream);
@@ -313,10 +334,10 @@ namespace Aspose.GIS_for.NET.Rendering
                       
         }
             //ExEnd: ClusterTextSymbolizer
-              */
+              
         }
 
-        #endregion
+#endregion
 
         #region Line
 

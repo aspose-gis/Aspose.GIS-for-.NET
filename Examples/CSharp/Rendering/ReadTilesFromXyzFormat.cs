@@ -89,7 +89,6 @@ namespace Aspose.GIS_for.NET.Rendering
             }
             // ExEnd: OpenStreetXyzTiles
         }
-
         private static void OpenTileFromFolder()
         {
             // ExStart: OpenTileFromFolder
