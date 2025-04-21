@@ -44,13 +44,13 @@ Directory | Description
 **TopoJSON:** JSON, TopoJSON\
 **ESRI File Geodatabase:** GDB\
 **Google Earth:** KML
+**Geography Markup Language:** GML\
+**MapInfo Tab Format:** TAB, DAT, DBF\
 
 ## Read GIS Formats
 
-**Geography Markup Language:** GML\
 **GPS Exchange Format:** GPX\
 **MapInfo Interchange Format:** MIF\
-**MapInfo Tab Format:** TAB, DAT, DBF\
 **OpenStreetMap:** OSM\
 **Other:** GeoTIFF, ESRI ASCII
 
