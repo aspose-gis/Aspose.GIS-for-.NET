@@ -1,0 +1,17 @@
+{
+  "version": "3.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "provider": "cdnjs",
+      "library": "leaflet@1.9.4",
+      "destination": "wwwroot/lib/leaflet/"
+    }
+  ,
+{
+  "provider": "cdnjs",
+  "library": "microsoft-signalr@8.0.7",
+  "destination": "wwwroot/lib/microsoft-signalr/"
+}
+]
+}
