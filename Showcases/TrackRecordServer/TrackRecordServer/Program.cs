@@ -18,7 +18,7 @@ namespace TrackRecordServer
 
             builder.Services.AddSingleton((sp) => 
             {
-                string filePath = "e:\\Aspose\\TrackerFiles\\route.gpx";
+                string filePath = "route.gpx";
 
                 using (var layer = Drivers.Gpx.OpenLayer(filePath))
                 {
