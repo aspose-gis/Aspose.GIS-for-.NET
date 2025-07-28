@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "All together",
+    "Projects": [
+      {
+        "Path": "TrackRecordServer\\TrackRecordServer.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "FakeMovingObject\\FakeMovingObject.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

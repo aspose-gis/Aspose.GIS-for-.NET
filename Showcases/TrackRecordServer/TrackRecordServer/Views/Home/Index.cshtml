@@ -1,0 +1,221 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Route</title>
+    <link href="~/lib/leaflet/leaflet.css" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f5f7fa;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .map-container {
+            height: 70vh;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        #map {
+            height: 100%;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #95a5a6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Travel route: @string.Format("{0:0.00}", ViewData["TotalLength"])m</h1>
+            <p>Analysis of the path traveled by the linear referencing method with Aspose.GIS</p>
+        </header>
+
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+
+        <footer>
+            <p>ASP.NET Core 9 & Leaflet &copy; @DateTime.Now.Year</p>
+        </footer>
+    </div>
+    <script src="~/lib/leaflet/leaflet.js"></script>
+    <script src="~/lib/microsoft-signalr/signalr.js"></script>
+    <script>
+
+        const mapInstance = (function initMap() {
+            // Initializing the map
+            const map = L.map('map').setView([52.360435, 30.424791], 13);
+
+            // Adding an OpenStreetMap layer
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+                maxZoom: 19,
+                subdomains: ['a','b','c']
+            }).addTo(map);
+
+            const routeGeoJson = @Html.Raw(ViewData["RouteGeoJson"]);
+
+            // Processing GeoJSON and adding to the map
+            if (routeGeoJson && routeGeoJson.features) {
+                // Processing each route line
+                routeGeoJson.features.forEach(feature => {
+                    if (feature.geometry.type === "LineString") {
+                        const coordinates = feature.geometry.coordinates;
+                        const points = coordinates.map(coord => L.latLng(coord[1], coord[0]));
+
+                        // Drawing the route line
+                        L.polyline(points, {
+                            color: '#6902f0',
+                            weight: 5,
+                            opacity: 0.8,
+                            smoothFactor: 1
+                        }).addTo(map);
+                    }
+                });
+
+                // Scaling the map to the route
+                const bounds = L.latLngBounds(
+                    routeGeoJson.features.flatMap(f =>
+                        f.geometry.coordinates.map(coord =>
+                            L.latLng(coord[1], coord[0])
+                        )
+                    )
+                );
+                map.fitBounds(bounds.pad(0.1));
+            } else {
+                console.error("Error: Invalid GeoJSON.", routeGeoJson);
+                alert("Route not found or corrupted");
+            }
+
+            return map;
+        })();
+
+        (function initSignalR() {
+            var movingObject = null;
+            var currentSegment = null;
+            var projection = null;
+            var segmentIndex = null;
+
+            document.addEventListener('DOMContentLoaded', () => {
+                const connection = new signalR.HubConnectionBuilder()
+                    .withUrl("/coordinatesHub")
+                    .configureLogging(signalR.LogLevel.Information)
+                    .build();
+
+                // Handler for receiving coordinates
+                connection.on("TrackState", (trackState) => {
+                    if(currentSegment) {
+                        currentSegment.setLatLngs(trackState.segment.line);
+                    } else {
+                        currentSegment = L.polyline(trackState.segment.line, {
+                            color: '#ff00c3'
+                        }).addTo(mapInstance);
+                    }
+
+                    if(projection) {
+                        projection.setLatLng(trackState.segment.projection);
+                        projection.setTooltipContent(`Distance traveled: ${trackState.distanceTraveled.toFixed(2)}m`);
+                    } else {
+                        projection = L.circleMarker(trackState.segment.projection, {
+                            radius: 5,
+                            fillColor: "#ff0000",
+                            color: "#c20404",
+                            weight: 1,
+                            fillOpacity: 1
+                        }).addTo(mapInstance);
+
+                        projection.bindTooltip(`Distance traveled: ${trackState.distanceTraveled.toFixed(2)}m`, {
+                            permanent: true,
+                            direction: 'top',
+                            offset: [0, -40]
+                        });
+                    }
+
+                    if(movingObject) {
+                        movingObject.setLatLng([trackState.location.latitude, trackState.location.longitude]);
+                        movingObject.setTooltipContent(`Deviation: ${trackState.segment.lateralDeviation.toFixed(2)}m`);
+                    } else {
+                        movingObject = L.circleMarker([trackState.location.latitude, trackState.location.longitude], {
+                            radius: 5,
+                            fillColor: "#00aaff",
+                            color: "#000",
+                            weight: 1,
+                            fillOpacity: 1
+                        }).addTo(mapInstance);
+
+                        movingObject.bindTooltip(`Deviation: ${trackState.segment.lateralDeviation.toFixed(2)}m`, {
+                            permanent: true,
+                            direction: 'top',
+                            offset: [0, -40]
+                        });
+                    }
+
+                    if(trackState.segment.lateralDeviation > 10) {
+                        movingObject.openTooltip();
+                    } else {
+                        movingObject.closeTooltip();
+                    }
+
+                    if (segmentIndex !== trackState.segment.index) {
+                        if(segmentIndex > trackState.segment.index) {
+                            console.log('%cSegment index: ' + trackState.segment.index, 'color: red;');
+                        } else {
+                            console.log("Segment index: " + trackState.segment.index);
+                        }
+                        segmentIndex = trackState.segment.index;
+                    }
+                });
+
+                // Starting a connection and joining a group
+                connection.start()
+                    .then(() => {
+                        console.log("Connected to SignalR hub");
+                        return connection.invoke("JoinHomeIndexGroup");
+                    })
+                    .catch(err => console.error('Connection error:', err));
+
+                // Handling connection closure when leaving a page
+                window.addEventListener('beforeunload', () => {
+                    connection.stop();
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
