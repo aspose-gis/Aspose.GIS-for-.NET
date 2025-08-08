@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="example.gpkg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.8" />
+    <PackageReference Include="System.Drawing.Common" Version="9.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Aspose.GIS">
+      <HintPath>..\..\..\..\net\build-out\bin\Release\NugetPackage\netstandard2.0\Aspose.GIS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
