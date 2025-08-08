@@ -21,7 +21,7 @@ namespace Aspose.GIS.Examples.CSharp
             // Set the license to avoid the evaluation limitations.
             // Uncomment this lines if you have a license
             License license = new License();
-            license.SetLicense(@"C:\Projects\gis-net\testdata\licensing\Aspose.GIS.lic");
+            license.SetLicense(@"");
 
             Console.WriteLine("Open RunExamples.cs. \nIn Main() method uncomment the example that you want to run.");
             Console.WriteLine("=====================================================");
