@@ -201,7 +201,6 @@ namespace Aspose.GIS.Examples.CSharp
 
         public static string GetDataDir()
         {
-            return @"C:\Projects\Aspose.GIS-for-.NET\Examples\Data\";
             var parent = Directory.GetParent(Directory.GetCurrentDirectory()).Parent;
             string startDirectory = null;
             if (parent != null)
