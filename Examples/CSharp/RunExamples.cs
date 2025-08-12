@@ -1,11 +1,12 @@
-﻿using Aspose.GIS_for.NET.Rendering;
+﻿using Aspose.Gis;
+using Aspose.GIS.Examples.CSharp.Geometries;
+using Aspose.GIS.Examples.CSharp.Layers;
+using Aspose.GIS_for.NET.Geometries;
+using Aspose.GIS_for.NET.Layers;
+using Aspose.GIS_for.NET.Rendering;
 using System;
 using System.IO;
-using Aspose.GIS.Examples.CSharp.Layers;
-using Aspose.GIS_for.NET.Layers;
-using Aspose.GIS.Examples.CSharp.Geometries;
-using Aspose.GIS_for.NET.Geometries;
-using Aspose.Gis;
+using System.Reflection;
 
 
 namespace Aspose.GIS.Examples.CSharp
@@ -201,28 +202,9 @@ namespace Aspose.GIS.Examples.CSharp
 
         public static string GetDataDir()
         {
-            var parent = Directory.GetParent(Directory.GetCurrentDirectory()).Parent;
-            Console.WriteLine(Path.GetFullPath(parent.ToString()));
-            if (parent.Parent != null)
-            {
-                parent = parent.Parent;
-                Console.WriteLine(Path.GetFullPath(parent.ToString()));
-            }
-            
-            string startDirectory = null;
-            if (parent != null) 
-            {
-                var directoryInfo = parent.Parent;
-                if (directoryInfo != null)
-                {
-                    startDirectory = directoryInfo.FullName;
-                }
-            }
-            else
-            {
-                startDirectory = parent.FullName;
-            }
-            return startDirectory != null ? Path.Combine(startDirectory, "Data\\") : null;
+            string assemblyPath = Assembly.GetExecutingAssembly().Location;
+            string assemblyDirectory = Path.GetDirectoryName(assemblyPath);
+            return assemblyDirectory;
         }
 
         public static void CopyDirectory(string sourcePath, string destinationPath)
