@@ -201,7 +201,13 @@ namespace Aspose.GIS.Examples.CSharp
 
         public static string GetDataDir()
         {
-            var parent = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent;
+            var parent = Directory.GetParent(Directory.GetCurrentDirectory()).Parent;
+            Console.WriteLine(Path.GetFullPath(parent.ToString()));
+            if (parent.Parent != null)
+            {
+                parent = parent.Parent;
+                Console.WriteLine(Path.GetFullPath(parent.ToString()));
+            }
             
             string startDirectory = null;
             if (parent != null) 
