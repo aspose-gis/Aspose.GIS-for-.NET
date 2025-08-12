@@ -29,11 +29,11 @@
 
 	<PropertyGroup Condition="'$(TargetFramework)'=='net6.0'">
 		<DefineConstants>$(DefineConstants);USE_ASPOSE_DRAWING;USE_INTEGRATION_FEATURES</DefineConstants>
-		<BaseIntermediateOutputPath>obj2</BaseIntermediateOutputPath>
+		<BaseIntermediateOutputPath>obj</BaseIntermediateOutputPath>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(TargetFramework)'=='net8.0'">
 		<DefineConstants>$(DefineConstants);USE_ASPOSE_DRAWING;USE_INTEGRATION_FEATURES</DefineConstants>
-		<BaseIntermediateOutputPath>obj2</BaseIntermediateOutputPath>
+		<BaseIntermediateOutputPath>obj</BaseIntermediateOutputPath>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(TargetFramework)'=='net4.7'">
 		<DefineConstants>$(DefineConstants);USE_INTEGRATION_FEATURES</DefineConstants>
