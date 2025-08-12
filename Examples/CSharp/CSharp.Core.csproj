@@ -22,6 +22,7 @@
 
 	<ItemGroup Condition="'$(TargetFramework)'=='net4.7'">
 		<PackageReference Include="Npgsql" Version="4.1.7" />
+		<Reference Include="System.IO.Compression" />
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Aspose.GIS" Version="25.4.0" />
