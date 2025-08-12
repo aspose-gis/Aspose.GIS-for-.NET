@@ -204,6 +204,7 @@ namespace Aspose.GIS.Examples.CSharp
         {
             string assemblyPath = Assembly.GetExecutingAssembly().Location;
             string assemblyDirectory = Path.GetDirectoryName(assemblyPath);
+            string testData = Path.Combine(assemblyDirectory, "..", "..", "Data");
             return assemblyDirectory;
         }
 
