@@ -40,7 +40,7 @@ namespace Aspose.GIS_for.NET.Rendering
             var mapPath = Path.Combine(RunExamples.GetDataDir(), "out_osm_tile.png");
 
             // we use the osm tile server
-            string url = "http://tile.openstreetmap.org/{z}/{x}/{y}.png";
+            string url = "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
             using (var layer = Drivers.XyzTiles.OpenLayer(new XyzConnection(url)))
             {
                 // print tile info
@@ -67,7 +67,7 @@ namespace Aspose.GIS_for.NET.Rendering
             var mapPath = Path.Combine(RunExamples.GetDataDir(), "out_osm_tiles.png");
 
             // we use the osm tile server
-            string url = "http://tile.openstreetmap.org/{z}/{x}/{y}.png";
+            string url = "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
             using (var layer = Drivers.XyzTiles.OpenLayer(new XyzConnection(url)))
             {
                 // print tiles info
