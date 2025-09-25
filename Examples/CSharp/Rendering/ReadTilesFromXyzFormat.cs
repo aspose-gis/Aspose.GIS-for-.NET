@@ -1,11 +1,12 @@
-﻿using System;
-using System.IO;
-using System.Linq;
-using Aspose.Gis;
-using Aspose.GIS.Examples.CSharp;
+﻿using Aspose.Gis;
 using Aspose.Gis.Formats.XyzTile;
 using Aspose.Gis.Rendering;
 using Aspose.Gis.SpatialReferencing;
+using Aspose.GIS.Examples.CSharp;
+using System;
+using System.IO;
+using System.Linq;
+using System.Net;
 
 namespace Aspose.GIS_for.NET.Rendering
 {
@@ -21,6 +22,9 @@ namespace Aspose.GIS_for.NET.Rendering
                 var license = new License();
                 license.SetLicense(pathToLicenseFile);
             }
+
+            // Add this BEFORE making any web requests
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
             Console.WriteLine($"Example: {nameof(OpenStreetXyzTile)}");
             OpenStreetXyzTile();
